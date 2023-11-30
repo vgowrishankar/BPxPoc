@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.
 Library     SeleniumLibrary
+Variables       ../Tests/Page_Object/Login_Page.py
 
 *** Variables ***
 ${BROWSER}      Chrome
@@ -12,6 +13,10 @@ ${Password}     your_password
 Open Browser To Login Page
     open browser        ${URL}  ${BROWSER}
     title should be     Facebook – log in or sign up
-    input text          id=email    ${UserName}
-    input password      id=pass     ${Password}
-    click button        name=login
+    input text          ${Login_page_username}    ${UserName}
+    input password      ${Login_page_password}     ${Password}
+    click button        ${Login_page_login_btn}
+
+
+
+
