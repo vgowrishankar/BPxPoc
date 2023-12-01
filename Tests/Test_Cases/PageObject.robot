@@ -10,7 +10,7 @@ ${browser}      Chrome
 
 *** Test Cases ***
 Verify Successful Login to BPx Data Portal
-    [Documentation]    This test case verifies that the user is able to successfully Login and Logout to OrangeHRM using Page Object
+    [Documentation]    This test case verifies that the user is able to successfully Login and Logout to BPx Data Portal using Page Object
     [Tags]    Smoke
     Open Browser  ${site_url}  ${browser}
     Input Pad Name
