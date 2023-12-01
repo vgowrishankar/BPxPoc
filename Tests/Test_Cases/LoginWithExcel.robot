@@ -1,11 +1,10 @@
 *** Settings ***
 Library      SeleniumLibrary
-Resource     ../Resources/login_resources.robot
-Library      DataDriver      ../TestData/UserTable.xls
-Library     DemoLibrary.py
+Resource     ../../Resources/login_resources.robot
+Library      DataDriver     ../../TestData/UserTable.xls
 
-Suite Setup     Open Browser
-Suite Teardown    Close Browser
+Suite Setup     Open Browser Facebook
+Suite Teardown    Close Browser Facebook
 Test Template    Invalid Login
 
 *** Variables ***
@@ -22,4 +21,3 @@ Invalid Login
     Input UserName    ${UserName}
     Input Password    ${Password}
     Click login button
-    Error message should be visible

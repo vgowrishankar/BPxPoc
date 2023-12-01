@@ -3,16 +3,17 @@ Library     SeleniumLibrary
 
 *** Variables ***
 ${BROWSER}      Chrome
-${Login_URL}    https://www.google.com
+${Login_URL}    https://www.facebook.com/login
 ${UserName}     your_username
 ${Password}     your_password
 
-*** Test Cases ***
-Open Browser
-    Open Browser    ${UserName}    ${Password}
+*** Keywords ***
+
+Open Browser Facebook
+    Open Browser    ${Login_URL}    ${BROWSER}
     Maximize Browser Window
 
-Close Browser
+Close Browser Facebook
     Close All Browsers
 
 Open Login Page
@@ -24,7 +25,7 @@ Input UserName
 
 Input Password
     [Arguments]    ${Password}
-    Input Password    id=pass     ${Password}
+    Input Text    id=pass     ${Password}
 
 Click login button
     Click Button    name=login
