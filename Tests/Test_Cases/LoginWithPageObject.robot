@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Simple example using SeleniumLibrary.
-Library     SeleniumLibrary
-Variables       ../Tests/Page_Object/Login_Page.py
+Library           SeleniumLibrary
+Variables         ../../Resources/PageObject/Login_Page.py
 
 *** Variables ***
 ${BROWSER}      Chrome
