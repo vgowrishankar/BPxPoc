@@ -1,0 +1,2 @@
+INSERT INTO TABLE VALUES(1, 'Gowri', 'Test');
+INSERT INTO TABLE VALUES(2, 'Asif', 'Test');

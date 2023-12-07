@@ -1,0 +1,29 @@
+CREATE STORAGE INTEGRATION s3_cust_two_int
+  TYPE = EXTERNAL_STAGE
+  STORAGE_PROVIDER = S3
+  ENABLED = TRUE
+  STORAGE_AWS_ROLE_ARN = put_storage_role_arn_hwew
+  -- change the bucket storage location
+  STORAGE_ALLOWED_LOCATIONS = ('s3://femiuseronetwo/data/');
+
+
+DESC INTEGRATION s3_cust_two_int;
+-- change the role trust policy with details generated from the execution of this code
+--STORAGE_AWS_IAM_USER_ARN and STORAGE_AWS_EXTERNAL_ID
+
+--database.schema
+use schema SNOWPIPE.PIPE;
+
+create stage cust_two_mystage
+  -- location
+  url = 's3://femiuseronetwo/data/'
+  -- integration name
+  storage_integration = s3_cust_two_int;
+
+create pipe SNOWPIPE.PIPE.mycustpipe auto_ingest=true as
+  copy into SNOWPIPE.PIPE.TEST
+  from @SNOWPIPE.PIPE.cust_two_mystage
+  file_format = (type = 'csv');
+
+show pipes;
+--copy the file notification and add it to the s3 notification event on all object creation
