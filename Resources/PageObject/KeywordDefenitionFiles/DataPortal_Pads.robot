@@ -4,6 +4,12 @@ Variables       ../Locators/Locators.py
 Library         DataDriver      ../../../TestData/Database.xls
 Library    Collections
 Library         SeleniumLibrary
+
+*** Variables ***
+
+
+
+
 *** Keywords ***
 Select Pad Filter
     select from list by label  ${PadName}
@@ -86,7 +92,7 @@ Get_All_values_From_Table
         FOR     ${j}    IN RANGE    1   ${row}
             ${Table_data}   get text    xpath://table[name='${Table_Name}']/tboday/tr[${i}]/td[${j}]
             LOG TO CONSOLE  ${Table_data}
-
+        END
     END
 
-
+*** Test Cases ***

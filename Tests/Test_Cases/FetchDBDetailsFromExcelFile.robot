@@ -19,11 +19,12 @@ ${DB_Port}
 *** Test Cases ***
 
 Database_value_Fetch
-    log to console    ${DB_Name}
-    log to console    ${DB_User_Name}
-    log to console    ${DB_Password}
-    log to console    ${DB_Host}
-    log to console    ${DB_Port}
+    fetch data from excel    ${DB_Name}  ${DB_User_Name}    ${DB_Password}  ${DB_Host}  ${DB_Port}
+    #log to console    ${DB_Name}
+    #log to console    ${DB_User_Name}
+    #log to console    ${DB_Password}
+    #log to console    ${DB_Host}
+    #log to console    ${DB_Port}
 
 *** Keywords ***
 
