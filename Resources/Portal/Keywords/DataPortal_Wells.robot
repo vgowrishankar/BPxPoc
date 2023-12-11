@@ -1,6 +1,6 @@
 *** Settings ***
 Library         SeleniumLibrary
-Variables       ../Locators/Locators.py
+Variables       ../PageObject/Locators.py
 Library         DataDriver      ../../../TestData/Database.xls
 
 *** Keywords ***

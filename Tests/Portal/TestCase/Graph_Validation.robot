@@ -1,6 +1,6 @@
 *** Settings ***
 Library         SeleniumLibrary
-Library    Collections
+Library         Collections
 
 
 *** Variables ***

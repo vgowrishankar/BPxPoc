@@ -14,3 +14,6 @@ OrginCorpID = "id:origincorpid"
 
 # Data Portal Completions locators
 CompletioID = "id:completionid"
+
+# Data Portal Refresh locators
+RefreshTable = "id:RefreshTable"

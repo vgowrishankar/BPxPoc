@@ -1,8 +1,8 @@
 *** Settings ***
 Documentation   Page Object in Robot Framework
 Library         SeleniumLibrary
-Resource        ../../Resources/PageObject/KeywordDefenitionFiles/DataPortal_Pads.robot
-Resource        ../../Resources/PageObject/KeywordDefenitionFiles/DataPortal_Wells.robot
+Resource        ../../../Resources/Portal/Keywords/DataPortal_Pads.robot
+Resource        ../../../Resources/Portal/Keywords/DataPortal_Wells.robot
 
 *** Variables ***
 ${site_url}     http://portal.intranet.bpx.com/

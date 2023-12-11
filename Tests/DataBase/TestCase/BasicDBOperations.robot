@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Tests which work with the same input params across all databases.
 
-Resource            ../../Resources/common.resource
+Resource            ../../../Resources/DataBase/Keywords/common.resource
 
 Suite Setup         Connect To DataBase
 Suite Teardown      Disconnect From Database

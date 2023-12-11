@@ -1,8 +1,8 @@
 *** Settings ***
 Library      SeleniumLibrary
 Library      ExcelLibrary
-Resource     ../../Resources/login_resources.robot
-Library      DataDriver     ../../TestData/UserTable.xlsx
+Resource     ../../../Resources/Portal/Keywords/login_resources.robot
+Library      DataDriver     ../../../TestData/UserTable.xlsx
 
 Suite Setup     Open Browser Facebook
 Suite Teardown    Close Browser Facebook

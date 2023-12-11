@@ -1,7 +1,7 @@
 *** Settings ***
 Library     DatabaseLibrary
 Library     OperatingSystem
-Library     DataDriver       ../../TestData/Database.xlsx
+Library     DataDriver       ../../../TestData/Database.xlsx
 
 #Suite Setup    Connect To Database  pysnowflake     ${DB_Name}  ${DB_User_Name} ${DB_Password} ${DB_Host}  ${DB_Port}
 #Suite Teardown    Disconnect From Database
