@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20231220 18:28:34.262" rpa="false" schemaversion="4">
+<suite id="s1" name="Validate File upload functionality via Drag Drop File From local" source="C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\Validate_File_upload_functionality_via_Drag_Drop_File_From_local.robot">
+<test id="s1-t1" name="Validate_File_upload_functionality_via_Drag_Drop_File_From_local" line="8">
+<kw name="login_to_Data_Portal" library="login_resources">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${Login_URL}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--incognito");add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231220 18:28:35.303" level="INFO">Opening browser 'chrome' to base url 'https://portal.stage.intranet.bpx.com/data-portal/well_origins'.</msg>
+<status status="PASS" starttime="20231220 18:28:35.303" endtime="20231220 18:28:41.651"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231220 18:28:41.651" endtime="20231220 18:28:41.781"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=i0116</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 18:28:41.781" endtime="20231220 18:28:43.543"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_page_username}</arg>
+<arg>${UserName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:43.544" level="INFO">Typing text 'SVC-AUTOFRAMEWORK-TEST-S@bpx.com' into text field 'id=i0116'.</msg>
+<status status="PASS" starttime="20231220 18:28:43.544" endtime="20231220 18:28:43.710"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_Page_username_next_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:43.711" level="INFO">Clicking element 'id=idSIButton9'.</msg>
+<status status="PASS" starttime="20231220 18:28:43.710" endtime="20231220 18:28:43.784"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login_page_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 18:28:43.785" endtime="20231220 18:28:45.202"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_page_password}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:45.202" level="INFO">Typing text 'xGP&amp;X8L6M2#9(f^$' into text field 'id=i0118'.</msg>
+<status status="PASS" starttime="20231220 18:28:45.202" endtime="20231220 18:28:45.276"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_page_login_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:45.277" level="INFO">Clicking element 'idSIButton9'.</msg>
+<status status="PASS" starttime="20231220 18:28:45.277" endtime="20231220 18:28:46.352"/>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState == "complete"</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20231220 18:28:46.352" endtime="20231220 18:28:46.365"/>
+</kw>
+<status status="PASS" starttime="20231220 18:28:35.302" endtime="20231220 18:28:46.365"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231220 18:28:51.366" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231220 18:28:46.366" endtime="20231220 18:28:51.366"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Pads_Tab}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 18:28:51.366" endtime="20231220 18:28:51.393"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Pads_Tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:51.394" level="INFO">Clicking element 'id=pads'.</msg>
+<status status="PASS" starttime="20231220 18:28:51.394" endtime="20231220 18:28:51.499"/>
+</kw>
+<kw name="Pads_Filter_Function" library="DataPortal_Pads">
+<arg>Pad Name</arg>
+<arg>Landgre</arg>
+<kw name="Input_Pad_Filter" library="DataPortal_Pads">
+<arg>${pads_dd_search_box}</arg>
+<arg>${Pad_filter_Value}</arg>
+<doc>used to input value in Filter dropdown</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 18:28:51.501" endtime="20231220 18:28:51.531"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>${Pad_filter_Value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:51.531" level="INFO">Typing text 'Pad Name' into text field 'id=mat-input-2'.</msg>
+<status status="PASS" starttime="20231220 18:28:51.531" endtime="20231220 18:28:51.753"/>
+</kw>
+<status status="PASS" starttime="20231220 18:28:51.500" endtime="20231220 18:28:51.753"/>
+</kw>
+<kw name="Input_Pad_Value" library="DataPortal_Pads">
+<arg>${pad_search_input}</arg>
+<arg>${Pad_input_Value}</arg>
+<doc>used to input value in Search value</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 18:28:51.755" endtime="20231220 18:28:51.779"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>${Pad_input_Value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:51.780" level="INFO">Typing text 'Landgre' into text field 'id=mat-input-3'.</msg>
+<status status="PASS" starttime="20231220 18:28:51.779" endtime="20231220 18:28:51.870"/>
+</kw>
+<status status="PASS" starttime="20231220 18:28:51.753" endtime="20231220 18:28:51.870"/>
+</kw>
+<kw name="Click_Button" library="DataPortal_Pads">
+<arg>${pads_apply_filter}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231220 18:28:51.870" endtime="20231220 18:28:51.893"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231220 18:28:51.894" level="INFO">Clicking element 'xpath=//input[@id='mat-input-3']//following-sibling::div//button[contains(text(),'Apply Filters')]'.</msg>
+<status status="PASS" starttime="20231220 18:28:51.893" endtime="20231220 18:28:52.013"/>
+</kw>
+<status status="PASS" starttime="20231220 18:28:51.870" endtime="20231220 18:28:52.013"/>
+</kw>
+<status status="PASS" starttime="20231220 18:28:51.500" endtime="20231220 18:28:52.013"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231220 18:28:57.015" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231220 18:28:52.013" endtime="20231220 18:28:57.015"/>
+</kw>
+<kw name="Get_All_values_From_Table" library="DataPortal_Pads">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${row}</var>
+<arg>${Pads_Table_Rows}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231220 18:28:57.049" level="INFO">${row} = 0</msg>
+<status status="PASS" starttime="20231220 18:28:57.017" endtime="20231220 18:28:57.049"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Coulumn}</var>
+<arg>${Pads_Table_coloum}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231220 18:28:57.065" level="INFO">${Coulumn} = 0</msg>
+<status status="PASS" starttime="20231220 18:28:57.049" endtime="20231220 18:28:57.065"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Total row count is ${row}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231220 18:28:57.065" endtime="20231220 18:28:57.065"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Total column count is ${Coulumn}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231220 18:28:57.066" endtime="20231220 18:28:57.066"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${Coulumn}+1</value>
+<iter>
+<var name="${i}"/>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${row}</value>
+<iter>
+<var name="${j}"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Table_data}</var>
+<arg>(//th[contains(text(),'pad ID') and @role='columnheader']//parent::tr//parent::thead//parent::table/tbody/tr)${i}//td${j}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231220 18:28:57.066" endtime="20231220 18:28:57.066"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${Table_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20231220 18:28:57.067" endtime="20231220 18:28:57.067"/>
+</kw>
+<status status="NOT RUN" starttime="20231220 18:28:57.066" endtime="20231220 18:28:57.067"/>
+</iter>
+<status status="NOT RUN" starttime="20231220 18:28:57.066" endtime="20231220 18:28:57.067"/>
+</for>
+<status status="NOT RUN" starttime="20231220 18:28:57.066" endtime="20231220 18:28:57.067"/>
+</iter>
+<status status="NOT RUN" starttime="20231220 18:28:57.066" endtime="20231220 18:28:57.067"/>
+</for>
+<status status="PASS" starttime="20231220 18:28:57.016" endtime="20231220 18:28:57.067"/>
+</kw>
+<status status="PASS" starttime="20231220 18:28:35.299" endtime="20231220 18:28:57.067"/>
+</test>
+<status status="PASS" starttime="20231220 18:28:34.265" endtime="20231220 18:28:57.069"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Validate File upload functionality via Drag Drop File From local">Validate File upload functionality via Drag Drop File From local</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231220 18:28:35.293" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\Validate_File_upload_functionality_via_Drag_Drop_File_From_local.robot", line 0</msg>
+<msg timestamp="20231220 18:28:35.294" level="ERROR">In source file:
+  File "../../../TestData/Database.xls", line 0</msg>
+<msg timestamp="20231220 18:28:35.298" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: FileNotFoundError: File attribute was not a full path. Tried to find C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\..\..\..\TestData\Database.xls but file does not exist.</msg>
+</errors>
+</robot>
