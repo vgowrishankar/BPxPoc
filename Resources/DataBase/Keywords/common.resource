@@ -21,7 +21,10 @@ ${DB_DRIVER}            ODBC Driver 18 for SQL Server
 
 
 *** Keywords ***
-Connect To DataBase
+Connect_To DataBase
+
+
+
     [Documentation]    Connects to the database based on the current DB module under test
     ...    and connection params set in global variables with alias
     [Arguments]    ${alias}=${None}

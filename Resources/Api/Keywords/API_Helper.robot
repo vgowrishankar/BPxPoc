@@ -17,6 +17,10 @@ ${Post_Request_Path_URL}
 
 
 *** Keywords ***
+api_test
+    get request
+
+
 API_Get_Request
     [Documentation]    This Keyword used to Do the GET request action and it will return the Response body
     [Arguments]    ${Base_url}  ${path_url}
@@ -26,6 +30,7 @@ API_Get_Request
     ${Request}=     get request    New_API_Session  ${Path_URL}
     log to console    ${Request.status_code}
     ${response_code}=   convert to string    ${Request.status_code}
+    should be equal    ${response_code}     200
     log to console    get request    completed returned Response body
     log to console    ${Request}
     log to console     ${response_code}
@@ -62,7 +67,17 @@ API_Header_Validation
     ${Condent_Type_Value}=  get from dictionary    ${Response_received.headers} ${Header_Keys}
     should be equal    ${Condent_Type_Value}    ${Header_Expected_Values}
 
+Read_Value_From_Json
+    ${Json_File}=   load json from file     C:${/}Users${/}10712370${/}PycharmProjects${/}pythonProject${/}BPxPoc${/}TestData${/}API_Payload.json
+    ${json_Name}=   get value from json    ${Json_File}  $.Name
+    ${json_Work}=   get value from json    ${Json_File}  $.Work
+    ${json_Prog_lang}=   get value from json    ${Json_File}  $.Program_Language
+    ${json_Contact}=   get value from json    ${Json_File}  $.Contact
 
+    log to console    ${json_Name[0]}
+    log to console    ${json_Work}[0]}
+    log to console    ${json_Prog_lang}[0]}
+    log to console    ${json_Contact}[0]}
 
 
 

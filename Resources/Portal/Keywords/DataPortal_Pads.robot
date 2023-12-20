@@ -1,9 +1,12 @@
 *** Settings ***
 Library         SeleniumLibrary
 Variables       ../PageObject/Locators.py
+Variables       ../PageObject/DataPortal_Pads.py
 Library         DataDriver      ../../../TestData/Database.xls
 Library         Collections
 Library         SeleniumLibrary
+Library          JSONLibrary
+
 
 *** Variables ***
 
@@ -14,8 +17,22 @@ Library         SeleniumLibrary
 Select Pad Filter
     select from list by label  ${PadName}
 
-Input Pad Name
-    Input text  ${PadName}
+Input_Pad_Filter
+    [Documentation]   used to input value in Filter dropdown
+    [Arguments]    ${Element}   ${Pad_filter_Value}
+    wait until element is visible    ${Element}
+    input text    ${Element}    ${Pad_filter_Value}
+
+Input_Pad_Value
+    [Documentation]   used to input value in Search value
+    [Arguments]    ${Element}   ${Pad_input_Value}
+    wait until element is visible    ${Element}
+    input text    ${Element}    ${Pad_input_Value}
+
+Click_Button
+    [Arguments]    ${Element}
+    wait until element is visible    ${Element}
+    click element    ${Element}
 
 Click Refresh Table
     Click Element  ${RefreshTable}
@@ -49,8 +66,8 @@ Scroll_Down_To_Find_Element
             END
         EXCEPT    Error message
             log     Catches any exception.
-
     END
+
 Select_from_dropdown
     [Arguments]    ${Element}   ${dd_selection_Value}
     log    inside method
@@ -59,7 +76,7 @@ Select_from_dropdown
             click element    ${Element}
             sleep    3
             log    click sent
-            ${Element_status}=  element should be disabled    ${Element}
+            ${Element_status}=  element should be enabled    ${Element}
             IF  ${Element_status}   ==  True
                 select from list by label    ${dd_selection_Value}
                 log    ${dd_selection_Value} option selected
@@ -80,19 +97,29 @@ Send_Keys
     EXCEPT    run keyword and expect error
         log    run keyword and expect error
 
+
+
+
 Get_All_values_From_Table
     [Arguments]    ${Table_Name}
-    ${row}  get element count    xpath://table[name='${Table_Name}']/tboday/tr
-    ${Coulumn}  get element count    xpath://table[name='${Table_Name}']/tboday/tr[1]/th
+    ${row}  get element count    xpath://table[@name='${Table_Name}']/thead/tr/th
+    ${Coulumn}  get element count    xpath://table[@name='${Table_Name}']/tbody/tr
 
     log to console    Total row count is ${row}
     log to console    Total column count is ${Coulumn}
 
-    FOR    ${i}     IN RANGE    1   ${Coulumn}
+    FOR    ${i}     IN RANGE    1   ${Coulumn}+1
         FOR     ${j}    IN RANGE    1   ${row}
-            ${Table_data}   get text    xpath://table[name='${Table_Name}']/tboday/tr[${i}]/td[${j}]
+            ${Table_data}   get text    xpath://table[@name='${Table_Name}']/tbody/tr[${i}]/td[${j}]
+
             LOG TO CONSOLE  ${Table_data}
         END
     END
 
-*** Test Cases ***
+Pads_Filter_Function
+    [Arguments]    ${Pad_filter_Value}  ${Pad_input_Value}
+    input_pad_filter    ${pads_dd_search_box}   ${Pad_filter_Value}
+    dataportal_pads.input_pad_value    ${pad_search_input}      ${Pad_input_Value}
+    click_button    ${pads_apply_filter}
+
+
