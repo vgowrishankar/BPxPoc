@@ -1,13 +1,30 @@
 *** Settings ***
 Library     SeleniumLibrary
-
+Variables       ../PageObject/Login_Page.py
+#Library         DataDriver  ../../../TestData/DataPortal.xls    sheet_name=MFAUser
+Resource        ../../../Utilities/Read_data_from_excel_file.robot
+Library     OperatingSystem
+#Test Template    login_to_Portal
 *** Variables ***
-${BROWSER}      Chrome
-${Login_URL}    https://www.facebook.com/login
-${UserName}     your_username
-${Password}     your_password
+
+${Login_URL}    https://portal.stage.intranet.bpx.com/data-portal/well_origins
+${UserName}     SVC-AUTOFRAMEWORK-TEST-S@bpx.com
+${Password}     xGP&X8L6M2#9(f^$
 
 *** Keywords ***
+
+login_to_Data_Portal
+   # [Arguments]    ${Login_URL}   ${UserName}    ${Password}
+    open browser    ${Login_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
+    maximize browser window
+    wait until element is visible    id=i0116
+    input text    ${Login_page_username}    ${UserName}
+    click element    ${Login_Page_username_next_btn}
+    wait until element is visible    ${Login_page_password}
+    input text    ${Login_page_password}  ${Password}
+    click element    ${Login_page_login_btn}
+    Wait For Condition    return document.readyState == "complete"
+
 
 Open Browser Facebook
     Open Browser    ${Login_URL}    ${BROWSER}
@@ -38,3 +55,4 @@ Error message should be visible
 
 Home Page should be visible
     Page Should Contain    Home
+

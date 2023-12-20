@@ -101,16 +101,16 @@ Send_Keys
 
 
 Get_All_values_From_Table
-    [Arguments]    ${Table_Name}
-    ${row}  get element count    xpath://table[@name='${Table_Name}']/thead/tr/th
-    ${Coulumn}  get element count    xpath://table[@name='${Table_Name}']/tbody/tr
+    [Arguments]
+    ${row}  get element count    ${Pads_Table_Rows}
+    ${Coulumn}  get element count    ${Pads_Table_coloum}
 
     log to console    Total row count is ${row}
     log to console    Total column count is ${Coulumn}
 
     FOR    ${i}     IN RANGE    1   ${Coulumn}+1
         FOR     ${j}    IN RANGE    1   ${row}
-            ${Table_data}   get text    xpath://table[@name='${Table_Name}']/tbody/tr[${i}]/td[${j}]
+            ${Table_data}   get text    (//th[contains(text(),'pad ID') and @role='columnheader']//parent::tr//parent::thead//parent::table/tbody/tr)${i}//td${j}
 
             LOG TO CONSOLE  ${Table_data}
         END
@@ -121,5 +121,7 @@ Pads_Filter_Function
     input_pad_filter    ${pads_dd_search_box}   ${Pad_filter_Value}
     dataportal_pads.input_pad_value    ${pad_search_input}      ${Pad_input_Value}
     click_button    ${pads_apply_filter}
+
+
 
 
