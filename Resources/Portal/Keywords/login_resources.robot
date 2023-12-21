@@ -10,6 +10,7 @@ Library     OperatingSystem
 ${Login_URL}    https://portal.stage.intranet.bpx.com/data-portal/well_origins
 ${UserName}     SVC-AUTOFRAMEWORK-TEST-S@bpx.com
 ${Password}     xGP&X8L6M2#9(f^$
+${BROWSER}      chrome
 
 *** Keywords ***
 
@@ -17,10 +18,10 @@ login_to_Data_Portal
    # [Arguments]    ${Login_URL}   ${UserName}    ${Password}
     open browser    ${Login_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
-    wait until element is visible    id=i0116
+    wait until element is visible    ${Login_page_username}    10s
     input text    ${Login_page_username}    ${UserName}
     click element    ${Login_Page_username_next_btn}
-    wait until element is visible    ${Login_page_password}
+    wait until element is visible    ${Login_page_password}    10s
     input text    ${Login_page_password}  ${Password}
     click element    ${Login_page_login_btn}
     Wait For Condition    return document.readyState == "complete"

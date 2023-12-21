@@ -1,5 +1,6 @@
 Pads_Tab    =   "id=pads"
 Pad_Name_DD_Arrow = "xpath=//*[local-name()='svg' and @fill='none']"
+Pad_Select_pad_name_from_dd ="xpath=//span[contains(text(),'Pad Name')]"
 Pad_Search_input = "id=mat-input-3"
 Pads_DD_Search_Box = "id=mat-input-2"
 Pads_Apply_Filter = "xpath=//input[@id='mat-input-3']//following-sibling::div//button[contains(text(),'Apply Filters')]"
