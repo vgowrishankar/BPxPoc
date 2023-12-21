@@ -1,8 +1,8 @@
 *** Settings ***
-Documentation   Sign in to Data Portal
+Documentation   Login to Data Portal
 Library         SeleniumLibrary
-Resource        ../../../Resources/Portal/Keywords/DataPortal_SignIn.robot
-Variables       ../../../Resources/Portal/PageObject/DataPortal_SignIn.py
+Resource        ../../../Resources/Portal/Keywords/DataPortal_LogIn.robot
+Variables       ../../../Resources/Portal/PageObject/DataPortal_LogIn.py
 
 Test Template    Test Template
 
