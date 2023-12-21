@@ -4,16 +4,16 @@ Library         SeleniumLibrary
 Resource        ../../../Resources/Portal/Keywords/DataPortal_SignIn.robot
 Variables       ../../../Resources/Portal/PageObject/DataPortal_SignIn.py
 
-Suite Setup     Data Portal MFA Login
-Suite Teardown    Close Browser Data Portal
-Test Template    Do Login
-
-*** Variables ***
+Test Template    Test Template
 
 *** Test Cases ***
 Sign In Data Portal Page
     Data Portal MFA Login
+    Get Data Portal URL
+    Close Browser Data Portal
 
 *** Keywords ***
-Do Login
-    Wait For Condition    return document.readyState == "complete"
+Test Template
+    Data Portal MFA Login
+    Get Data Portal URL
+    Close Browser Data Portal

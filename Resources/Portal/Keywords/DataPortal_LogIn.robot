@@ -23,5 +23,9 @@ Data Portal MFA Login
     click element    ${Login_page_login_btn}
     Wait For Condition    return document.readyState == "complete"
 
+Get Data Portal URL
+    ${url} =  Execute Javascript  return window.location.href;
+    log to console   Data Portal URL: ${url}
+
 Close Browser Data Portal
     Close All Browsers
