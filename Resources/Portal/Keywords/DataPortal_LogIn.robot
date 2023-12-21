@@ -1,7 +1,7 @@
 *** Settings ***
 Library         SeleniumLibrary
 Library         DataDriver     ../../../TestData/DataPortal.xls     sheet_name=MFAUser
-Variables       ../PageObject/DataPortal_SignIn.py
+Variables       ../PageObject/DataPortal_LogIn.py
 
 *** Variables ***
 ${BROWSER}      Chrome
