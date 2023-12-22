@@ -41,9 +41,32 @@ One Map GPS Login
     click element    ${Login_page_signIn_btn}
     Wait For Condition    return document.readyState == "complete"
 
+Open Browser OneMap Portal
+    Open Browser    ${Login_URL}    ${BROWSER}
+    Maximize Browser Window
+    sleep   5s
+    Click Element   id=loginTitle
+
 Get One Map URL
     ${url} =  Execute Javascript  return window.location.href;
     log to console   One Map URL: ${url}
 
 Close Browser One Map
+
+Input Password
+    [Arguments]    ${Password}
+    Input Text    id=user_password     ${Password}
+
+Click Sign in button
+    Click Button    id=signIn
+    sleep   2s
+
+Check if the dashboard is loading
+    Wait For Condition    return document.readyState == "complete"
+
+Home Page should be visible
+    Page Should Contain    Nimbus Live - Midstream
+    sleep   2s
+
+Close Browser OneMap Portal
     Close All Browsers
