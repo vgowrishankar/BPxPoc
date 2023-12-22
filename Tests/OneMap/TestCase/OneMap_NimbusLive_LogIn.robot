@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation   Login to GPS One Map Nimbus Live Mid Stream
 Library         SeleniumLibrary
-Resource        ../../../Resources/OneMap/Keywords/ArcGIS_LogIn.robot
+Resource        ../../../Resources/OneMap/Keywords/ArcGIS_Login.robot
 Variables       ../../../Resources/OneMap/PageObject/ArcGIS_LogIn.py
 
 Test Template    Test Template

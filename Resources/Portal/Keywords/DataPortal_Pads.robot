@@ -10,9 +10,8 @@ Library         ../PageObject/Locators.py
 
 
 *** Variables ***
-
-
-
+@{Pads_Table_Headings}=        ${EMPTY}     Pad_Name      Pad_ID       Business_Unit
+@{ll}
 *** Keywords ***
 Select Pad Filter
 
@@ -138,9 +137,79 @@ Pads_Filter_Function_using_Arrow
         click element    ${Pad_Name_DD_Arrow}
         sleep    3
         click element    ${Pad_Select_pad_name_from_dd}
-        input_pad_filter    ${pads_dd_search_box}    ${Pad_filter_Value}
+        input_pad_filter    ${Pad_Search_input}    ${Pad_filter_Value}
         wait until element is enabled    ${pads_apply_filter}
         click_button    ${pads_apply_filter}
 
+test_Get_all_values_From_Data_porta_Pads_table
+    locators.minwindow
+    sleep   10
+    wait until element is visible    ${Pads_Tab}
+    click element     ${Pads_Tab}
 
+    sleep   3
+    ${data}=    get text         xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table' or @role=table]//thead//tr)[1]//th[1]
+    LOG TO CONSOLE    ${data}
+    ${column}   get element count     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th
+    LOG TO CONSOLE    ${column}
+    FOR     ${i}    IN RANGE       1       ${column}+1
+         ${locators}=   get webelement    xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
+         ${text}=      GET TEXT       xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
+         LOG TO CONSOLE       ${text}
+    END
+    ${Total_data}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//td
+    LOG TO CONSOLE    Totaldatacountis=${Total_data}
 
+    ${Total_rr}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr
+    LOG TO CONSOLE    Totaldatacountis=${Total_rr}
+
+    FOR    ${i}    IN RANGE     1       ${Total_rr}+1
+    LOG TO CONSOLE    1stloop started
+        FOR    ${j}    IN RANGE     1       ${column}+1
+        #LOG TO CONSOLE    2ndloop started
+        ${locatores}=   get webelement    xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
+        scroll element into view        ${locatores}
+        ${data_text}=   GET TEXT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
+        log to console    ${data_text}
+        END
+    #LOG TO CONSOLE    loop_completed
+    END
+
+Get_all_values_From_Data_porta_Pads_table
+    locators.minwindow
+    sleep   10
+    wait until element is visible    ${Pads_Tab}
+    click element     ${Pads_Tab}
+
+    sleep   3
+    ${data}=    get text         xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table' or @role=table]//thead//tr)[1]//th[1]
+    LOG TO CONSOLE    ${data}
+    ${column}   get element count     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th
+    LOG TO CONSOLE    ${column}
+    FOR     ${i}    IN RANGE       1       ${column}+1
+         ${locators}=   get webelement    xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
+         ${text}=      GET TEXT       xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
+         LOG TO CONSOLE       ${text}
+    END
+    ${Total_data}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//td
+    LOG TO CONSOLE    Totaldatacountis=${Total_data}
+
+    ${Total_rr}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr
+    LOG TO CONSOLE    Totaldatacountis=${Total_rr}
+
+    FOR    ${i}    IN RANGE     1       ${Total_rr}+1
+    LOG TO CONSOLE    1stloop started
+        ${dict}=    create dictionary
+        FOR    ${j}    IN RANGE     1       ${column}+1
+        #LOG TO CONSOLE    2ndloop started
+        ${locatores}=   get webelement    xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
+        scroll element into view        ${locatores}
+        ${data_text}=   GET TEXT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
+        log to console    ${data_text}
+        set to dictionary    ${dict}        ${Pads_Table_Headings}[${j}]       ${data_text}
+        END
+    LOG TO CONSOLE    ${dict}
+    append to list    ${ll}     ${dict}
+    END
+    log to console          ${ll}
+    log    ${ll}
