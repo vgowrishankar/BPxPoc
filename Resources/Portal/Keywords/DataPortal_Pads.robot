@@ -15,7 +15,7 @@ Library         ../PageObject/Locators.py
 
 *** Keywords ***
 Select Pad Filter
-    minwindow
+
     #select from list by label  ${PadName}
 
 Input_Pad_Filter
@@ -63,7 +63,7 @@ Scroll_Down_To_Find_Element
     FOR    ${i}     IN RANGE    1     5
         TRY
             sleep   3
-            scroll_down_to_find_element    ${Element}
+            scroll element into view    ${Element}
             log to console    try to find element using scroLl down
         EXCEPT  trying to scrool down using javascript
             sleep    3
