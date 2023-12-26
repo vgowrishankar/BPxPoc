@@ -1,6 +1,6 @@
 *** Settings ***
 Library         SeleniumLibrary
-
+Library         String
 Variables       ../PageObject/DataPortal_Pads.py
 Library         DataDriver      ../../../TestData/Database.xls
 Library         Collections
@@ -12,6 +12,9 @@ Library         ../PageObject/Locators.py
 *** Variables ***
 @{Pads_Table_Headings}=        ${EMPTY}     Pad_Name      Pad_ID       Business_Unit
 @{ll}
+@{Uploaded_file_list}
+
+
 *** Keywords ***
 Select Pad Filter
 
@@ -100,27 +103,6 @@ Send_Keys
         input text    ${Sendkey_Element}   ${Input_Value}
     EXCEPT    run keyword and expect error
         log    run keyword and expect error
-
-
-
-
-Get_All_values_From_Table
-
-    ${row}  get element count    ${Pads_Table_Rows}
-    ${Coulumn}  get element count    ${Pads_Table_coloum}
-
-    log to console    Total row count is ${row}
-    log to console    Total column count is ${Coulumn}
-
-
-    FOR    ${i}     IN RANGE    1   ${Coulumn}+1
-        FOR     ${j}    IN RANGE    1   ${row}
-            sleep    2
-            ${Table_data}   get text    (//th[contains(text(),'pad ID') and @role='columnheader']//parent::tr//parent::thead//parent::table/tbody/tr)${i}//td${j}
-
-            LOG TO CONSOLE  ${Table_data}
-        END
-    END
 
 Pads_Filter_Function
      [Arguments]    ${Pad_filter_Value}  ${Pad_input_Value}
@@ -213,3 +195,51 @@ Get_all_values_From_Data_porta_Pads_table
     END
     log to console          ${ll}
     log    ${ll}
+
+
+Select_side_panel
+    wait until element is visible    ${Pads_Side_Extend_Tab}
+    click element       ${Pads_Side_Extend_Tab}
+
+
+Upload_URL_function
+    [Arguments]    ${URL_name}      ${URL}
+    wait until element is visible    ${Pads_Ex_Tab_Pad_data_Attachements_first_URL_name_input}
+    input text        ${Pads_Ex_Tab_Pad_data_Attachements_first_URL_name_input}         ${URL_name}
+    wait until element is visible    ${Pads_Ex_Tab_Pad_data_Attachements_first_URL_input}
+    input text        ${Pads_Ex_Tab_Pad_data_Attachements_first_URL_input}         ${URL}
+    #click element       ${Pads_Ex_Tab_Pad_data_Attachements_first_upload_URL_btn}
+
+
+Get_all_uploaded_file_list
+    ${list_of_elements}=        get webelements     ${Pads_Ex_Tab_Pad_data_Attachements_first_uploaded_doc_name}
+    ${Element_count}=    get element count    ${Pads_Ex_Tab_Pad_data_Attachements_first_uploaded_doc_name}
+    log to console    Total_file_countis=${Element_count}
+    ${list}=    create list
+
+    FOR     ${i}    IN        @{list_of_elements}
+        scroll element into view        ${i}
+        log to console    ${i.text}
+        ${get_text}=    get text    ${i}
+        APPEND TO LIST    ${list}        ${get_text}
+    END
+
+    LOG TO CONSOLE     List_Of_Files= ${list}
+    [Return]    ${list}
+
+Select_AND_Toggle_button
+    wait until element is visible    ${Pads_And_Toggle_Pressed_status}      10s
+    ${get_toggle_status}=       get element attribute    ${Pads_And_Toggle_Pressed_status}      aria-pressed
+    IF     ${get_toggle_status} ==    "false"
+        click element       ${Pads_And_Toggle}
+
+Table_Value_validation_with_filter_option
+    [Arguments]    ${Table_value_List}      ${Filter_mode}      @{input_list}
+    ${Filter_option}=   convert to lower case      ${Filter_mode}
+    LOG TO CONSOLE    ${Filter_option}
+    #Run keyword if  any == 'any'     Any_option_validation
+
+
+Any_option_validation
+    log to console    any option validation
+    log    anyoptionvalidation

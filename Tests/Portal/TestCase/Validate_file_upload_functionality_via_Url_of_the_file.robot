@@ -1,7 +1,6 @@
 *** Settings ***
 Library         SeleniumLibrary
 Library         ../../../Resources/Portal/PageObject/Locators.py
-
 Variables       ../../../Resources/Portal/PageObject/DataPortal_Pads.py
 Resource        ../../../Resources/Portal/Keywords/DataPortal_Pads.robot
 #Resource        ../../../Resources/Portal/Keywords/login_resources.robot
@@ -11,11 +10,15 @@ Library         ../../../Resources/Portal/Keywords/Custome_Methods.py
 
 
 *** Variables ***
-@{keys}=        ${EMPTY}     padname      padid       businessunit        fine
-${file_input}=    "C:${/}Users${/}10712370${/}PycharmProjects${/}pythonProject${/}BPxPoc${/}selenium-screenshot-1.png"
+${Upload_URl_name}=    Test_URL_NAME
+${Upload_URl}=   Test url
+${file_Name}=   template_01.docx
+
+
 
 *** Test Cases ***
-Validate_File_upload_functionality_via_Drag_Drop_File_From_local
+Validate_file_upload_functionality_via_Url_of_the_file
+    [Tags]    TC151123001
     Data Portal MFA Login
     sleep    10
     wait until element is visible    ${Pads_Tab}
@@ -29,23 +32,14 @@ Validate_File_upload_functionality_via_Drag_Drop_File_From_local
     wait until element is visible     ${Pads_Ex_Tab_Pad_data_Attachemnts}
     click element        ${Pads_Ex_Tab_Pad_data_Attachemnts}
     sleep    5
-    Upload_Document_using_Drag_Drop         ${Pads_Ex_Tab_Pad_data_Attachements_first_upload_area}          ${file_input}
-
-
-
-
-
-
-
-
+    Upload_URL_function         ${Upload_URl_name}          ${Upload_URl}
+    Sleep   5
+    ${list_of_uploadedfile}=        Get_all_uploaded_file_list
+    ${latest}=    get from list    ${list_of_uploadedfile}          0
+    list should contain value      ${list_of_uploadedfile}       ${file_Name}
+    should be equal as strings    ${latest}         ${file_Name}
 
 *** Keywords ***
 
 
-Upload_Document_using_Drag_Drop
-    [Arguments]    ${source_locator}        ${targeted}
-    ${source}=      get webelement    ${source_locator}
-    ${target}=      get webelement    ${targeted}
-    ${action}=      evaluate    seleniumlibrary.create webdriver.common.action_chains.ActionChains(driver).drag_and_drop(${source},${target})
-    [Return]     ${action}
 
