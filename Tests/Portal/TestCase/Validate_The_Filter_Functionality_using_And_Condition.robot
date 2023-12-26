@@ -10,17 +10,16 @@ Library         ../../../Resources/Portal/Keywords/Custome_Methods.py
 
 
 *** Variables ***
-@{table_value}=    as    if     kh    an
-@{list_of_input}=   BU      STATE
-${Filter_Mode}         ANY
-
+${filter_value}       OR
+@{table_value}=     anstate    state     anstEate    st
+@{list_of_input}=   an      STATE
 
 
 
 
 *** Test Cases ***
 sample
-    Table_Value_validation_with_filter_option       @{table_value}     ${Filter_Mode}     @{list_of_input}
+    Table_Value_validation_with_filter_option       ${table_value}      ${list_of_input}        ${filter_value}
 
 
 
@@ -40,5 +39,37 @@ Validate_The_Filter_Functionality_using_And_Condition
     click element        ${Pads_Table_only_Padname_Value}
     sleep    5
 
+Table_Value_validation_with_filter_option
+    [Arguments]     ${Enter_table_list}     ${Enter_list_of_input}      ${Filter_mode}
+    LOG TO CONSOLE      ${Filter_mode}
+    ${new_Filter_mode}=     convert to lower case    ${Filter_mode}
+    log to console     ${new_Filter_mode}
+    RUN KEYWORD IF    '${new_Filter_mode}' == 'and'     And_Toggle_option_validation    ${Enter_table_list}    ${Enter_list_of_input}       ELSE    Or_Toggle_option_validation    ${Enter_table_list}    ${Enter_list_of_input}
 
 
+
+
+Or_Toggle_option_validation
+    [Arguments]    ${list_to_be_validate}       ${list_of_input_values}
+
+    FOR     ${i}    IN    @{list_of_input_values}
+        FOR    ${j}    IN      @{list_to_be_validate}
+                should contain any    ${j}      @{list_of_input_values}     ignore_case=True
+                LOG TO CONSOLE    Input_Value=@{list_of_input_values}
+                log to console    Contains_in=${j}
+        END
+
+    END
+
+And_Toggle_option_validation
+    [Arguments]    ${list_to_be_validate}       ${list_of_input_values}
+
+    FOR     ${i}    IN    @{list_of_input_values}
+        FOR    ${j}    IN      @{list_to_be_validate}
+                should contain   ${j}      @{list_of_input_values}     ignore_case=True
+                LOG TO CONSOLE    Input_Value=@{list_of_input_values}
+                log to console    Contains_in=${j}
+
+        END
+
+    END

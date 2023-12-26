@@ -12,7 +12,7 @@ Library         ../PageObject/Locators.py
 *** Variables ***
 @{Pads_Table_Headings}=        ${EMPTY}     Pad_Name      Pad_ID       Business_Unit
 @{ll}
-@{Uploaded_file_list}
+
 
 
 *** Keywords ***
@@ -233,13 +233,7 @@ Select_AND_Toggle_button
     IF     ${get_toggle_status} ==    "false"
         click element       ${Pads_And_Toggle}
 
-Table_Value_validation_with_filter_option
-    [Arguments]    ${Table_value_List}      ${Filter_mode}      @{input_list}
-    ${Filter_option}=   convert to lower case      ${Filter_mode}
-    LOG TO CONSOLE    ${Filter_option}
-    #Run keyword if  any == 'any'     Any_option_validation
 
 
-Any_option_validation
-    log to console    any option validation
-    log    anyoptionvalidation
+
+
