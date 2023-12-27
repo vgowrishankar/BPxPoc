@@ -32,7 +32,7 @@ Well_Origins_Ex_Tab_Fr_loading_Subsurfaces = "xpath=//div[@id='cdk-accordion-chi
 Well_Origins_Ex_Tab_Fr_loading_Surface_Land = "xpath=//div[@id='cdk-accordion-child-5']/div/button[contains(text(),'Surface')]"
 Well_Origins_Ex_Tab_Fr_loading_Survey = "xpath=//div[@id='cdk-accordion-child-5']/div/button[contains(text(),'Survey')]"
 Well_Origins_Ex_Tab_Fr_loading_Regulatory ="xpath=//div[@id='cdk-accordion-child-5']/div/button[contains(text(),'Regulatory')]"
-Well_Origins_Ex_Tab_Header_Table_Values="xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table'])[4]//td"
+Well_Origins_Ex_Tab_Header_Table_Values="xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table'])[2]//td"
 Well_Origins_Ex_Tab_Pad_data_Dashboard_Header = "xpath=//div[@id='cdk-accordion-child-4']/div/button[contains(text(),'Info')]/parent::div//parent::div//parent::mat-expansion-panel//parent::mat-accordion//parent::div/parent::app-navigation-menu//following-sibling::div[@class='body-content']/h2"
 Well_Origins_Ex_Tab_Pad_data_info_Dashboard_Labels = "xpath=//div[@id='cdk-accordion-child-4']/div/button[contains(text(),'Info')]/parent::div//parent::div//parent::mat-expansion-panel//parent::mat-accordion//parent::div/parent::app-navigation-menu//following-sibling::div[@class='body-content']//div[@class='label-container']/label"
 Well_Origins_Ex_Tab_Pad_data_info_PAD_name_label = "xpath=//div[@id='cdk-accordion-child-4']/div/button[contains(text(),'Info')]/parent::div//parent::div//parent::mat-expansion-panel//parent::mat-accordion//parent::div/parent::app-navigation-menu//following-sibling::div[@class='body-content']//div[@class='label-container']/label[contains(text(),'pad name')]"
@@ -41,6 +41,7 @@ Well_Origins_Ex_Tab_Pad_data_info_PAD_ID_label = "xpath=//div[@id='cdk-accordion
 Well_Origins_Ex_Tab_Pad_data_info_Dashboard_Tooltips_icons ="//div[@id='cdk-accordion-child-4']/div/button[contains(text(),'Info')]/parent::div//parent::div//parent::mat-expansion-panel//parent::mat-accordion//parent::div/parent::app-navigation-menu//following-sibling::div[@class='body-content']//div[@class='label-container']/div[@class='tooltip-container ng-star-inserted']"
 #This Xpath contains 6 Tooltips Values get Tooltip value
 Well_Origins_Ex_Tab_Pad_data_info_Dashboard_Tooltips_Value = "//div[@id='cdk-accordion-child-4']/div/button[contains(text(),'Info')]/parent::div//parent::div//parent::mat-expansion-panel//parent::mat-accordion//parent::div/parent::app-navigation-menu//following-sibling::div[@class='body-content']//div[@class='label-container']/div[@class='tooltip-container ng-star-inserted']//p"
+Well_Origins_Ex_Tab_Pad_data_info_all_information_inputs ="xpath=//form//input"
 Well_Origins_Ex_Tab_Pad_data_info_PAD_name_Input ="xpath=//input[@id='Pad_Data-Info-pad_name']"
 Well_Origins_Ex_Tab_Pad_data_info_PAD_ID_Input = "xpath=//input[@id='Pad_Data-Info-pad_id']"
 Well_Origins_Ex_Tab_Pad_data_info_well_origins_Values ="xpath=//div[@id='Pad_Data-Info-well_origins']/a"

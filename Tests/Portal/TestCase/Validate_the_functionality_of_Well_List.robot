@@ -17,8 +17,8 @@ ${Well_input}       LOWE 54H
 
 *** Test Cases ***
 sample
-
     Validate_the_functionality_of_well_list
+
 
 
 
@@ -47,5 +47,11 @@ Validate_the_functionality_of_well_list
     ${side_panel_Title_Text}=       get text        ${Get_side_panel_title_element}
     #Validate Side Panel Heading
     should be equal         ${side_panel_Title_Text}        ${Well_input}       ignore_case=True
+    #******************* Get all value from Side panel table *********************
+    ${side_panel_Table_value}=      Get_all_Value_from_side_panel_info_table
+
+    ${side_panel_information_value}=    Get_all_Value_from_side_panel_info_Tab_informations
+
+
 
 
