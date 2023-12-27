@@ -161,7 +161,6 @@ Get_all_values_From_Data_porta_Pads_table
     locators.minwindow
     sleep   10
     wait until element is visible    ${Pads_Tab}
-    click element     ${Pads_Tab}
 
     sleep   3
     ${data}=    get text         xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table' or @role=table]//thead//tr)[1]//th[1]
@@ -228,12 +227,66 @@ Get_all_uploaded_file_list
     [Return]    ${list}
 
 Select_AND_Toggle_button
+    sleep    5
     wait until element is visible    ${Pads_And_Toggle_Pressed_status}      10s
-    ${get_toggle_status}=       get element attribute    ${Pads_And_Toggle_Pressed_status}      aria-pressed
-    IF     ${get_toggle_status} ==    "false"
-        click element       ${Pads_And_Toggle}
+    ${status}=    Run Keyword And Return Status    Click Element    ${Pads_And_Toggle}
+    Run Keyword If    'True'=='${status}'       Tab_clicked_successfully
+
+
+Get_all_Value_from_Pad_name_Header_table
+    locators.minwindow
+    sleep   10
+    wait until element is visible    ${Pads_Tab}
+
+    sleep   3
+    ${list_of_elements}=        get webelements     ${Pads_Table_only_Padname_Value}
+    ${Element_count}=    get element count    ${Pads_Table_only_Padname_Value}
+    log to console    Total_file_countis=${Element_count}
+    ${list}=    create list
+
+    FOR     ${i}    IN        @{list_of_elements}
+        scroll element into view        ${i}
+        log to console    ${i.text}
+        ${get_text}=    get text    ${i}
+        APPEND TO LIST    ${list}        ${get_text}
+    END
+
+    LOG TO CONSOLE     List_Of_Files= ${list}
+    [Return]    ${list}
+
+
+
+Table_Value_validation_with_filter_option
+    [Arguments]     ${Enter_table_list}     ${Enter_list_of_input}      ${Filter_mode}
+    LOG TO CONSOLE      ${Filter_mode}
+    ${new_Filter_mode}=     convert to lower case    ${Filter_mode}
+    log to console     ${new_Filter_mode}
+    RUN KEYWORD IF    '${new_Filter_mode}' == 'and'     And_Toggle_option_validation    ${Enter_table_list}    ${Enter_list_of_input}       ELSE    Or_Toggle_option_validation    ${Enter_table_list}    ${Enter_list_of_input}
 
 
 
 
+Or_Toggle_option_validation
+    [Arguments]    ${list_to_be_validate}       ${list_of_input_values}
 
+    FOR     ${i}    IN    @{list_of_input_values}
+        FOR    ${j}    IN      @{list_to_be_validate}
+                should contain any    ${j}      @{list_of_input_values}     ignore_case=True
+                LOG TO CONSOLE    Input_Value=@{list_of_input_values}
+                log to console    Contains_in=${j}
+        END
+
+    END
+
+And_Toggle_option_validation
+    [Arguments]    ${list_to_be_validate}       ${list_of_input_values}
+
+    FOR     ${i}    IN    @{list_of_input_values}
+        FOR    ${j}    IN      @{list_to_be_validate}
+                should contain   ${j}      @{list_of_input_values}     ignore_case=True
+                LOG TO CONSOLE    Input_Value=@{list_of_input_values}
+                log to console    Contains_in=${j}
+
+        END
+
+    END
