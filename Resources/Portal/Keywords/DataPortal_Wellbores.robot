@@ -73,3 +73,24 @@ Input_Well_bores_Filter
     wait until element is visible    ${Element}
     clear element text    ${Element}
     input text    ${Element}    ${Pad_filter_Value}
+
+Select_Wellbore_side_panel
+    wait until element is visible    ${Well_bores_Side_Extend_Tab}
+    click element       ${Well_bores_Side_Extend_Tab}
+
+
+Get_all_Comments_list
+    ${list_of_elements}=        get webelements     ${Well_bores_Ex_Tab_Pad_data_Comments_lists}
+    ${Element_count}=    get element count    ${Well_bores_Ex_Tab_Pad_data_Comments_lists}
+    log to console    Total_file_countis=${Element_count}
+    ${list}=    create list
+
+    FOR     ${i}    IN        @{list_of_elements}
+        scroll element into view        ${i}
+        log to console    ${i.text}
+        ${get_text}=    get text    ${i}
+        APPEND TO LIST    ${list}        ${get_text}
+    END
+
+    LOG TO CONSOLE     List_Of_Files= ${list}
+    [Return]    ${list}

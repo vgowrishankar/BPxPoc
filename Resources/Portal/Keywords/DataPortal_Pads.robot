@@ -290,3 +290,9 @@ And_Toggle_option_validation
         END
 
     END
+
+
+Uploading_files
+    [Arguments]    @{List_Of_file_tobe_uploaded}
+    wait until element is visible    ${Pads_Ex_Tab_Pad_data_Attachements_first_area_Browse_file_btn}    10s
+    choose file      ${Pads_Ex_Tab_Pad_data_Attachements_first_area_Browse_file_btn}        ${CURDIR}${/}..\\..\\..\\TestData\\Upload_files\\Test_csv_file.csv

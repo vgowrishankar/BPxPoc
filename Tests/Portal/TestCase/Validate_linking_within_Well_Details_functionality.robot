@@ -25,21 +25,18 @@ ${Completion_input}       DZIUK A 12H
 
 
 *** Test Cases ***
-sample
-    Validate_the_functionality_of_well_list
-
-*** Keywords ***
 Validate_the_functionality_of_well_list
-    [Tags]    TC151123014
+    [Tags]    TC151123014       TC151123028
     Data Portal MFA Login
     sleep    10
     #===============
     ${DD_Value}=     replace string    ${Well_origin_Select_pad_name_from_dd}       value      ${Well_origin_DD_Selection_Value}
     Well_origin_Filter_Function_using_Arrow     ${DD_Value}     ${Well_input}
-    Custome_Methods.minwindow
+    custome_methods.minwindow
     #**********************Get All table values and store in list *************************
     ${all_list_Values}=     Get_all_values_From_Data_porta_Well_origin_table
     &{Fetch_table_value_from_list}=        get from list     ${all_list_Values}     0
+    ${Table_Value_wellname}=     get from dictionary     ${Fetch_table_value_from_list}      Well_Name
     ${Table_Value_padname}=     get from dictionary     ${Fetch_table_value_from_list}      Pad_Name
     ${Fetch_Origin_Corp_ID}=     get from dictionary     ${Fetch_table_value_from_list}      Origin_Corp_ID
     ${new_Fetch_Origin_Corp_ID}=     replace string     ${Fetch_Origin_Corp_ID}       —     ${EMPTY}
@@ -52,12 +49,49 @@ Validate_the_functionality_of_well_list
     ${DD_selection_element}=    replace string      ${Well_bores_Select_pad_name_from_dd}       value             ${Well_bores_DD_Selection_Value}
     Well_bores_Filter_Function_using_Arrow       ${DD_selection_element}     ${Well_bores_input}
     ${wellbores_table_value}=       Get_all_values_From_Data_porta_Well_bores_table
+    &{Fetch_table_value_from_wellbore_data_list}=        get from list     ${wellbores_table_value}     0
+    ${well_boar_Table_Value_wellname}=     get from dictionary     ${Fetch_table_value_from_wellbore_data_list}      Well_Name
+    ${well_boar_Table_Value_Origin_Corp_ID}=     get from dictionary     ${Fetch_table_value_from_wellbore_data_list}      Origin_Corp_ID
+    ${well_boar_Table_Value_Wellbore_Corp_ID}=     get from dictionary     ${Fetch_table_value_from_wellbore_data_list}      Wellbore_Corp_ID
 
     #Completion Section
     click element       ${Completions_Tab}
+    sleep  5
     ${DD_completion_selection_element}=    replace string      ${Completions_Select_pad_name_from_dd}       value             ${Completion_DD_Selection_Value}
     Completions_Filter_Function_using_Arrow       ${DD_completion_selection_element}     ${Completion_input}
     ${completion_table_value}=       Get_all_values_From_Data_porta_Completions_table
+
+
+    click element        ${Completions_Table_only_Wellname_Value}
+    sleep    5
+    Select_Completions_side_panel
+    ${Get_side_panel_title_element}=        replace string    ${Completions_Ex_tab_Title}      value       ${Well_input}
+    ${side_panel_Title_Text}=       get text        ${Get_side_panel_title_element}
+    ${side_panel_Completions_Table_value}=      Get_all_Value_from_Completions_side_panel_info_table
+
+
+    ${completions_side_panel_information_value}=    Get_all_Value_from_side_panel_info_Tab_informations_Completions
+    ${Completion_Ex_Tab_info_information_wellname}=     get from dictionary     ${completions_side_panel_information_value}      Well_Name
+    ${Completion_Ex_Tab_info_information_Padname}=     get from dictionary     ${completions_side_panel_information_value}      Pad_Name
+    ${Completion_Ex_Tab_info_information_origin_corp_id}=     get from dictionary     ${completions_side_panel_information_value}      Origin_Corp_ID
+    ${Completion_Ex_Tab_info_information_Wellbore_origin_corp_id}=     get from dictionary     ${completions_side_panel_information_value}      Wellbore_Corp_ID
+
+    #****     Validations    ********
+    #compare well name with well origin,wellbore,completions Tabs
+     should be equal         ${Table_Value_wellname}        ${well_boar_Table_Value_wellname}       ignore_case=True
+     should be equal         ${Table_Value_wellname}        ${Completion_Ex_Tab_info_information_wellname}       ignore_case=True
+
+    #Compare Pad name with well origin & completions tabs
+     should be equal         ${Table_Value_padname}        ${Completion_Ex_Tab_info_information_Padname}       ignore_case=True
+
+     #Compare Origin_Corp_ID with well origin,well bore & completions tabs
+     should be equal         ${Fetch_Origin_Corp_ID}        ${well_boar_Table_Value_Origin_Corp_ID}       ignore_case=True
+     should contain         ${Completion_Ex_Tab_info_information_origin_corp_id}        ${Fetch_Origin_Corp_ID}       ignore_case=True
+
+     #Compare Wellbore corp ID with Wellbore and Completions Tab Values
+     should be equal         ${well_boar_Table_Value_Wellbore_Corp_ID}        ${Completion_Ex_Tab_info_information_Wellbore_origin_corp_id}       ignore_case=True
+
+*** Keywords ***
 
 
 

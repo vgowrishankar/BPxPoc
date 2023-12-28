@@ -19,6 +19,14 @@ ${file_Name}=   template_01.docx
 *** Test Cases ***
 Validate_file_upload_functionality_via_Url_of_the_file
     [Tags]    TC151123001
+    login_to_Portal_and_Navigate_to_Side_Panel_attachement_Tab
+    Upload_URL_function         ${Upload_URl_name}          ${Upload_URl}
+    Sleep   5
+    Upload_files_validation
+
+
+*** Keywords ***
+login_to_Portal_and_Navigate_to_Side_Panel_attachement_Tab
     Data Portal MFA Login
     sleep    10
     wait until element is visible    ${Pads_Tab}
@@ -32,14 +40,12 @@ Validate_file_upload_functionality_via_Url_of_the_file
     wait until element is visible     ${Pads_Ex_Tab_Pad_data_Attachemnts}
     click element        ${Pads_Ex_Tab_Pad_data_Attachemnts}
     sleep    5
-    Upload_URL_function         ${Upload_URl_name}          ${Upload_URl}
-    Sleep   5
+
+Upload_files_validation
     ${list_of_uploadedfile}=        Get_all_uploaded_file_list
     ${latest}=    get from list    ${list_of_uploadedfile}          0
     list should contain value      ${list_of_uploadedfile}       ${file_Name}
     should be equal as strings    ${latest}         ${file_Name}
-
-*** Keywords ***
 
 
 

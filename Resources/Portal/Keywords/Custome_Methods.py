@@ -1,8 +1,8 @@
 import pyautogui
 from selenium import webdriver
 from selenium.webdriver import ActionChains
-
-
+from pynput.keyboard    import  Key, Controller
+import time
 
 
 def minwindow():
@@ -14,6 +14,17 @@ def minwindow():
         pyautogui.keyDown('-')
         pyautogui.keyUp('ctrl')
         pyautogui.keyUp('-')
+
+def Upload_files(file_path:str):
+    time.sleep(4)
+    keyword=Controller()
+    #sample file path C:\\filename
+    keyword.type(file_path)
+    keyword.press(Key.enter)
+    keyword.release(Key.enter)
+    time.sleep(3)
+
+
 
 JS_DROP_FILE = """
     var target = arguments[0],

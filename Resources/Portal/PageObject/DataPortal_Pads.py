@@ -57,6 +57,7 @@ Pads_Ex_Tab_Pad_data_Attachements_first_upload_area = "xpath=//label[contains(te
 Pads_Ex_Tab_Pad_data_Attachements_first_URL_name_input = "xpath=(//input[@placeholder='URL Name'])[1]"
 Pads_Ex_Tab_Pad_data_Attachements_first_URL_input ="xpath=(//input[@placeholder='URL'])[1]"
 Pads_Ex_Tab_Pad_data_Attachements_first_upload_URL_btn = "xpath=(//button[@class='upload-url-btn'])[1]"
+Pads_Ex_Tab_Pad_data_Attachements_first_area_Browse_file_btn = "xpath=(//button[contains(text(),' Browse Files ')])[1]"
 #Below xpath will contain all uploaded files link/name
 Pads_Ex_Tab_Pad_data_Attachements_first_uploaded_doc_name ="xpath=//section[@id='uploaded-files-section']//span[@class='file-link']"
 Pads_Ex_Tab_Pad_data_Attachements_first_uploaded_doc_details = "xpath=//section[@id='uploaded-files-section']//span[@class='property-value']"
