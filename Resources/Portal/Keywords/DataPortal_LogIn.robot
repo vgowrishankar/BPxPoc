@@ -13,7 +13,6 @@ ${Password}     xGP&X8L6M2#9(f^$
 Data Portal MFA Login
     open browser    ${Login_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
-    sleep    3
     wait until element is visible    ${Login_page_username}
     #[Arguments]     ${UserName}
     input text    ${Login_page_username}    ${UserName}

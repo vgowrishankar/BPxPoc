@@ -1,0 +1,5 @@
+Wellbores_Tab    =   "id=wellbores"
+Well_bores_Name_DD_Arrow = "xpath=(//*[local-name()='svg' and @fill='none'])[4]"
+Well_bores_Select_pad_name_from_dd ="xpath=//span[text()='value']"
+Well_bores_Search_input = "xpath=//input[@id='mat-input-3' and @class='mat-mdc-input-element filter-value cdk-text-field-autofill-monitored']"
+Well_bores_Apply_Filter = "xpath=//input[@id='mat-input-3']//following-sibling::div//button[contains(text(),'Apply Filters')]"

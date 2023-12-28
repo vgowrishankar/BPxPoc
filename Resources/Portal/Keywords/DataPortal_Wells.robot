@@ -14,7 +14,7 @@ Library         ../../../Resources/Portal/Keywords/Custome_Methods.py
 Variables       ../PageObject/DataPortal_WellOrigins.py
 *** Variables ***
 @{Well_origin_Table_Headings}=        ${EMPTY}     Well_Name      Pad_Name       Business_Unit      stage     Origin_Corp_ID       API      POL_Date
-@{Well_origin_side_panel_information_headings}=     ${EMPTY}     Pad_ID       Concept_ID      Origin_Corp_ID     Wellbores       Completions      Operator    Business_Unit     Bu_Dso      COUNTY      STATE       ASSET       ASSIGNED_FIELD      PAD_NAME        RIG_NAME        STAGE       PLANNED_OPERATOR_TYPE       OPERATOR_TYPE       COST_CENTER
+@{Well_origin_side_panel_information_headings}=     ${EMPTY}     Pad_ID       Concept_ID      Origin_Corp_ID     Wellbores       Completions      Operator    Business_Unit     Bu_Dso      County      State       Asset       Assigned_Field      Pad_Name        Rig_Name        Stage       Planned_Operator_Type       Operator_Type       Cost_Center
 
 
 *** Keywords ***

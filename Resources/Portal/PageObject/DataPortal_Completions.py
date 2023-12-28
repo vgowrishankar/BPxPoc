@@ -1,0 +1,5 @@
+Completions_Tab    =   "id=completions"
+Completions_Name_DD_Arrow = "xpath=(//*[local-name()='svg' and @fill='none'])[7]"
+Completions_Select_pad_name_from_dd ="xpath=//span[text()='value']"
+Completions_Search_input = "xpath=//input[@id='mat-input-5' and @class='mat-mdc-input-element filter-value cdk-text-field-autofill-monitored']"
+Completions_Apply_Filter = "xpath=//input[@id='mat-input-5']//following-sibling::div//button[contains(text(),'Apply Filters')]"
