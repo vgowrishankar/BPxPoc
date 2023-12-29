@@ -11,13 +11,16 @@ ${GPS_URL}      https://onemap.bpx.com/portal/apps/webappviewer/index.html?id=92
 ${UserName}     qeadmin
 ${Password}     Welcome2BPX!
 
+*** Test Cases ***
+sample
+    One Map GIS Login
 
 *** Keywords ***
 One Map GIS Login
     open browser    ${GIS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
-    wait until element is visible   xpath=//*[@id="loginTitle"]
-    click element    xpath=//*[@id="loginTitle"]
+    wait until element is visible   ${Login_Page_Title_Value}
+    click element    ${Login_Page_Title_Value}
     wait until element is visible    ${Login_page_username}
     wait until element is visible    ${Login_page_password}
     #[Arguments]     ${UserName}
