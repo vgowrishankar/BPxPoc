@@ -1,7 +1,7 @@
 *** Settings ***
 Library         SeleniumLibrary
 Library         DataDriver     ../../../TestData/DataOneMap.xls     sheet_name=ArcGIS_User
-Variables       ../PageObject/ArcGIS_LogIn.py
+Variables       ../PageObject/ArcGIS_Login.py
 
 
 *** Variables ***
@@ -16,7 +16,7 @@ ${Password}     Welcome2BPX!
 One Map GIS Login
     open browser    ${GIS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
-    wait until element is visible   xpath=//*[@id="loginTitle"]
+    wait until element is visible   ${ArcGIS_Login_Title}
     click element    xpath=//*[@id="loginTitle"]
     wait until element is visible    ${Login_page_username}
     wait until element is visible    ${Login_page_password}
