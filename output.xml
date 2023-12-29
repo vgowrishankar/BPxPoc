@@ -1,401 +1,2456 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20231229 00:05:29.392" rpa="false" schemaversion="4">
-<suite id="s1" name="Validate file upload functionality Multiple files" source="C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\Validate_file_upload_functionality_Multiple_files.robot">
-<test id="s1-t1" name="Validate_File_upload_functionality_via_Drag_Drop_File_From_local" line="20">
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20231229 11:49:07.741" rpa="false" schemaversion="4">
+<suite id="s1" name="Validate linking within Well Details functionality" source="C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\Validate_linking_within_Well_Details_functionality.robot">
+<test id="s1-t1" name="Validate_the_functionality_of_well_list" line="29">
 <kw name="Data Portal MFA Login" library="DataPortal_LogIn">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${Login_URL}</arg>
 <arg>chrome</arg>
 <arg>options=add_argument("--incognito");add_experimental_option("detach", True)</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20231229 00:05:29.851" level="INFO">Opening browser 'chrome' to base url 'https://portal.stage.intranet.bpx.com/'.</msg>
-<status status="PASS" starttime="20231229 00:05:29.851" endtime="20231229 00:05:37.020"/>
+<msg timestamp="20231229 11:49:08.384" level="INFO">Opening browser 'chrome' to base url 'https://portal.stage.intranet.bpx.com/'.</msg>
+<status status="PASS" starttime="20231229 11:49:08.384" endtime="20231229 11:49:15.408"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20231229 00:05:37.020" endtime="20231229 00:05:37.215"/>
+<status status="PASS" starttime="20231229 11:49:15.408" endtime="20231229 11:49:15.600"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${Login_page_username}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231229 00:05:37.215" endtime="20231229 00:05:38.117"/>
+<status status="PASS" starttime="20231229 11:49:15.601" endtime="20231229 11:49:16.316"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Login_page_username}</arg>
 <arg>${UserName}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:38.118" level="INFO">Typing text 'SVC-AUTOFRAMEWORK-TEST-S@bpx.com' into text field 'id=i0116'.</msg>
-<status status="PASS" starttime="20231229 00:05:38.117" endtime="20231229 00:05:38.246"/>
+<msg timestamp="20231229 11:49:16.319" level="INFO">Typing text 'SVC-AUTOFRAMEWORK-TEST-S@bpx.com' into text field 'id=i0116'.</msg>
+<status status="PASS" starttime="20231229 11:49:16.317" endtime="20231229 11:49:16.529"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_Page_username_next_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:38.247" level="INFO">Clicking element 'id=idSIButton9'.</msg>
-<status status="PASS" starttime="20231229 00:05:38.246" endtime="20231229 00:05:38.301"/>
+<msg timestamp="20231229 11:49:16.529" level="INFO">Clicking element 'id=idSIButton9'.</msg>
+<status status="PASS" starttime="20231229 11:49:16.529" endtime="20231229 11:49:16.620"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${Login_page_password}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231229 00:05:38.301" endtime="20231229 00:05:39.608"/>
+<msg timestamp="20231229 11:49:17.407" level="INFO">Suppressing StaleElementReferenceException from Selenium.</msg>
+<status status="PASS" starttime="20231229 11:49:16.622" endtime="20231229 11:49:18.536"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Login_page_password}</arg>
 <arg>${Password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:39.609" level="INFO">Typing text 'xGP&amp;X8L6M2#9(f^$' into text field 'id=i0118'.</msg>
-<status status="PASS" starttime="20231229 00:05:39.608" endtime="20231229 00:05:39.681"/>
+<msg timestamp="20231229 11:49:18.537" level="INFO">Typing text 'xGP&amp;X8L6M2#9(f^$' into text field 'id=i0118'.</msg>
+<status status="PASS" starttime="20231229 11:49:18.537" endtime="20231229 11:49:18.717"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Login_page_login_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:39.681" level="INFO">Clicking element 'idSIButton9'.</msg>
-<status status="PASS" starttime="20231229 00:05:39.681" endtime="20231229 00:05:40.647"/>
+<msg timestamp="20231229 11:49:18.718" level="INFO">Clicking element 'idSIButton9'.</msg>
+<status status="PASS" starttime="20231229 11:49:18.717" endtime="20231229 11:49:19.845"/>
 </kw>
 <kw name="Wait For Condition" library="SeleniumLibrary">
 <arg>return document.readyState == "complete"</arg>
 <doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" starttime="20231229 00:05:40.647" endtime="20231229 00:05:40.658"/>
+<status status="PASS" starttime="20231229 11:49:19.845" endtime="20231229 11:49:19.858"/>
 </kw>
-<status status="PASS" starttime="20231229 00:05:29.851" endtime="20231229 00:05:40.658"/>
+<status status="PASS" starttime="20231229 11:49:08.384" endtime="20231229 11:49:19.859"/>
 </kw>
+<kw name="Navigate_to_WellOrigin_Tab_and_Filter_with_Value">
 <kw name="Sleep" library="BuiltIn">
 <arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231229 00:05:50.659" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20231229 00:05:40.659" endtime="20231229 00:05:50.659"/>
+<msg timestamp="20231229 11:49:29.860" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231229 11:49:19.860" endtime="20231229 11:49:29.860"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${Pads_Tab}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231229 00:05:50.661" endtime="20231229 00:05:50.705"/>
+<kw name="Replace String" library="String">
+<var>${DD_Value}</var>
+<arg>${Well_origin_Select_pad_name_from_dd}</arg>
+<arg>value</arg>
+<arg>${Well_origin_DD_Selection_Value}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20231229 11:49:29.860" level="INFO">${DD_Value} = xpath=//span[contains(text(),'Well Name')]</msg>
+<status status="PASS" starttime="20231229 11:49:29.860" endtime="20231229 11:49:29.860"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Pads_Tab}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:50.705" level="INFO">Clicking element 'id=pads'.</msg>
-<status status="PASS" starttime="20231229 00:05:50.705" endtime="20231229 00:05:50.810"/>
-</kw>
-<kw name="Pads_Filter_Function_using_Arrow" library="DataPortal_Pads">
-<arg>gre</arg>
+<kw name="Well_origin_Filter_Function_using_Arrow" library="DataPortal_Wells">
+<arg>${DD_Value}</arg>
+<arg>${Well_input}</arg>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Pad_Name_DD_Arrow}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:50.812" level="INFO">Clicking element 'xpath=//*[local-name()='svg' and @fill='none']'.</msg>
-<status status="PASS" starttime="20231229 00:05:50.811" endtime="20231229 00:05:51.352"/>
+<msg timestamp="20231229 11:49:29.860" level="INFO">Clicking element 'xpath=//*[local-name()='svg' and @fill='none']'.</msg>
+<status status="PASS" starttime="20231229 11:49:29.860" endtime="20231229 11:49:30.123"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>3</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231229 00:05:54.354" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20231229 00:05:51.352" endtime="20231229 00:05:54.354"/>
+<msg timestamp="20231229 11:49:33.128" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231229 11:49:30.128" endtime="20231229 11:49:33.128"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${Pad_Select_pad_name_from_dd}</arg>
+<arg>${DD_selection_element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:54.355" level="INFO">Clicking element 'xpath=//span[contains(text(),'Pad Name')]'.</msg>
-<status status="PASS" starttime="20231229 00:05:54.354" endtime="20231229 00:05:54.444"/>
+<msg timestamp="20231229 11:49:33.128" level="INFO">Clicking element 'xpath=//span[contains(text(),'Well Name')]'.</msg>
+<status status="PASS" starttime="20231229 11:49:33.128" endtime="20231229 11:49:33.282"/>
 </kw>
-<kw name="Input_Pad_Filter" library="DataPortal_Pads">
-<arg>${Pad_Search_input}</arg>
+<kw name="Input_Well_origin_Filter" library="DataPortal_Wells">
+<arg>${Well_origin_Search_input}</arg>
 <arg>${Pad_filter_Value}</arg>
 <doc>used to input value in Filter dropdown</doc>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${Element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231229 00:05:54.445" endtime="20231229 00:05:54.471"/>
+<status status="PASS" starttime="20231229 11:49:33.282" endtime="20231229 11:49:33.319"/>
 </kw>
 <kw name="Clear Element Text" library="SeleniumLibrary">
 <arg>${Element}</arg>
 <doc>Clears the value of the text-input-element identified by ``locator``.</doc>
-<status status="PASS" starttime="20231229 00:05:54.471" endtime="20231229 00:05:54.505"/>
+<status status="PASS" starttime="20231229 11:49:33.319" endtime="20231229 11:49:33.426"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${Element}</arg>
 <arg>${Pad_filter_Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:54.506" level="INFO">Typing text 'gre' into text field 'id=mat-input-3'.</msg>
-<status status="PASS" starttime="20231229 00:05:54.506" endtime="20231229 00:05:54.594"/>
+<msg timestamp="20231229 11:49:33.426" level="INFO">Typing text 'DZIUK A 12H' into text field '//input[@id='mat-input-1' and @class='mat-mdc-input-element filter-value cdk-text-field-autofill-monitored']'.</msg>
+<status status="PASS" starttime="20231229 11:49:33.426" endtime="20231229 11:49:33.707"/>
 </kw>
-<status status="PASS" starttime="20231229 00:05:54.444" endtime="20231229 00:05:54.594"/>
+<status status="PASS" starttime="20231229 11:49:33.282" endtime="20231229 11:49:33.707"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
-<arg>${pads_apply_filter}</arg>
+<arg>${Well_Origins_Apply_Filter}</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" starttime="20231229 00:05:54.594" endtime="20231229 00:05:54.623"/>
+<status status="PASS" starttime="20231229 11:49:33.707" endtime="20231229 11:49:33.757"/>
 </kw>
 <kw name="Click_Button" library="DataPortal_Pads">
-<arg>${pads_apply_filter}</arg>
+<arg>${Well_Origins_Apply_Filter}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${Element}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231229 00:05:54.624" endtime="20231229 00:05:54.639"/>
+<status status="PASS" starttime="20231229 11:49:33.757" endtime="20231229 11:49:33.806"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${Element}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:05:54.639" level="INFO">Clicking element 'xpath=//input[@id='mat-input-3']//following-sibling::div//button[contains(text(),'Apply Filters')]'.</msg>
-<status status="PASS" starttime="20231229 00:05:54.639" endtime="20231229 00:05:54.724"/>
+<msg timestamp="20231229 11:49:33.807" level="INFO">Clicking element 'xpath=//input[@id='mat-input-1']//following-sibling::div//button[contains(text(),'Apply Filters')]'.</msg>
+<status status="PASS" starttime="20231229 11:49:33.807" endtime="20231229 11:49:33.937"/>
 </kw>
-<status status="PASS" starttime="20231229 00:05:54.624" endtime="20231229 00:05:54.724"/>
+<status status="PASS" starttime="20231229 11:49:33.757" endtime="20231229 11:49:33.937"/>
 </kw>
-<status status="PASS" starttime="20231229 00:05:50.811" endtime="20231229 00:05:54.724"/>
+<status status="PASS" starttime="20231229 11:49:29.860" endtime="20231229 11:49:33.937"/>
 </kw>
 <kw name="Minwindow" library="Custome_Methods">
-<msg timestamp="20231229 00:05:55.535" level="INFO">calles python function</msg>
-<status status="PASS" starttime="20231229 00:05:54.724" endtime="20231229 00:05:55.535"/>
+<msg timestamp="20231229 11:49:34.748" level="INFO">calles python function</msg>
+<status status="PASS" starttime="20231229 11:49:33.937" endtime="20231229 11:49:34.748"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:19.859" endtime="20231229 11:49:34.748"/>
+</kw>
+<kw name="Fetching_all_values_from_Well_Origin_Table">
+<kw name="Get_all_values_From_Data_porta_Well_origin_table" library="DataPortal_Wells">
+<var>${all_list_Values}</var>
+<kw name="Minwindow" library="Custome_Methods">
+<msg timestamp="20231229 11:49:35.561" level="INFO">calles python function</msg>
+<status status="PASS" starttime="20231229 11:49:34.748" endtime="20231229 11:49:35.561"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
+<arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231229 00:06:00.538" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20231229 00:05:55.537" endtime="20231229 00:06:00.538"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Pads_Table_only_Padname_Value}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:00.539" level="INFO">Clicking element 'xpath=//th[contains(text(),'pad ID') and @role='columnheader']//parent::tr//parent::thead//parent::table//tr//td[@class='mat-mdc-cell mdc-data-table__cell cdk-cell cell cdk-column-pad_name mat-column-pad_name ng-star-inserted']'.</msg>
-<status status="PASS" starttime="20231229 00:06:00.538" endtime="20231229 00:06:00.629"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231229 00:06:05.630" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20231229 00:06:00.630" endtime="20231229 00:06:05.630"/>
-</kw>
-<kw name="Select_side_panel" library="DataPortal_Pads">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${Pads_Side_Extend_Tab}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231229 00:06:05.630" endtime="20231229 00:06:05.653"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Pads_Side_Extend_Tab}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:05.654" level="INFO">Clicking element '//div[@class='main-table-container']//app-details-form-window/div/div[@class='expand-tab']'.</msg>
-<status status="PASS" starttime="20231229 00:06:05.653" endtime="20231229 00:06:05.728"/>
-</kw>
-<status status="PASS" starttime="20231229 00:06:05.630" endtime="20231229 00:06:05.728"/>
+<msg timestamp="20231229 11:49:45.561" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231229 11:49:35.561" endtime="20231229 11:49:45.561"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${Pads_Ex_Tab_Pad_data_Attachemnts}</arg>
+<arg>${Pads_Tab}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20231229 00:06:05.728" endtime="20231229 00:06:05.764"/>
+<status status="PASS" starttime="20231229 11:49:45.561" endtime="20231229 11:49:45.618"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${Pads_Ex_Tab_Pad_data_Attachemnts}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:05.765" level="INFO">Clicking element 'xpath=//div[@id='cdk-accordion-child-4'  or  @class='mat-expansion-panel-content ng-tns-c1859850774-13 ng-trigger ng-trigger-bodyExpansion']/div/button[contains(text(),'Attachments')]'.</msg>
-<status status="PASS" starttime="20231229 00:06:05.764" endtime="20231229 00:06:05.930"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:49:48.619" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231229 11:49:45.618" endtime="20231229 11:49:48.619"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${column}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.665" level="INFO">${column} = 7</msg>
+<status status="PASS" starttime="20231229 11:49:48.619" endtime="20231229 11:49:48.665"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${column}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:48.665" endtime="20231229 11:49:48.665"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${column}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.710" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_114")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:48.665" endtime="20231229 11:49:48.710"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.790" level="INFO">${text} = Well Name</msg>
+<status status="PASS" starttime="20231229 11:49:48.710" endtime="20231229 11:49:48.790"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:48.665" endtime="20231229 11:49:48.790"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.817" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_115")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:48.790" endtime="20231229 11:49:48.819"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.863" level="INFO">${text} = Pad Name</msg>
+<status status="PASS" starttime="20231229 11:49:48.819" endtime="20231229 11:49:48.863"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:48.790" endtime="20231229 11:49:48.863"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.890" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_116")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:48.863" endtime="20231229 11:49:48.890"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.924" level="INFO">${text} = Business Unit</msg>
+<status status="PASS" starttime="20231229 11:49:48.891" endtime="20231229 11:49:48.924"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:48.863" endtime="20231229 11:49:48.924"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.948" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_117")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:48.930" endtime="20231229 11:49:48.948"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.968" level="INFO">${text} = Stage</msg>
+<status status="PASS" starttime="20231229 11:49:48.948" endtime="20231229 11:49:48.968"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:48.924" endtime="20231229 11:49:48.968"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:48.984" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_118")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:48.968" endtime="20231229 11:49:48.984"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.002" level="INFO">${text} = Origin Corp ID</msg>
+<status status="PASS" starttime="20231229 11:49:48.984" endtime="20231229 11:49:49.002"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:48.968" endtime="20231229 11:49:49.002"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.012" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_119")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:49.002" endtime="20231229 11:49:49.016"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.036" level="INFO">${text} = API</msg>
+<status status="PASS" starttime="20231229 11:49:49.016" endtime="20231229 11:49:49.036"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:49.002" endtime="20231229 11:49:49.036"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.052" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_120")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:49.037" endtime="20231229 11:49:49.052"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.076" level="INFO">${text} = POL Date</msg>
+<status status="PASS" starttime="20231229 11:49:49.052" endtime="20231229 11:49:49.076"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:49.037" endtime="20231229 11:49:49.076"/>
+</iter>
+<status status="PASS" starttime="20231229 11:49:48.665" endtime="20231229 11:49:49.076"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Header_values_Fetch_successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:49.076" endtime="20231229 11:49:49.076"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_data}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.094" level="INFO">${Total_data} = 7</msg>
+<status status="PASS" starttime="20231229 11:49:49.076" endtime="20231229 11:49:49.094"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Totaldatacountis=${Total_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:49.094" endtime="20231229 11:49:49.094"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_rr}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.110" level="INFO">${Total_rr} = 1</msg>
+<status status="PASS" starttime="20231229 11:49:49.094" endtime="20231229 11:49:49.110"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Totaldatacountis=${Total_rr}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:49.112" endtime="20231229 11:49:49.112"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${list_of_value}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231229 11:49:49.112" level="INFO">${list_of_value} = []</msg>
+<status status="PASS" starttime="20231229 11:49:49.112" endtime="20231229 11:49:49.112"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${Total_rr}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>1stloop started</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:49.112" endtime="20231229 11:49:49.112"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231229 11:49:49.115" level="INFO">${dict} = {}</msg>
+<status status="PASS" starttime="20231229 11:49:49.112" endtime="20231229 11:49:49.115"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${column}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.142" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_106")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:49.116" endtime="20231229 11:49:49.142"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:49:49.142" endtime="20231229 11:49:49.470"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.521" level="INFO">${data_text} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:49:49.470" endtime="20231229 11:49:49.521"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:49.521" endtime="20231229 11:49:49.524"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_origin_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:49:49.525" endtime="20231229 11:49:49.526"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:49.116" endtime="20231229 11:49:49.526"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.554" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_107")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:49.526" endtime="20231229 11:49:49.554"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:49:49.554" endtime="20231229 11:49:49.871"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.927" level="INFO">${data_text} = DZIUK A PAD 3</msg>
+<status status="PASS" starttime="20231229 11:49:49.871" endtime="20231229 11:49:49.927"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:49.927" endtime="20231229 11:49:49.928"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_origin_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:49:49.928" endtime="20231229 11:49:49.928"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:49.526" endtime="20231229 11:49:49.928"/>
+</iter>
+<iter>
+<var name="${j}">3</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:49.967" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_108")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:49.928" endtime="20231229 11:49:49.967"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:49:49.968" endtime="20231229 11:49:50.275"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:50.314" level="INFO">${data_text} = EAGLEFORD</msg>
+<status status="PASS" starttime="20231229 11:49:50.275" endtime="20231229 11:49:50.314"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:50.314" endtime="20231229 11:49:50.314"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_origin_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:49:50.314" endtime="20231229 11:49:50.314"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:49.928" endtime="20231229 11:49:50.314"/>
+</iter>
+<iter>
+<var name="${j}">4</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:50.344" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_109")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:50.314" endtime="20231229 11:49:50.344"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:49:50.344" endtime="20231229 11:49:50.657"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:50.730" level="INFO">${data_text} = PRODUCING</msg>
+<status status="PASS" starttime="20231229 11:49:50.657" endtime="20231229 11:49:50.730"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:50.730" endtime="20231229 11:49:50.730"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_origin_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:49:50.730" endtime="20231229 11:49:50.730"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:50.314" endtime="20231229 11:49:50.735"/>
+</iter>
+<iter>
+<var name="${j}">5</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:50.772" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_110")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:50.735" endtime="20231229 11:49:50.772"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:49:50.772" endtime="20231229 11:49:51.093"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:51.129" level="INFO">${data_text} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:49:51.095" endtime="20231229 11:49:51.129"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:51.129" endtime="20231229 11:49:51.129"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_origin_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:49:51.137" endtime="20231229 11:49:51.137"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:50.735" endtime="20231229 11:49:51.137"/>
+</iter>
+<iter>
+<var name="${j}">6</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:51.153" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_111")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:51.137" endtime="20231229 11:49:51.153"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:49:51.153" endtime="20231229 11:49:51.471"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:51.550" level="INFO">${data_text} = 4225537092</msg>
+<status status="PASS" starttime="20231229 11:49:51.471" endtime="20231229 11:49:51.550"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:51.550" endtime="20231229 11:49:51.551"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_origin_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:49:51.551" endtime="20231229 11:49:51.551"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:51.137" endtime="20231229 11:49:51.551"/>
+</iter>
+<iter>
+<var name="${j}">7</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:49:51.566" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_112")&gt;</msg>
+<status status="PASS" starttime="20231229 11:49:51.551" endtime="20231229 11:49:51.566"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:49:51.566" endtime="20231229 11:49:51.864"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:51.937" level="INFO">${data_text} = 2022-05-19</msg>
+<status status="PASS" starttime="20231229 11:49:51.864" endtime="20231229 11:49:51.937"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:51.937" endtime="20231229 11:49:51.937"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_origin_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:49:51.937" endtime="20231229 11:49:51.937"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:51.551" endtime="20231229 11:49:51.937"/>
+</iter>
+<status status="PASS" starttime="20231229 11:49:49.115" endtime="20231229 11:49:51.937"/>
+</for>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${dict}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231229 11:49:51.937" endtime="20231229 11:49:51.937"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:49.112" endtime="20231229 11:49:51.943"/>
+</iter>
+<status status="PASS" starttime="20231229 11:49:49.112" endtime="20231229 11:49:51.943"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${list_of_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:49:51.943" endtime="20231229 11:49:51.943"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_of_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231229 11:49:51.943" level="INFO">[{'Well_Name': 'DZIUK A 12H', 'Pad_Name': 'DZIUK A PAD 3', 'Business_Unit': 'EAGLEFORD', 'stage': 'PRODUCING', 'Origin_Corp_ID': '20084132', 'API': '4225537092', 'POL_Date': '2022-05-19'}]</msg>
+<status status="PASS" starttime="20231229 11:49:51.943" endtime="20231229 11:49:51.943"/>
+</kw>
+<msg timestamp="20231229 11:49:51.943" level="INFO">${all_list_Values} = [{'Well_Name': 'DZIUK A 12H', 'Pad_Name': 'DZIUK A PAD 3', 'Business_Unit': 'EAGLEFORD', 'stage': 'PRODUCING', 'Origin_Corp_ID': '20084132', 'API': '4225537092', 'POL_Date': '2022-05-19'}]</msg>
+<status status="PASS" starttime="20231229 11:49:34.748" endtime="20231229 11:49:51.943"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>&amp;{Fetch_table_value_from_list}</var>
+<arg>${all_list_Values}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231229 11:49:51.943" level="INFO">&amp;{Fetch_table_value_from_list} = { Well_Name=DZIUK A 12H | Pad_Name=DZIUK A PAD 3 | Business_Unit=EAGLEFORD | stage=PRODUCING | Origin_Corp_ID=20084132 | API=4225537092 | POL_Date=2022-05-19 }</msg>
+<status status="PASS" starttime="20231229 11:49:51.943" endtime="20231229 11:49:51.951"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Table_Value_wellname}</var>
+<arg>${Fetch_table_value_from_list}</arg>
+<arg>Well_Name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:49:51.951" level="INFO">${Table_Value_wellname} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:49:51.951" endtime="20231229 11:49:51.952"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Table_Value_padname}</var>
+<arg>${Fetch_table_value_from_list}</arg>
+<arg>Pad_Name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:49:51.954" level="INFO">${Table_Value_padname} = DZIUK A PAD 3</msg>
+<status status="PASS" starttime="20231229 11:49:51.952" endtime="20231229 11:49:51.954"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Fetch_Origin_Corp_ID}</var>
+<arg>${Fetch_table_value_from_list}</arg>
+<arg>Origin_Corp_ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:49:51.954" level="INFO">${Fetch_Origin_Corp_ID} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:49:51.954" endtime="20231229 11:49:51.954"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${new_Fetch_Origin_Corp_ID}</var>
+<arg>${Fetch_Origin_Corp_ID}</arg>
+<arg>—</arg>
+<arg>${EMPTY}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20231229 11:49:51.960" level="INFO">${new_Fetch_Origin_Corp_ID} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:49:51.954" endtime="20231229 11:49:51.960"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Table_Value_wellname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:49:51.960" level="INFO">${Table_Value_wellname} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:49:51.960" endtime="20231229 11:49:51.960"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Table_Value_padname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:49:51.960" level="INFO">${Table_Value_padname} = DZIUK A PAD 3</msg>
+<status status="PASS" starttime="20231229 11:49:51.960" endtime="20231229 11:49:51.960"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Fetch_Origin_Corp_ID}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:49:51.960" level="INFO">${Fetch_Origin_Corp_ID} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:49:51.960" endtime="20231229 11:49:51.960"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${new_Fetch_Origin_Corp_ID}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:49:51.960" level="INFO">${new_Fetch_Origin_Corp_ID} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:49:51.960" endtime="20231229 11:49:51.960"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20231229 00:06:10.931" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20231229 00:06:05.930" endtime="20231229 00:06:10.931"/>
+<msg timestamp="20231229 11:49:56.961" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231229 11:49:51.960" endtime="20231229 11:49:56.961"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:34.748" endtime="20231229 11:49:56.961"/>
+</kw>
+<kw name="Navigate_to_Wellbores_Tab_and_Filter_with_Value">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Wellbores_Tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:49:56.961" level="INFO">Clicking element 'id=wellbores'.</msg>
+<status status="PASS" starttime="20231229 11:49:56.961" endtime="20231229 11:49:57.221"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:00.221" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231229 11:49:57.221" endtime="20231229 11:50:00.221"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${DD_selection_element}</var>
+<arg>${Well_bores_Select_pad_name_from_dd}</arg>
+<arg>value</arg>
+<arg>${Well_bores_DD_Selection_Value}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20231229 11:50:00.222" level="INFO">${DD_selection_element} = xpath=//span[text()='Well Name']</msg>
+<status status="PASS" starttime="20231229 11:50:00.221" endtime="20231229 11:50:00.222"/>
+</kw>
+<kw name="Well_bores_Filter_Function_using_Arrow" library="DataPortal_Wellbores">
+<arg>${DD_selection_element}</arg>
+<arg>${Well_bores_input}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Well_bores_Name_DD_Arrow}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:00.222" endtime="20231229 11:50:00.264"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
-<arg>${Pads_Ex_Tab_Pad_data_Attachements_first_area_Browse_file_btn}</arg>
+<arg>${Well_bores_Name_DD_Arrow}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:10.932" level="INFO">Clicking element 'xpath=(//button[contains(text(),' Browse Files ')])[1]'.</msg>
-<status status="PASS" starttime="20231229 00:06:10.932" endtime="20231229 00:06:11.008"/>
+<msg timestamp="20231229 11:50:00.265" level="INFO">Clicking element 'xpath=(//*[local-name()='svg' and @fill='none'])[4]'.</msg>
+<status status="PASS" starttime="20231229 11:50:00.264" endtime="20231229 11:50:00.385"/>
 </kw>
-<kw name="Upload Files" library="Custome_Methods">
-<arg>${Uploading_files}</arg>
-<status status="PASS" starttime="20231229 00:06:11.008" endtime="20231229 00:06:18.168"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:03.386" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:00.385" endtime="20231229 11:50:03.386"/>
 </kw>
-<kw name="Get_all_uploaded_file_list" library="DataPortal_Pads">
-<var>${list_of_files_uploaded}</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${DD_selection_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:03.387" level="INFO">Clicking element 'xpath=//span[text()='Well Name']'.</msg>
+<status status="PASS" starttime="20231229 11:50:03.386" endtime="20231229 11:50:03.511"/>
+</kw>
+<kw name="Input_Well_bores_Filter" library="DataPortal_Wellbores">
+<arg>${Well_bores_Search_input}</arg>
+<arg>${Pad_filter_Value}</arg>
+<doc>used to input value in Filter dropdown</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:03.512" endtime="20231229 11:50:03.551"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20231229 11:50:03.552" endtime="20231229 11:50:03.603"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>${Pad_filter_Value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:03.604" level="INFO">Typing text 'DZIUK A 12H' into text field 'xpath=//input[@id='mat-input-3' and @class='mat-mdc-input-element filter-value cdk-text-field-autofill-monitored']'.</msg>
+<status status="PASS" starttime="20231229 11:50:03.604" endtime="20231229 11:50:03.763"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:03.512" endtime="20231229 11:50:03.763"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Well_bores_Apply_Filter}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231229 11:50:03.763" endtime="20231229 11:50:03.802"/>
+</kw>
+<kw name="Click_Button" library="DataPortal_Pads">
+<arg>${Well_bores_Apply_Filter}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:03.803" endtime="20231229 11:50:03.822"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:03.823" level="INFO">Clicking element 'xpath=//input[@id='mat-input-3']//following-sibling::div//button[contains(text(),'Apply Filters')]'.</msg>
+<status status="PASS" starttime="20231229 11:50:03.823" endtime="20231229 11:50:03.941"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:03.802" endtime="20231229 11:50:03.941"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:00.222" endtime="20231229 11:50:03.941"/>
+</kw>
+<status status="PASS" starttime="20231229 11:49:56.961" endtime="20231229 11:50:03.941"/>
+</kw>
+<kw name="Fetching_all_values_from_Well_bores_Table">
+<kw name="Get_all_values_From_Data_porta_Well_bores_table" library="DataPortal_Wellbores">
+<var>${wellbores_table_value}</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:13.942" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:03.942" endtime="20231229 11:50:13.942"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Wellbores_Tab}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:13.942" endtime="20231229 11:50:13.980"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:16.982" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:13.981" endtime="20231229 11:50:16.982"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${column}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.032" level="INFO">${column} = 4</msg>
+<status status="PASS" starttime="20231229 11:50:16.982" endtime="20231229 11:50:17.032"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${column}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:17.032" endtime="20231229 11:50:17.034"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${column}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.058" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_140")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:17.035" endtime="20231229 11:50:17.058"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.097" level="INFO">${text} = Well Name</msg>
+<status status="PASS" starttime="20231229 11:50:17.059" endtime="20231229 11:50:17.097"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:17.034" endtime="20231229 11:50:17.097"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.124" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_141")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:17.098" endtime="20231229 11:50:17.124"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.161" level="INFO">${text} = Origin Corp ID</msg>
+<status status="PASS" starttime="20231229 11:50:17.124" endtime="20231229 11:50:17.161"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:17.098" endtime="20231229 11:50:17.161"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.186" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_142")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:17.161" endtime="20231229 11:50:17.186"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.225" level="INFO">${text} = Wellbore Corp ID</msg>
+<status status="PASS" starttime="20231229 11:50:17.186" endtime="20231229 11:50:17.225"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:17.161" endtime="20231229 11:50:17.225"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.250" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_143")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:17.225" endtime="20231229 11:50:17.250"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.287" level="INFO">${text} = Business Unit</msg>
+<status status="PASS" starttime="20231229 11:50:17.251" endtime="20231229 11:50:17.287"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:17.225" endtime="20231229 11:50:17.287"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:17.034" endtime="20231229 11:50:17.287"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Header_values_Fetch_successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:17.287" endtime="20231229 11:50:17.288"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_data}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.313" level="INFO">${Total_data} = 4</msg>
+<status status="PASS" starttime="20231229 11:50:17.288" endtime="20231229 11:50:17.313"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Totaldatacountis=${Total_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:17.315" endtime="20231229 11:50:17.315"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_rr}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.342" level="INFO">${Total_rr} = 1</msg>
+<status status="PASS" starttime="20231229 11:50:17.315" endtime="20231229 11:50:17.342"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Totaldatacountis=${Total_rr}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:17.342" endtime="20231229 11:50:17.342"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${list_of_value}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231229 11:50:17.343" level="INFO">${list_of_value} = []</msg>
+<status status="PASS" starttime="20231229 11:50:17.343" endtime="20231229 11:50:17.343"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${Total_rr}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>1stloop started</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:17.343" endtime="20231229 11:50:17.344"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231229 11:50:17.344" level="INFO">${dict} = {}</msg>
+<status status="PASS" starttime="20231229 11:50:17.344" endtime="20231229 11:50:17.344"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${column}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.371" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_144")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:17.346" endtime="20231229 11:50:17.371"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:17.372" endtime="20231229 11:50:17.677"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.747" level="INFO">${data_text} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:17.678" endtime="20231229 11:50:17.747"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:17.747" endtime="20231229 11:50:17.749"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_bores_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:17.750" endtime="20231229 11:50:17.751"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:17.345" endtime="20231229 11:50:17.751"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:17.796" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_145")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:17.751" endtime="20231229 11:50:17.796"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:17.796" endtime="20231229 11:50:18.096"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:18.155" level="INFO">${data_text} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:50:18.096" endtime="20231229 11:50:18.155"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:18.155" endtime="20231229 11:50:18.156"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_bores_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:18.156" endtime="20231229 11:50:18.158"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:17.751" endtime="20231229 11:50:18.158"/>
+</iter>
+<iter>
+<var name="${j}">3</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:18.200" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_146")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:18.158" endtime="20231229 11:50:18.200"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:18.200" endtime="20231229 11:50:18.517"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:18.588" level="INFO">${data_text} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:18.518" endtime="20231229 11:50:18.588"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:18.589" endtime="20231229 11:50:18.589"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_bores_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:18.591" endtime="20231229 11:50:18.591"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:18.158" endtime="20231229 11:50:18.591"/>
+</iter>
+<iter>
+<var name="${j}">4</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:18.618" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_147")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:18.592" endtime="20231229 11:50:18.618"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:18.618" endtime="20231229 11:50:18.922"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:18.993" level="INFO">${data_text} = EAGLEFORD</msg>
+<status status="PASS" starttime="20231229 11:50:18.923" endtime="20231229 11:50:18.993"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:18.993" endtime="20231229 11:50:18.994"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Well_bores_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:18.995" endtime="20231229 11:50:18.996"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:18.591" endtime="20231229 11:50:18.996"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:17.344" endtime="20231229 11:50:18.997"/>
+</for>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${dict}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231229 11:50:18.997" endtime="20231229 11:50:18.997"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:17.343" endtime="20231229 11:50:18.998"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:17.343" endtime="20231229 11:50:18.998"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${list_of_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:18.998" endtime="20231229 11:50:19.000"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_of_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231229 11:50:19.001" level="INFO">[{'Well_Name': 'DZIUK A 12H', 'Origin_Corp_ID': '20084132', 'Wellbore_Corp_ID': '20084132-001', 'Business_Unit': 'EAGLEFORD'}]</msg>
+<status status="PASS" starttime="20231229 11:50:19.000" endtime="20231229 11:50:19.001"/>
+</kw>
+<msg timestamp="20231229 11:50:19.001" level="INFO">${wellbores_table_value} = [{'Well_Name': 'DZIUK A 12H', 'Origin_Corp_ID': '20084132', 'Wellbore_Corp_ID': '20084132-001', 'Business_Unit': 'EAGLEFORD'}]</msg>
+<status status="PASS" starttime="20231229 11:50:03.942" endtime="20231229 11:50:19.001"/>
+</kw>
+<kw name="Get From List" library="Collections">
+<var>&amp;{Fetch_table_value_from_wellbore_data_list}</var>
+<arg>${wellbores_table_value}</arg>
+<arg>0</arg>
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<msg timestamp="20231229 11:50:19.003" level="INFO">&amp;{Fetch_table_value_from_wellbore_data_list} = { Well_Name=DZIUK A 12H | Origin_Corp_ID=20084132 | Wellbore_Corp_ID=20084132-001 | Business_Unit=EAGLEFORD }</msg>
+<status status="PASS" starttime="20231229 11:50:19.002" endtime="20231229 11:50:19.003"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${well_boar_Table_Value_wellname}</var>
+<arg>${Fetch_table_value_from_wellbore_data_list}</arg>
+<arg>Well_Name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:50:19.003" level="INFO">${well_boar_Table_Value_wellname} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:19.003" endtime="20231229 11:50:19.004"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${well_boar_Table_Value_Origin_Corp_ID}</var>
+<arg>${Fetch_table_value_from_wellbore_data_list}</arg>
+<arg>Origin_Corp_ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:50:19.004" level="INFO">${well_boar_Table_Value_Origin_Corp_ID} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:50:19.004" endtime="20231229 11:50:19.004"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${well_boar_Table_Value_Wellbore_Corp_ID}</var>
+<arg>${Fetch_table_value_from_wellbore_data_list}</arg>
+<arg>Wellbore_Corp_ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:50:19.006" level="INFO">${well_boar_Table_Value_Wellbore_Corp_ID} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:19.006" endtime="20231229 11:50:19.006"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${well_boar_Table_Value_wellname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:50:19.007" level="INFO">${well_boar_Table_Value_wellname} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:19.007" endtime="20231229 11:50:19.007"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${well_boar_Table_Value_Origin_Corp_ID}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:50:19.009" level="INFO">${well_boar_Table_Value_Origin_Corp_ID} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:50:19.007" endtime="20231229 11:50:19.009"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${well_boar_Table_Value_Wellbore_Corp_ID}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:50:19.010" level="INFO">${well_boar_Table_Value_Wellbore_Corp_ID} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:19.009" endtime="20231229 11:50:19.010"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:03.941" endtime="20231229 11:50:19.010"/>
+</kw>
+<kw name="Navigate_to_Completions_Tab_and_Filter_with_Value">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Completions_Tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:19.013" level="INFO">Clicking element 'id=completions'.</msg>
+<status status="PASS" starttime="20231229 11:50:19.011" endtime="20231229 11:50:19.345"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:24.347" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:19.345" endtime="20231229 11:50:24.347"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${DD_completion_selection_element}</var>
+<arg>${Completions_Select_pad_name_from_dd}</arg>
+<arg>value</arg>
+<arg>${Completion_DD_Selection_Value}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20231229 11:50:24.347" level="INFO">${DD_completion_selection_element} = xpath=//span[text()='Well Name']</msg>
+<status status="PASS" starttime="20231229 11:50:24.347" endtime="20231229 11:50:24.348"/>
+</kw>
+<kw name="Completions_Filter_Function_using_Arrow" library="DataPortal_Completions">
+<arg>${DD_completion_selection_element}</arg>
+<arg>${Completion_input}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Completions_Name_DD_Arrow}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:24.349" level="INFO">Clicking element 'xpath=(//*[local-name()='svg' and @fill='none'])[7]'.</msg>
+<status status="PASS" starttime="20231229 11:50:24.348" endtime="20231229 11:50:24.548"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:27.548" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:24.548" endtime="20231229 11:50:27.548"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${DD_selection_element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:27.551" level="INFO">Clicking element 'xpath=//span[text()='Well Name']'.</msg>
+<status status="PASS" starttime="20231229 11:50:27.549" endtime="20231229 11:50:27.732"/>
+</kw>
+<kw name="Input_Well_bores_Filter" library="DataPortal_Completions">
+<arg>${Completions_Search_input}</arg>
+<arg>${Pad_filter_Value}</arg>
+<doc>used to input value in Filter dropdown</doc>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:27.732" endtime="20231229 11:50:27.765"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20231229 11:50:27.765" endtime="20231229 11:50:27.814"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<arg>${Pad_filter_Value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:27.815" level="INFO">Typing text 'DZIUK A 12H' into text field 'xpath=//input[@id='mat-input-5' and @class='mat-mdc-input-element filter-value cdk-text-field-autofill-monitored']'.</msg>
+<status status="PASS" starttime="20231229 11:50:27.815" endtime="20231229 11:50:27.993"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:27.732" endtime="20231229 11:50:27.994"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${Completions_Apply_Filter}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20231229 11:50:27.995" endtime="20231229 11:50:28.027"/>
+</kw>
+<kw name="Click_Button" library="DataPortal_Pads">
+<arg>${Completions_Apply_Filter}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:28.028" endtime="20231229 11:50:28.046"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Element}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:28.047" level="INFO">Clicking element 'xpath=//input[@id='mat-input-5']//following-sibling::div//button[contains(text(),'Apply Filters')]'.</msg>
+<status status="PASS" starttime="20231229 11:50:28.047" endtime="20231229 11:50:28.183"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:28.027" endtime="20231229 11:50:28.183"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:24.348" endtime="20231229 11:50:28.183"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:19.011" endtime="20231229 11:50:28.183"/>
+</kw>
+<kw name="Fetching_all_values_from_Completions_Table">
+<kw name="Get_all_values_From_Data_porta_Completions_table" library="DataPortal_Completions">
+<var>${completion_table_value}</var>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:38.185" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:28.185" endtime="20231229 11:50:38.185"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Completions_Tab}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:38.185" endtime="20231229 11:50:38.227"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:41.227" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:38.227" endtime="20231229 11:50:41.227"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${column}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.253" level="INFO">${column} = 5</msg>
+<status status="PASS" starttime="20231229 11:50:41.227" endtime="20231229 11:50:41.253"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${column}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:41.253" endtime="20231229 11:50:41.254"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${column}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.281" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_167")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:41.254" endtime="20231229 11:50:41.281"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.323" level="INFO">${text} = Well Name</msg>
+<status status="PASS" starttime="20231229 11:50:41.281" endtime="20231229 11:50:41.323"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:41.254" endtime="20231229 11:50:41.323"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.349" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_168")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:41.323" endtime="20231229 11:50:41.349"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.388" level="INFO">${text} = Origin Corp ID</msg>
+<status status="PASS" starttime="20231229 11:50:41.349" endtime="20231229 11:50:41.388"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:41.323" endtime="20231229 11:50:41.388"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.417" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_169")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:41.388" endtime="20231229 11:50:41.417"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.442" level="INFO">${text} = Wellbore Corp ID</msg>
+<status status="PASS" starttime="20231229 11:50:41.417" endtime="20231229 11:50:41.442"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:41.388" endtime="20231229 11:50:41.442"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.462" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_170")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:41.443" endtime="20231229 11:50:41.462"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.504" level="INFO">${text} = Completion Corp ID</msg>
+<status status="PASS" starttime="20231229 11:50:41.463" endtime="20231229 11:50:41.504"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:41.442" endtime="20231229 11:50:41.504"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locators}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.525" level="INFO">${locators} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_171")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:41.504" endtime="20231229 11:50:41.525"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[3]//th)[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.554" level="INFO">${text} = Business Unit</msg>
+<status status="PASS" starttime="20231229 11:50:41.525" endtime="20231229 11:50:41.554"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:41.504" endtime="20231229 11:50:41.554"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:41.254" endtime="20231229 11:50:41.554"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Header_values_Fetch_successfully</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:41.555" endtime="20231229 11:50:41.555"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_data}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//td</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.582" level="INFO">${Total_data} = 5</msg>
+<status status="PASS" starttime="20231229 11:50:41.555" endtime="20231229 11:50:41.582"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Totaldatacountis=${Total_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:41.583" endtime="20231229 11:50:41.583"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_rr}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.611" level="INFO">${Total_rr} = 1</msg>
+<status status="PASS" starttime="20231229 11:50:41.583" endtime="20231229 11:50:41.612"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Totaldatacountis=${Total_rr}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:41.612" endtime="20231229 11:50:41.612"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${list_of_value}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231229 11:50:41.613" level="INFO">${list_of_value} = []</msg>
+<status status="PASS" starttime="20231229 11:50:41.612" endtime="20231229 11:50:41.613"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${Total_rr}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>1stloop started</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:41.613" endtime="20231229 11:50:41.614"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231229 11:50:41.614" level="INFO">${dict} = {}</msg>
+<status status="PASS" starttime="20231229 11:50:41.614" endtime="20231229 11:50:41.614"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${column}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:41.639" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_172")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:41.616" endtime="20231229 11:50:41.639"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:41.639" endtime="20231229 11:50:41.970"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:42.010" level="INFO">${data_text} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:41.970" endtime="20231229 11:50:42.010"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:42.010" endtime="20231229 11:50:42.012"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:42.012" endtime="20231229 11:50:42.013"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:41.615" endtime="20231229 11:50:42.013"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:42.031" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_173")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:42.013" endtime="20231229 11:50:42.031"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:42.031" endtime="20231229 11:50:42.328"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:42.366" level="INFO">${data_text} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:50:42.328" endtime="20231229 11:50:42.366"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:42.366" endtime="20231229 11:50:42.367"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:42.367" endtime="20231229 11:50:42.368"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:42.013" endtime="20231229 11:50:42.368"/>
+</iter>
+<iter>
+<var name="${j}">3</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:42.386" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_174")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:42.368" endtime="20231229 11:50:42.386"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:42.386" endtime="20231229 11:50:42.688"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:42.725" level="INFO">${data_text} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:42.688" endtime="20231229 11:50:42.725"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:42.725" endtime="20231229 11:50:42.725"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:42.725" endtime="20231229 11:50:42.726"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:42.368" endtime="20231229 11:50:42.726"/>
+</iter>
+<iter>
+<var name="${j}">4</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:42.747" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_175")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:42.726" endtime="20231229 11:50:42.748"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:42.748" endtime="20231229 11:50:43.062"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:43.098" level="INFO">${data_text} = 20084132-000</msg>
+<status status="PASS" starttime="20231229 11:50:43.062" endtime="20231229 11:50:43.098"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:43.098" endtime="20231229 11:50:43.098"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:43.099" endtime="20231229 11:50:43.099"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:42.726" endtime="20231229 11:50:43.099"/>
+</iter>
+<iter>
+<var name="${j}">5</var>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<var>${locatores}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<msg timestamp="20231229 11:50:43.126" level="INFO">${locatores} = &lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_176")&gt;</msg>
+<status status="PASS" starttime="20231229 11:50:43.099" endtime="20231229 11:50:43.126"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${locatores}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:43.126" endtime="20231229 11:50:43.406"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[3]//tr[${i}]//td[${j}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:43.448" level="INFO">${data_text} = EAGLEFORD</msg>
+<status status="PASS" starttime="20231229 11:50:43.408" endtime="20231229 11:50:43.448"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:43.448" endtime="20231229 11:50:43.449"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${j}]</arg>
+<arg>${data_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:43.449" endtime="20231229 11:50:43.450"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:43.099" endtime="20231229 11:50:43.450"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:41.614" endtime="20231229 11:50:43.450"/>
+</for>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${dict}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231229 11:50:43.450" endtime="20231229 11:50:43.450"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:41.613" endtime="20231229 11:50:43.450"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:41.613" endtime="20231229 11:50:43.450"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${list_of_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:43.451" endtime="20231229 11:50:43.452"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${list_of_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231229 11:50:43.453" level="INFO">[{'Well_Name': 'DZIUK A 12H', 'Origin_Corp_ID': '20084132', 'Wellbore_Corp_ID': '20084132-001', 'Completion_Corp_ID': '20084132-000', 'Business_Unit': 'EAGLEFORD'}]</msg>
+<status status="PASS" starttime="20231229 11:50:43.452" endtime="20231229 11:50:43.453"/>
+</kw>
+<msg timestamp="20231229 11:50:43.453" level="INFO">${completion_table_value} = [{'Well_Name': 'DZIUK A 12H', 'Origin_Corp_ID': '20084132', 'Wellbore_Corp_ID': '20084132-001', 'Completion_Corp_ID': '20084132-000', 'Business_Unit': 'EAGLEFORD'}]</msg>
+<status status="PASS" starttime="20231229 11:50:28.185" endtime="20231229 11:50:43.453"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Completions_Table_only_Wellname_Value}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:43.454" level="INFO">Clicking element 'xpath=//tr[@id='completions_wellRow_0']//td'.</msg>
+<status status="PASS" starttime="20231229 11:50:43.453" endtime="20231229 11:50:43.760"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231229 11:50:48.761" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231229 11:50:43.760" endtime="20231229 11:50:48.761"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:28.185" endtime="20231229 11:50:48.761"/>
+</kw>
+<kw name="Select_Completions_side_panel" library="DataPortal_Completions">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Completions_Side_Extend_Tab}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231229 11:50:48.762" endtime="20231229 11:50:48.804"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Completions_Side_Extend_Tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:48.805" level="INFO">Clicking element 'xpath=(//div[@class='main-table-container']//app-details-form-window/div/div[@class='expand-tab'])[3]'.</msg>
+<status status="PASS" starttime="20231229 11:50:48.804" endtime="20231229 11:50:49.002"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:48.762" endtime="20231229 11:50:49.003"/>
+</kw>
+<kw name="Fetching_all_values_from_Completions_side_Panel_Info_Tab_Informations_Values">
+<kw name="Replace String" library="String">
+<var>${Get_side_panel_title_element}</var>
+<arg>${Completions_Ex_tab_Title}</arg>
+<arg>value</arg>
+<arg>${Well_input}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20231229 11:50:49.004" level="INFO">${Get_side_panel_title_element} = xpath=//h1[contains(text(),'DZIUK A 12H')]</msg>
+<status status="PASS" starttime="20231229 11:50:49.003" endtime="20231229 11:50:49.004"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${side_panel_Title_Text}</var>
+<arg>${Get_side_panel_title_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:49.105" level="INFO">${side_panel_Title_Text} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:49.004" endtime="20231229 11:50:49.105"/>
+</kw>
+<kw name="Get_all_Value_from_Completions_side_panel_info_table" library="DataPortal_Completions">
+<var>${side_panel_Completions_Table_value}</var>
 <kw name="Get WebElements" library="SeleniumLibrary">
 <var>${list_of_elements}</var>
-<arg>${Pads_Ex_Tab_Pad_data_Attachements_first_uploaded_doc_name}</arg>
+<arg>${Completions_Ex_Tab_Header_Table_Values}</arg>
 <doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20231229 00:06:18.197" level="INFO">${list_of_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="dc0a09a5ee38c48c5254caeaea36543d", element="1F38104C8BBE927F14428A0AE0D57FF6_element_198")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
-<status status="PASS" starttime="20231229 00:06:18.170" endtime="20231229 00:06:18.197"/>
+<msg timestamp="20231229 11:50:49.168" level="INFO">${list_of_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_271")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20231229 11:50:49.106" endtime="20231229 11:50:49.168"/>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <var>${Element_count}</var>
-<arg>${Pads_Ex_Tab_Pad_data_Attachements_first_uploaded_doc_name}</arg>
+<arg>${Completions_Ex_Tab_Header_Table_Values}</arg>
 <doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20231229 00:06:18.210" level="INFO">${Element_count} = 4</msg>
-<status status="PASS" starttime="20231229 00:06:18.197" endtime="20231229 00:06:18.210"/>
+<msg timestamp="20231229 11:50:49.184" level="INFO">${Element_count} = 5</msg>
+<status status="PASS" starttime="20231229 11:50:49.168" endtime="20231229 11:50:49.184"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Total_file_countis=${Element_count}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231229 00:06:18.210" endtime="20231229 00:06:18.211"/>
+<status status="PASS" starttime="20231229 11:50:49.184" endtime="20231229 11:50:49.185"/>
 </kw>
-<kw name="Create List" library="BuiltIn">
-<var>${list}</var>
-<doc>Returns a list containing given items.</doc>
-<msg timestamp="20231229 00:06:18.211" level="INFO">${list} = []</msg>
-<status status="PASS" starttime="20231229 00:06:18.211" endtime="20231229 00:06:18.211"/>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231229 11:50:49.185" level="INFO">${dict} = {}</msg>
+<status status="PASS" starttime="20231229 11:50:49.185" endtime="20231229 11:50:49.185"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231229 11:50:49.186" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20231229 11:50:49.185" endtime="20231229 11:50:49.186"/>
 </kw>
 <for flavor="IN">
 <var>${i}</var>
 <value>@{list_of_elements}</value>
 <iter>
-<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dc0a09a5ee38c48c5254caeaea36543d", element="1F38104C8BBE927F14428A0AE0D57FF6_element_198")&gt;</var>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_271")&gt;</var>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${i}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20231229 00:06:18.211" endtime="20231229 00:06:18.504"/>
+<status status="PASS" starttime="20231229 11:50:49.186" endtime="20231229 11:50:49.468"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${i.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231229 00:06:18.504" endtime="20231229 00:06:18.536"/>
+<status status="PASS" starttime="20231229 11:50:49.470" endtime="20231229 11:50:49.501"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${get_text}</var>
 <arg>${i}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:18.548" level="INFO">${get_text} = Test_PPT_file.pptx</msg>
-<status status="PASS" starttime="20231229 00:06:18.536" endtime="20231229 00:06:18.548"/>
+<msg timestamp="20231229 11:50:49.515" level="INFO">${get_text} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:49.501" endtime="20231229 11:50:49.515"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${list}</arg>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${count}]</arg>
 <arg>${get_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231229 00:06:18.549" endtime="20231229 00:06:18.549"/>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:49.515" endtime="20231229 11:50:49.515"/>
 </kw>
-<status status="PASS" starttime="20231229 00:06:18.211" endtime="20231229 00:06:18.549"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:49.516" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20231229 11:50:49.516" endtime="20231229 11:50:49.516"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:49.186" endtime="20231229 11:50:49.516"/>
 </iter>
 <iter>
-<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dc0a09a5ee38c48c5254caeaea36543d", element="1F38104C8BBE927F14428A0AE0D57FF6_element_199")&gt;</var>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_252")&gt;</var>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${i}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20231229 00:06:18.549" endtime="20231229 00:06:18.833"/>
+<status status="PASS" starttime="20231229 11:50:49.516" endtime="20231229 11:50:49.787"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${i.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231229 00:06:18.834" endtime="20231229 00:06:18.864"/>
+<status status="PASS" starttime="20231229 11:50:49.787" endtime="20231229 11:50:49.809"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${get_text}</var>
 <arg>${i}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:18.894" level="INFO">${get_text} = Test_csv_file.csv</msg>
-<status status="PASS" starttime="20231229 00:06:18.864" endtime="20231229 00:06:18.894"/>
+<msg timestamp="20231229 11:50:49.824" level="INFO">${get_text} = 20084132</msg>
+<status status="PASS" starttime="20231229 11:50:49.809" endtime="20231229 11:50:49.824"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${list}</arg>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${count}]</arg>
 <arg>${get_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231229 00:06:18.894" endtime="20231229 00:06:18.894"/>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:49.824" endtime="20231229 11:50:49.824"/>
 </kw>
-<status status="PASS" starttime="20231229 00:06:18.549" endtime="20231229 00:06:18.894"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:49.825" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20231229 11:50:49.825" endtime="20231229 11:50:49.825"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:49.516" endtime="20231229 11:50:49.825"/>
 </iter>
 <iter>
-<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dc0a09a5ee38c48c5254caeaea36543d", element="1F38104C8BBE927F14428A0AE0D57FF6_element_200")&gt;</var>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_253")&gt;</var>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${i}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20231229 00:06:18.895" endtime="20231229 00:06:19.181"/>
+<status status="PASS" starttime="20231229 11:50:49.825" endtime="20231229 11:50:50.095"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${i.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231229 00:06:19.181" endtime="20231229 00:06:19.204"/>
+<status status="PASS" starttime="20231229 11:50:50.095" endtime="20231229 11:50:50.119"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${get_text}</var>
 <arg>${i}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:19.221" level="INFO">${get_text} = template_01.docx</msg>
-<status status="PASS" starttime="20231229 00:06:19.204" endtime="20231229 00:06:19.221"/>
+<msg timestamp="20231229 11:50:50.138" level="INFO">${get_text} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:50.119" endtime="20231229 11:50:50.138"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${list}</arg>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${count}]</arg>
 <arg>${get_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231229 00:06:19.221" endtime="20231229 00:06:19.223"/>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:50.138" endtime="20231229 11:50:50.138"/>
 </kw>
-<status status="PASS" starttime="20231229 00:06:18.894" endtime="20231229 00:06:19.223"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:50.139" level="INFO">${count} = 4</msg>
+<status status="PASS" starttime="20231229 11:50:50.139" endtime="20231229 11:50:50.139"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:49.825" endtime="20231229 11:50:50.139"/>
 </iter>
 <iter>
-<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="dc0a09a5ee38c48c5254caeaea36543d", element="1F38104C8BBE927F14428A0AE0D57FF6_element_201")&gt;</var>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_254")&gt;</var>
 <kw name="Scroll Element Into View" library="SeleniumLibrary">
 <arg>${i}</arg>
 <doc>Scrolls the element identified by ``locator`` into view.</doc>
-<status status="PASS" starttime="20231229 00:06:19.223" endtime="20231229 00:06:19.504"/>
+<status status="PASS" starttime="20231229 11:50:50.140" endtime="20231229 11:50:50.424"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${i.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231229 00:06:19.504" endtime="20231229 00:06:19.543"/>
+<status status="PASS" starttime="20231229 11:50:50.424" endtime="20231229 11:50:50.442"/>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${get_text}</var>
 <arg>${i}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20231229 00:06:19.562" level="INFO">${get_text} = d1161eda-bf58-4076-ad23-7979f913f869.pptx</msg>
-<status status="PASS" starttime="20231229 00:06:19.543" endtime="20231229 00:06:19.562"/>
+<msg timestamp="20231229 11:50:50.461" level="INFO">${get_text} = 20084132-000</msg>
+<status status="PASS" starttime="20231229 11:50:50.442" endtime="20231229 11:50:50.461"/>
 </kw>
-<kw name="Append To List" library="Collections">
-<arg>${list}</arg>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${count}]</arg>
 <arg>${get_text}</arg>
-<doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" starttime="20231229 00:06:19.562" endtime="20231229 00:06:19.563"/>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:50.461" endtime="20231229 11:50:50.461"/>
 </kw>
-<status status="PASS" starttime="20231229 00:06:19.223" endtime="20231229 00:06:19.563"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:50.462" level="INFO">${count} = 5</msg>
+<status status="PASS" starttime="20231229 11:50:50.461" endtime="20231229 11:50:50.462"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:50.139" endtime="20231229 11:50:50.462"/>
 </iter>
-<status status="PASS" starttime="20231229 00:06:18.211" endtime="20231229 00:06:19.563"/>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_255")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:50.462" endtime="20231229 11:50:50.736"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:50.736" endtime="20231229 11:50:50.759"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:50.772" level="INFO">${get_text} = EAGLEFORD</msg>
+<status status="PASS" starttime="20231229 11:50:50.759" endtime="20231229 11:50:50.772"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_Table_Headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:50.772" endtime="20231229 11:50:50.772"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:50.773" level="INFO">${count} = 6</msg>
+<status status="PASS" starttime="20231229 11:50:50.772" endtime="20231229 11:50:50.773"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:50.462" endtime="20231229 11:50:50.773"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:49.186" endtime="20231229 11:50:50.773"/>
 </for>
 <kw name="Log To Console" library="BuiltIn">
-<arg>List_Of_Files= ${list}</arg>
+<arg>Side_panel_List_Of_Values= ${dict}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20231229 00:06:19.563" endtime="20231229 00:06:19.563"/>
+<status status="PASS" starttime="20231229 11:50:50.773" endtime="20231229 11:50:50.773"/>
 </kw>
-<msg timestamp="20231229 00:06:19.563" level="INFO">${list_of_files_uploaded} = ['Test_PPT_file.pptx', 'Test_csv_file.csv', 'template_01.docx', 'd1161eda-bf58-4076-ad23-7979f913f869.pptx']</msg>
-<status status="PASS" starttime="20231229 00:06:18.169" endtime="20231229 00:06:19.563"/>
+<msg timestamp="20231229 11:50:50.773" level="INFO">${side_panel_Completions_Table_value} = {'Well_Name': 'DZIUK A 12H', 'Origin_Corp_ID': '20084132', 'Wellbore_Corp_ID': '20084132-001', 'Completion_Corp_ID': '20084132-000', 'Business_Unit': 'EAGLEFORD'}</msg>
+<status status="PASS" starttime="20231229 11:50:49.105" endtime="20231229 11:50:50.773"/>
+</kw>
+<kw name="Get_all_Value_from_side_panel_info_Tab_informations_Completions" library="DataPortal_Completions">
+<var>${completions_side_panel_information_value}</var>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${list_of_elements}</var>
+<arg>${Completions_Ex_Tab_Pad_data_info_all_information_inputs}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231229 11:50:50.790" level="INFO">${list_of_elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_275")&gt;, &lt;selenium.webdriver.remote.webelement.WebElemen...</msg>
+<status status="PASS" starttime="20231229 11:50:50.774" endtime="20231229 11:50:50.790"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Element_count}</var>
+<arg>${Completions_Ex_Tab_Pad_data_info_all_information_inputs}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20231229 11:50:50.803" level="INFO">${Element_count} = 9</msg>
+<status status="PASS" starttime="20231229 11:50:50.790" endtime="20231229 11:50:50.803"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Total_file_countis=${Element_count}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:50.803" endtime="20231229 11:50:50.804"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${dict}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20231229 11:50:50.804" level="INFO">${dict} = {}</msg>
+<status status="PASS" starttime="20231229 11:50:50.804" endtime="20231229 11:50:50.804"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${count}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231229 11:50:50.805" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20231229 11:50:50.804" endtime="20231229 11:50:50.805"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${get_origin_Corp_id_Value}</var>
+<arg>${completions_Ex_Tab_info_tab_informations_Origin_Corp_ID}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:50.833" level="INFO">${get_origin_Corp_id_Value} = DZIUK A 12H (20084132)</msg>
+<status status="PASS" starttime="20231229 11:50:50.805" endtime="20231229 11:50:50.833"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${get_origin_Wellboar_id_Value}</var>
+<arg>${completions_Ex_Tab_info_tab_informations_Wellbore_Corp_ID}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:50.862" level="INFO">${get_origin_Wellboar_id_Value} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:50.833" endtime="20231229 11:50:50.862"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>Origin_Corp_ID</arg>
+<arg>${get_origin_Corp_id_Value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:50.862" endtime="20231229 11:50:50.862"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>Wellbore_Corp_ID</arg>
+<arg>${get_origin_Wellboar_id_Value}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:50.862" endtime="20231229 11:50:50.863"/>
 </kw>
 <for flavor="IN">
-<var>${file_name}</var>
-<value>@{Uploading_file_names}</value>
+<var>${i}</var>
+<value>@{list_of_elements}</value>
 <iter>
-<var name="${file_name}">Test_csv_file.csv</var>
-<kw name="List Should Contain Value" library="Collections">
-<arg>${list_of_files_uploaded}</arg>
-<arg>${file_name}</arg>
-<doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="PASS" starttime="20231229 00:06:19.564" endtime="20231229 00:06:19.564"/>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_275")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:50.863" endtime="20231229 11:50:51.146"/>
 </kw>
-<status status="PASS" starttime="20231229 00:06:19.564" endtime="20231229 00:06:19.564"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:51.147" endtime="20231229 11:50:51.170"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:51.194" level="INFO">${get_text} = 20084132-000</msg>
+<status status="PASS" starttime="20231229 11:50:51.170" endtime="20231229 11:50:51.194"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:51.194" endtime="20231229 11:50:51.194"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:51.195" level="INFO">${count} = 2</msg>
+<status status="PASS" starttime="20231229 11:50:51.195" endtime="20231229 11:50:51.195"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:50.863" endtime="20231229 11:50:51.195"/>
 </iter>
 <iter>
-<var name="${file_name}">Test_PPT_file.pptx</var>
-<kw name="List Should Contain Value" library="Collections">
-<arg>${list_of_files_uploaded}</arg>
-<arg>${file_name}</arg>
-<doc>Fails if the ``value`` is not found from ``list``.</doc>
-<status status="PASS" starttime="20231229 00:06:19.564" endtime="20231229 00:06:19.565"/>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_277")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:51.195" endtime="20231229 11:50:51.474"/>
 </kw>
-<status status="PASS" starttime="20231229 00:06:19.564" endtime="20231229 00:06:19.565"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:51.474" endtime="20231229 11:50:51.498"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:51.515" level="INFO">${get_text} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:51.499" endtime="20231229 11:50:51.515"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:51.516" endtime="20231229 11:50:51.516"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:51.516" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20231229 11:50:51.516" endtime="20231229 11:50:51.516"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:51.195" endtime="20231229 11:50:51.516"/>
 </iter>
-<status status="PASS" starttime="20231229 00:06:19.564" endtime="20231229 00:06:19.565"/>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_279")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:51.517" endtime="20231229 11:50:51.789"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:51.789" endtime="20231229 11:50:51.811"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:51.826" level="INFO">${get_text} = 000000000303893</msg>
+<status status="PASS" starttime="20231229 11:50:51.811" endtime="20231229 11:50:51.826"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:51.826" endtime="20231229 11:50:51.826"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:51.827" level="INFO">${count} = 4</msg>
+<status status="PASS" starttime="20231229 11:50:51.826" endtime="20231229 11:50:51.827"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:51.516" endtime="20231229 11:50:51.827"/>
+</iter>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_281")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:51.827" endtime="20231229 11:50:52.101"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:52.101" endtime="20231229 11:50:52.117"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:52.132" level="INFO">${get_text} = Blackhawk</msg>
+<status status="PASS" starttime="20231229 11:50:52.118" endtime="20231229 11:50:52.132"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:52.132" endtime="20231229 11:50:52.133"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:52.133" level="INFO">${count} = 5</msg>
+<status status="PASS" starttime="20231229 11:50:52.133" endtime="20231229 11:50:52.133"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:51.827" endtime="20231229 11:50:52.133"/>
+</iter>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_283")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:52.133" endtime="20231229 11:50:52.414"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:52.414" endtime="20231229 11:50:52.436"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:52.454" level="INFO">${get_text} = Blackhawk</msg>
+<status status="PASS" starttime="20231229 11:50:52.436" endtime="20231229 11:50:52.454"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:52.455" endtime="20231229 11:50:52.455"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:52.455" level="INFO">${count} = 6</msg>
+<status status="PASS" starttime="20231229 11:50:52.455" endtime="20231229 11:50:52.455"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:52.133" endtime="20231229 11:50:52.455"/>
+</iter>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_285")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:52.456" endtime="20231229 11:50:52.744"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:52.744" endtime="20231229 11:50:52.769"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:52.789" level="INFO">${get_text} = EAGLEFORD</msg>
+<status status="PASS" starttime="20231229 11:50:52.769" endtime="20231229 11:50:52.789"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:52.790" endtime="20231229 11:50:52.790"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:52.790" level="INFO">${count} = 7</msg>
+<status status="PASS" starttime="20231229 11:50:52.790" endtime="20231229 11:50:52.790"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:52.456" endtime="20231229 11:50:52.790"/>
+</iter>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_287")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:52.791" endtime="20231229 11:50:53.072"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:53.072" endtime="20231229 11:50:53.095"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:53.112" level="INFO">${get_text} = DZIUK A PAD 3</msg>
+<status status="PASS" starttime="20231229 11:50:53.095" endtime="20231229 11:50:53.112"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:53.113" endtime="20231229 11:50:53.113"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:53.113" level="INFO">${count} = 8</msg>
+<status status="PASS" starttime="20231229 11:50:53.113" endtime="20231229 11:50:53.113"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:52.790" endtime="20231229 11:50:53.113"/>
+</iter>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_289")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:53.113" endtime="20231229 11:50:53.398"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:53.398" endtime="20231229 11:50:53.423"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:53.444" level="INFO">${get_text} = DZIUK A PAD 3</msg>
+<status status="PASS" starttime="20231229 11:50:53.423" endtime="20231229 11:50:53.444"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:53.444" endtime="20231229 11:50:53.444"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:53.444" level="INFO">${count} = 9</msg>
+<status status="PASS" starttime="20231229 11:50:53.444" endtime="20231229 11:50:53.444"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:53.113" endtime="20231229 11:50:53.444"/>
+</iter>
+<iter>
+<var name="${i}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c85329f00858f66c9fe600b8760bd4a6", element="9DEB5CC084D27CA9311778366FE1785A_element_291")&gt;</var>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${i}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20231229 11:50:53.446" endtime="20231229 11:50:53.726"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${i.text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:53.726" endtime="20231229 11:50:53.748"/>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<var>${get_text}</var>
+<arg>${i}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<msg timestamp="20231229 11:50:53.768" level="INFO">${get_text} = H&amp;P 512</msg>
+<status status="PASS" starttime="20231229 11:50:53.748" endtime="20231229 11:50:53.768"/>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<arg>${dict}</arg>
+<arg>${Completions_side_panel_information_headings}[${count}]</arg>
+<arg>${get_text}</arg>
+<doc>Adds the given ``key_value_pairs`` and/or ``items`` to the ``dictionary``.</doc>
+<status status="PASS" starttime="20231229 11:50:53.768" endtime="20231229 11:50:53.770"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${count}</var>
+<arg>${count}+1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20231229 11:50:53.771" level="INFO">${count} = 10</msg>
+<status status="PASS" starttime="20231229 11:50:53.770" endtime="20231229 11:50:53.771"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:53.446" endtime="20231229 11:50:53.771"/>
+</iter>
+<status status="PASS" starttime="20231229 11:50:50.863" endtime="20231229 11:50:53.771"/>
 </for>
-<status status="PASS" starttime="20231229 00:05:29.849" endtime="20231229 00:06:19.565"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Side_panel_List_Of_information_Values= ${dict}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20231229 11:50:53.771" endtime="20231229 11:50:53.772"/>
+</kw>
+<msg timestamp="20231229 11:50:53.772" level="INFO">${completions_side_panel_information_value} = {'Origin_Corp_ID': 'DZIUK A 12H (20084132)', 'Wellbore_Corp_ID': '20084132-001', 'Completion_Corp_ID': '20084132-000', 'Well_Name': 'DZIUK A 12H', 'Well_Num': '000000000303893', 'Area_Name': 'Blackhaw...</msg>
+<status status="PASS" starttime="20231229 11:50:50.773" endtime="20231229 11:50:53.772"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Completion_Ex_Tab_info_information_wellname}</var>
+<arg>${completions_side_panel_information_value}</arg>
+<arg>Well_Name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:50:53.773" level="INFO">${Completion_Ex_Tab_info_information_wellname} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:53.772" endtime="20231229 11:50:53.773"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Completion_Ex_Tab_info_information_Padname}</var>
+<arg>${completions_side_panel_information_value}</arg>
+<arg>Pad_Name</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:50:53.773" level="INFO">${Completion_Ex_Tab_info_information_Padname} = DZIUK A PAD 3</msg>
+<status status="PASS" starttime="20231229 11:50:53.773" endtime="20231229 11:50:53.774"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Completion_Ex_Tab_info_information_origin_corp_id}</var>
+<arg>${completions_side_panel_information_value}</arg>
+<arg>Origin_Corp_ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:50:53.774" level="INFO">${Completion_Ex_Tab_info_information_origin_corp_id} = DZIUK A 12H (20084132)</msg>
+<status status="PASS" starttime="20231229 11:50:53.774" endtime="20231229 11:50:53.774"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${Completion_Ex_Tab_info_information_Wellbore_origin_corp_id}</var>
+<arg>${completions_side_panel_information_value}</arg>
+<arg>Wellbore_Corp_ID</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20231229 11:50:53.775" level="INFO">${Completion_Ex_Tab_info_information_Wellbore_origin_corp_id} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:53.774" endtime="20231229 11:50:53.775"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Completion_Ex_Tab_info_information_wellname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:50:53.775" level="INFO">${Completion_Ex_Tab_info_information_wellname} = DZIUK A 12H</msg>
+<status status="PASS" starttime="20231229 11:50:53.775" endtime="20231229 11:50:53.775"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Completion_Ex_Tab_info_information_Padname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:50:53.777" level="INFO">${Completion_Ex_Tab_info_information_Padname} = DZIUK A PAD 3</msg>
+<status status="PASS" starttime="20231229 11:50:53.775" endtime="20231229 11:50:53.777"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Completion_Ex_Tab_info_information_origin_corp_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:50:53.777" level="INFO">${Completion_Ex_Tab_info_information_origin_corp_id} = DZIUK A 12H (20084132)</msg>
+<status status="PASS" starttime="20231229 11:50:53.777" endtime="20231229 11:50:53.777"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${Completion_Ex_Tab_info_information_Wellbore_origin_corp_id}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20231229 11:50:53.777" level="INFO">${Completion_Ex_Tab_info_information_Wellbore_origin_corp_id} = 20084132-001</msg>
+<status status="PASS" starttime="20231229 11:50:53.777" endtime="20231229 11:50:53.777"/>
+</kw>
+<status status="PASS" starttime="20231229 11:50:49.003" endtime="20231229 11:50:53.778"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${Table_Value_wellname}</arg>
+<arg>${well_boar_Table_Value_wellname}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231229 11:50:53.778" endtime="20231229 11:50:53.779"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${Table_Value_wellname}</arg>
+<arg>${Completion_Ex_Tab_info_information_wellname}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231229 11:50:53.779" endtime="20231229 11:50:53.779"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${Table_Value_padname}</arg>
+<arg>${Completion_Ex_Tab_info_information_Padname}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231229 11:50:53.781" endtime="20231229 11:50:53.781"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${Fetch_Origin_Corp_ID}</arg>
+<arg>${well_boar_Table_Value_Origin_Corp_ID}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231229 11:50:53.782" endtime="20231229 11:50:53.782"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${Completion_Ex_Tab_info_information_origin_corp_id}</arg>
+<arg>${Fetch_Origin_Corp_ID}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20231229 11:50:53.783" endtime="20231229 11:50:53.783"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${well_boar_Table_Value_Wellbore_Corp_ID}</arg>
+<arg>${Completion_Ex_Tab_info_information_Wellbore_origin_corp_id}</arg>
+<arg>ignore_case=True</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20231229 11:50:53.783" endtime="20231229 11:50:53.784"/>
+</kw>
+<tag>TC151123014</tag>
+<tag>TC151123028</tag>
+<status status="PASS" starttime="20231229 11:49:08.378" endtime="20231229 11:50:53.784"/>
 </test>
-<status status="PASS" starttime="20231229 00:05:29.393" endtime="20231229 00:06:19.566"/>
+<status status="PASS" starttime="20231229 11:49:07.743" endtime="20231229 11:50:53.786"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">TC151123014</stat>
+<stat pass="1" fail="0" skip="0">TC151123028</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Validate file upload functionality Multiple files">Validate file upload functionality Multiple files</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Validate linking within Well Details functionality">Validate linking within Well Details functionality</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20231229 00:05:29.688" level="ERROR">Error in file 'C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Resources\Portal\Keywords\DataPortal_Pads.robot' on line 19: Creating keyword 'Select Pad Filter' failed: User keyword cannot be empty.</msg>
-<msg timestamp="20231229 00:05:29.845" level="ERROR">[ DataDriver ] Error in robot file:
-  File "C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\Validate_file_upload_functionality_Multiple_files.robot", line 0</msg>
-<msg timestamp="20231229 00:05:29.845" level="ERROR">In source file:
+<msg timestamp="20231229 11:49:08.124" level="ERROR">Error in file 'C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Resources\Portal\Keywords\DataPortal_Pads.robot' on line 19: Creating keyword 'Select Pad Filter' failed: User keyword cannot be empty.</msg>
+<msg timestamp="20231229 11:49:08.374" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\Validate_linking_within_Well_Details_functionality.robot", line 0</msg>
+<msg timestamp="20231229 11:49:08.375" level="ERROR">In source file:
   File "../../../TestData/Database.xls", line 0</msg>
-<msg timestamp="20231229 00:05:29.847" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: FileNotFoundError: File attribute was not a full path. Tried to find C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\..\..\..\TestData\Database.xls but file does not exist.</msg>
+<msg timestamp="20231229 11:49:08.377" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: FileNotFoundError: File attribute was not a full path. Tried to find C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\Portal\TestCase\..\..\..\TestData\Database.xls but file does not exist.</msg>
 </errors>
 </robot>
