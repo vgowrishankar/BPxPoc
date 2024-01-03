@@ -14,3 +14,7 @@ Sensor_status_values= "xpath=//div[@class='widget-body flex-fluid full-width fle
 NS_Online_Count ="xpath=(//div[@class='responsive-text flex-vertical flex-fix allow-shrink indicator-center-text'])[1]//*[local-name()='text' ]"
 GW_Online_Count ="xpath=(//div[@class='responsive-text flex-vertical flex-fix allow-shrink indicator-center-text'])[2]//*[local-name()='text' ]"
 Alarmed_Count ="xpath=(//div[@class='responsive-text flex-vertical flex-fix allow-shrink indicator-center-text'])[3]//*[local-name()='text' ]"
+Graph_point= "xpath=(//*[local-name()='svg']//*[name()='g' and  contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']"
+Expand_btn="xpath=//a[@class='dock-expand']//*[local-name()='svg']"
+Graph_point2= "xpath=((//*[local-name()='svg']//*[name()='g' and  contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle'])[index]"
+

@@ -11,12 +11,13 @@ Library         SeleniumLibrary
 Library          JSONLibrary
 
 
+
 *** Variables ***
 @{Sensor_Status_Headings}=        ${EMPTY}    Gateway       Facility        online_status       last_online_status      Last_Alarm_status
 ${Business_Unit_Input}=     Permian
 ${Facility_Input}=      BINGO CDP
 ${Gateway_input}=       ngw-perm-ms-008
-
+@{list_of_Values}
 
 *** Test Cases ***
 Validate_ArcGIS_Values
@@ -24,8 +25,7 @@ Validate_ArcGIS_Values
     Business_Unit_Selection
     Facility_Selection
     Gateway_Selection
-    Get_Nimbus_Sensors_Counts_Values
-
+    Fetch_Graph_Value_From_Air_Quality
 
 
 *** Keywords ***
@@ -91,3 +91,48 @@ Get_Nimbus_Sensors_Counts_Values
     ${Alarmed}=    get text    ${Alarmed_Count}
     log to console    ${Alarmed}
     ${list}=        Get_all_Values_From_Sensor_status
+
+
+Graphical
+    sleep   10
+    ${list_of_elements}=        get webelements     (//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']
+    ${Element_count}=    get element count    (//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']
+    log to console    Total_file_countis=${Element_count}
+    ${count}=    set variable    1
+    FOR  ${list}    IN RANGE    1      ${Element_count}+1
+        sleep    3
+        ${single_ele}=  get webelement    xpath=((//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle'])[${list}]
+        ${check_element}=  Run Keyword and Return Status   wait until page contains element    ${single_ele}    10s
+        Run Keyword If      '${check_element}' == 'True'     mouse over     ${single_ele}
+        ${get_Graph_Value}=     get element attribute    ${single_ele}      aria-label
+        log to console    ${get_Graph_Value}
+        ${count}=   evaluate    ${count}+1
+        append to list    ${list_of_Values}       ${get_Graph_Value}
+    END
+    log    ${count}
+    log to console    ${list_of_Values}
+    log to console    Graphical_completed
+
+Fetch_Graph_Value_From_Air_Quality
+    sleep   10
+    ${list_of_elements}=        get webelements     (//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']
+    ${Element_count}=    get element count    (//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']
+    log to console    Total_graph_Pin_count_is=${Element_count}
+    FOR  ${list}    IN RANGE    1      ${Element_count}+1
+        #sleep    3
+        ${single_ele}=  get webelement    xpath=((//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle'])[${list}]
+        ${check_element}=  Run Keyword and Return Status   wait until page contains element    ${single_ele}    10s
+        Run Keyword If      '${check_element}' == 'True'     get_Attribute_value_and_store      ${single_ele}       aria-label
+        #${get_Graph_Value}=     get element attribute    ${single_ele}      aria-label
+        #log to console    ${get_Graph_Value}
+        #append to list    ${list_of_Values}       ${get_Graph_Value}
+    END
+    log to console    ${list_of_Values}
+    log list    ${list_of_Values}
+    log to console    Graphical_completed
+
+get_Attribute_value_and_store
+    [Arguments]    ${Element}       ${Attribute_Name}
+    ${get_Graph_Value}=     get element attribute    ${Element}      ${Attribute_Name}
+    log to console    ${get_Graph_Value}
+    append to list    ${list_of_Values}       ${get_Graph_Value}
