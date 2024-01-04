@@ -17,4 +17,9 @@ Alarmed_Count ="xpath=(//div[@class='responsive-text flex-vertical flex-fix allo
 Graph_point= "xpath=(//*[local-name()='svg']//*[name()='g' and  contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']"
 Expand_btn="xpath=//a[@class='dock-expand']//*[local-name()='svg']"
 Graph_point2= "xpath=((//*[local-name()='svg']//*[name()='g' and  contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle'])[index]"
-
+Graph_Wind_btn="xpath=//div[text()='Wind']"
+Graph_Power_btn="xpath=//div[text()='Power']"
+Graph_Scada_btn="xpath=//div[text()='SCADA']"
+Graph_value_Fetch_AirQuality_MethenePPM= "xpath=(//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto2_17043')])[4]//*[name()='circle']"
+Graph_value_Fetch_AirQuality_Methene_VDC= "xpath=(//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']"
+Graph_Value_Fetch_AirQuality_Ambient_Temp_C= "xpath=(//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[6]//*[name()='circle']"

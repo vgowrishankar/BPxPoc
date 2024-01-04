@@ -25,8 +25,9 @@ Validate_ArcGIS_Values
     Business_Unit_Selection
     Facility_Selection
     Gateway_Selection
-    Fetch_Graph_Value_From_Air_Quality
-
+    ${List_of_AirQuality_Methene_VDC_Graph_Values}=     Fetch_Graph_Value_From_Air_Quality_Methene_VDC
+    ${List_of_AirQuality_Methene_PPM_Graph_Values}=     Fetch_Graph_Value_From_Air_Quality_Methene_PPM
+    ${List_of_AirQuality_Ambient_Temp_C}=               Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C
 
 *** Keywords ***
 
@@ -42,10 +43,10 @@ Get_all_Values_From_Sensor_status
     ${Total_set}   get element count     xpath=//div[@class='widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden']//div[@class='external-html']
 
     ${Total_data}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//td
-    LOG TO CONSOLE    Totaldatacountis=${Total_data}
+    LOG TO CONSOLE    Total_data_count_is=${Total_data}
 
     ${Total_data_Per_set}   GET ELEMENT COUNT     (//div[@class='widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden']//div[@class='external-html'])[1]/p
-    LOG TO CONSOLE    Totaldatacountis=${Total_data_Per_set}
+    LOG TO CONSOLE    Total_data_set_is=${Total_data_Per_set}
     ${list_To_Store}=   create list
     FOR    ${i}    IN RANGE     1       ${Total_set}+1
     LOG TO CONSOLE    1stloop started
@@ -85,12 +86,13 @@ Gateway_Selection
 Get_Nimbus_Sensors_Counts_Values
     sleep    5
     ${NSCount}=    get text    ${NS_Online_Count}
-    log to console    ${NSCount}
+    log     ${NSCount}
     ${GWCount}=     get text    ${GW_Online_Count}
-    log to console    ${GWCount}
+    log     ${GWCount}
     ${Alarmed}=    get text    ${Alarmed_Count}
-    log to console    ${Alarmed}
+    log     ${Alarmed}
     ${list}=        Get_all_Values_From_Sensor_status
+    log to console    Sensor_Count_Fetched
 
 
 Graphical
@@ -113,26 +115,67 @@ Graphical
     log to console    ${list_of_Values}
     log to console    Graphical_completed
 
-Fetch_Graph_Value_From_Air_Quality
+Fetch_Graph_Value_From_Air_Quality_Methene_VDC
     sleep   10
-    ${list_of_elements}=        get webelements     (//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']
-    ${Element_count}=    get element count    (//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle']
+    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_VDC}=      create list
+    ${list_of_elements}=        get webelements     ${Graph_value_Fetch_AirQuality_Methene_VDC}
+    ${Element_count}=    get element count    ${Graph_value_Fetch_AirQuality_Methene_VDC}
     log to console    Total_graph_Pin_count_is=${Element_count}
     FOR  ${list}    IN RANGE    1      ${Element_count}+1
         #sleep    3
-        ${single_ele}=  get webelement    xpath=((//*[local-name()='svg']//*[name()='g' and contains(@class,'amcharts-graph-line amcharts-graph-graphAuto0_170')])[2]//*[name()='circle'])[${list}]
+        ${single_ele}=  get webelement    ${Graph_value_Fetch_AirQuality_MethenePPM}\[${list}]
         ${check_element}=  Run Keyword and Return Status   wait until page contains element    ${single_ele}    10s
-        Run Keyword If      '${check_element}' == 'True'     get_Attribute_value_and_store      ${single_ele}       aria-label
+        Run Keyword If      '${check_element}' == 'True'     get_Attribute_value_and_store      ${single_ele}       aria-label      ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_VDC}
+    END
+    log to console    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_VDC}
+    log list    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_VDC}
+    log to console    Fetch_Graph_Value_From_Air_Quality_Methene_VDC_Completed
+    [Return]        ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_VDC}
+
+Fetch_Graph_Value_From_Air_Quality_Methene_PPM
+    sleep   10
+    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_PPM}=      create list
+    ${list_of_elements}=        get webelements     ${Graph_value_Fetch_AirQuality_MethenePPM}
+    ${Element_count}=    get element count    ${Graph_value_Fetch_AirQuality_MethenePPM}
+    log to console    Total_graph_Pin_count_is=${Element_count}
+    FOR  ${list}    IN RANGE    1      ${Element_count}+1
+        #sleep    3
+        ${single_ele}=  get webelement    ${Graph_value_Fetch_AirQuality_MethenePPM}\[${list}]
+        ${check_element}=  Run Keyword and Return Status   wait until page contains element    ${single_ele}    10s
+        Run Keyword If      '${check_element}' == 'True'     get_Attribute_value_and_store      ${single_ele}       aria-label      ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_PPM}
         #${get_Graph_Value}=     get element attribute    ${single_ele}      aria-label
         #log to console    ${get_Graph_Value}
         #append to list    ${list_of_Values}       ${get_Graph_Value}
     END
-    log to console    ${list_of_Values}
-    log list    ${list_of_Values}
-    log to console    Graphical_completed
+    log to console    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_PPM}
+    log list    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_PPM}
+    log to console    Fetch_Graph_Value_From_Air_Quality_Methene_PPM_completed
+    [Return]        ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_PPM}
+
+Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C
+    sleep   10
+    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}=      create list
+    ${list_of_elements}=        get webelements     ${Graph_Value_Fetch_AirQuality_Ambient_Temp_C}
+    ${Element_count}=    get element count    ${Graph_Value_Fetch_AirQuality_Ambient_Temp_C}
+    log to console    Total_graph_Pin_count_is=${Element_count}
+    FOR  ${list}    IN RANGE    1      ${Element_count}+1
+        #sleep    3
+        ${single_ele}=  get webelement    ${Graph_Value_Fetch_AirQuality_Ambient_Temp_C}\[${list}]
+        ${check_element}=  Run Keyword and Return Status   wait until page contains element    ${single_ele}    10s
+        Run Keyword If      '${check_element}' == 'True'     get_Attribute_value_and_store      ${single_ele}       aria-label      ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}
+        #${get_Graph_Value}=     get element attribute    ${single_ele}      aria-label
+        #log to console    ${get_Graph_Value}
+        #append to list    ${list_of_Values}       ${get_Graph_Value}
+    END
+    log to console    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}
+    log list    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}
+    log to console    Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C_completed
+    [Return]        ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}
+
 
 get_Attribute_value_and_store
-    [Arguments]    ${Element}       ${Attribute_Name}
+    [Arguments]    ${Element}       ${Attribute_Name}       ${list_to_be_Store}
     ${get_Graph_Value}=     get element attribute    ${Element}      ${Attribute_Name}
     log to console    ${get_Graph_Value}
-    append to list    ${list_of_Values}       ${get_Graph_Value}
+    append to list    ${list_to_be_Store}       ${get_Graph_Value}
+
