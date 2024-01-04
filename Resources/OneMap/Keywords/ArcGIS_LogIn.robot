@@ -14,7 +14,7 @@ ${Password}     Welcome2BPX!
 
 *** Keywords ***
 One Map GIS Login
-    open browser    ${GIS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
+    seleniumlibrary.open browser    ${GIS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
     wait until element is visible   ${ArcGIS_Login_Title}
     click element    xpath=//*[@id="loginTitle"]
