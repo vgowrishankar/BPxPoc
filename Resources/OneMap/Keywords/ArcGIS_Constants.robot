@@ -15,22 +15,14 @@ Library          JSONLibrary
 *** Variables ***
 @{Sensor_Status_Headings}=        ${EMPTY}    Gateway       Facility        online_status       last_online_status      Last_Alarm_status
 ${Business_Unit_Input}=     Permian
-${Facility_Input}=      BINGO CDP
-${Gateway_input}=       ngw-perm-ms-008
+${Facility_Input}=      GRAND SLAM CDP
+${Gateway_input}=       ngw-perm-ms-001
 @{list_of_Values}
 
-*** Test Cases ***
-Validate_ArcGIS_Values
-    One Map GIS Login
-    Business_Unit_Selection
-    Facility_Selection
-    Gateway_Selection
-    ${List_of_AirQuality_Methene_VDC_Graph_Values}=     Fetch_Graph_Value_From_Air_Quality_Methene_VDC
-    ${List_of_AirQuality_Methene_PPM_Graph_Values}=     Fetch_Graph_Value_From_Air_Quality_Methene_PPM
-    ${List_of_AirQuality_Ambient_Temp_C}=               Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C
+
+
 
 *** Keywords ***
-
 Select_from_Drop_Down_value
     [Arguments]    ${Selection_Value}
     ${New_element}=     replace string    ${DD_Value_Selection}     value        ${Selection_Value}
@@ -39,20 +31,17 @@ Select_from_Drop_Down_value
 
 
 Get_all_Values_From_Sensor_status
-
     ${Total_set}   get element count     xpath=//div[@class='widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden']//div[@class='external-html']
-
-    ${Total_data}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//td
-    LOG TO CONSOLE    Total_data_count_is=${Total_data}
+    LOG TO CONSOLE    Total_data_count_is=${Total_set}
 
     ${Total_data_Per_set}   GET ELEMENT COUNT     (//div[@class='widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden']//div[@class='external-html'])[1]/p
     LOG TO CONSOLE    Total_data_set_is=${Total_data_Per_set}
     ${list_To_Store}=   create list
     FOR    ${i}    IN RANGE     1       ${Total_set}+1
-    LOG TO CONSOLE    1stloop started
+
         ${dict}=    create dictionary
         FOR    ${j}    IN RANGE     1       ${Total_data_Per_set}+1
-        #LOG TO CONSOLE    2ndloop started
+
         ${locatores}=   get webelement    xpath=((//div[@class='widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden']//div[@class='external-html'])[${i}]/p)[${j}]
         scroll element into view        ${locatores}
         ${data_text}=   GET TEXT     xpath=((//div[@class='widget-body flex-fluid full-width flex-vertical overflow-y-auto overflow-x-hidden']//div[@class='external-html'])[${i}]/p)[${j}]
@@ -83,7 +72,7 @@ Gateway_Selection
     click element    ${Gateway_DD_Click_btn}
     Select_from_Drop_Down_value     ${Gateway_input}
 
-Get_Nimbus_Sensors_Counts_Values
+Get_Nimbus_Sensors_Counts_and_Values
     sleep    5
     ${NSCount}=    get text    ${NS_Online_Count}
     log     ${NSCount}
@@ -91,8 +80,10 @@ Get_Nimbus_Sensors_Counts_Values
     log     ${GWCount}
     ${Alarmed}=    get text    ${Alarmed_Count}
     log     ${Alarmed}
-    ${list}=        Get_all_Values_From_Sensor_status
     log to console    Sensor_Count_Fetched
+    ${list}=        Get_all_Values_From_Sensor_status
+    [Return]    ${list}
+
 
 
 Graphical
@@ -131,6 +122,8 @@ Fetch_Graph_Value_From_Air_Quality_Methene_VDC
     log list    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_VDC}
     log to console    Fetch_Graph_Value_From_Air_Quality_Methene_VDC_Completed
     [Return]        ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Methene_VDC}
+
+
 
 Fetch_Graph_Value_From_Air_Quality_Methene_PPM
     sleep   10
@@ -179,3 +172,28 @@ get_Attribute_value_and_store
     log to console    ${get_Graph_Value}
     append to list    ${list_to_be_Store}       ${get_Graph_Value}
 
+Validate_Sensors_Have_the_Selected_Gateway
+    [Documentation]    This Keyword used to Validate Actual sensor value should contain Selected Gateway value
+    [Arguments]         ${list_Of_Dictionary}        ${Value_Should_Contains}
+    ${List_length}=     get length    ${list_Of_Dictionary}
+    FOR    ${i}     IN RANGE     0      ${List_length}
+            ${list_Value}=  get from list    ${list_Of_Dictionary}      ${i}
+            ${Gateway_value}=       get from dictionary    ${list_Value}        Gateway
+            ${Text_length}=     get length    ${Gateway_value}
+            log to console    ${Gateway_value}
+            Run Keyword If      '${Text_length}' != '0'      should contain    ${Gateway_value}      ${Gateway_input}
+           # should contain    ${Gateway_value}      ${Gateway_input}
+    END
+
+Validate_Sensors_Have_the_Selected_Facility
+    [Documentation]    This Keyword used to Validate Actual sensor value should contain Selected Gateway value
+    [Arguments]         ${list_Of_Dictionary}        ${Value_Should_Contains}
+    ${List_length}=     get length    ${list_Of_Dictionary}
+    FOR    ${i}     IN RANGE     0      ${List_length}
+            ${list_Value}=  get from list    ${list_Of_Dictionary}      ${i}
+            ${Facility_value}=       get from dictionary    ${list_Value}        Facility
+            ${Text_length}=     get length    ${Facility_value}
+            log to console    ${Facility_value}
+            Run Keyword If      '${Text_length}' != '0'      should contain    ${Facility_value}      ${Value_Should_Contains}
+           # should contain    ${Gateway_value}      ${Gateway_input}
+    END
