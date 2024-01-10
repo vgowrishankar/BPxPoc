@@ -1,0 +1,15 @@
+1703160869084	geckodriver	INFO	Listening on 127.0.0.1:61930
+1703160872158	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "61931" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\10712370\\AppData\\Local\\Temp\\rust_mozprofiletrCXwn"
+1703160873149	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\10712370\\AppData\\Local\\Temp\\rust_mozprofiletrCXwn\\search.json.mozlz4", (void 0)))
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+DevTools listening on ws://localhost:61931/devtools/browser/f455d22f-cd38-4a29-b004-bd36e46b4eda
+1703160876742	Marionette	INFO	Listening on port 61985
+Read port: 61985
+1703160876868	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: Region.jsm: "Error fetching region" (new SyntaxError("JSON.parse: unexpected character at line 1 column 1 of the JSON data", ""))
+console.error: Region.jsm: "Failed to fetch region" (new Error("NO_RESULT", "resource://gre/modules/Region.jsm", 419))
+1703160887640	Marionette	INFO	Stopped listening on port 61985
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
