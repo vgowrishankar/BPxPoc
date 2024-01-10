@@ -1,82 +1,2212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240109 19:13:27.918" rpa="false" schemaversion="4">
-<suite id="s1" name="Read data from excel file" source="C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Utilities\Read_data_from_excel_file.robot">
-<test id="s1-t1" name="sample" line="8">
-<kw name="Read_Data_Portal_Excel_File">
-<var>${data}</var>
-<arg>Portal</arg>
-<arg>1</arg>
+<robot generator="Robot 6.1.1 (Python 3.12.1 on win32)" generated="20240110 18:13:11.414" rpa="false" schemaversion="4">
+<suite id="s1" name="Validate One Map Routing Direction" source="C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\OneMap\TestCase\Validate_One_Map_Routing_Direction.robot">
+<test id="s1-t1" name="Validate_One_Map_Routing_Direction.robot" line="10">
+<kw name="One Map GPS Login" library="ArcGIS_LogIn">
+<kw name="ARCGPS_Variables_Read_from_Excel" library="One_Map_Routing_Constants">
+<doc>This Function used to get cell value from Excel file</doc>
+<kw name="Read_Data_From_Excel_File" library="Read_data_from_excel_file">
+<var>${BROWSER}</var>
+<arg>User_Dashboard.xlsx</arg>
+<arg>OneMapRouting</arg>
 <arg>2</arg>
+<arg>2</arg>
+<kw name="Replace String" library="String">
+<var>${file_path}</var>
+<arg>${file_path1}</arg>
+<arg>filename</arg>
+<arg>${filename}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:12.941" level="INFO">${file_path} = C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Utilities\..\TestData\User_Dashboard.xlsx</msg>
+<status status="PASS" starttime="20240110 18:13:12.941" endtime="20240110 18:13:12.941"/>
+</kw>
 <kw name="Open Excel Document" library="ExcelLibrary">
 <arg>${file_path}</arg>
 <arg>doc_id=docid</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20240109 19:13:28.249" endtime="20240109 19:13:28.255"/>
+<status status="PASS" starttime="20240110 18:13:12.941" endtime="20240110 18:13:12.950"/>
 </kw>
-<kw name="Get Sheet" library="ExcelLibrary">
-<arg>${sheet_name}</arg>
-<doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20240109 19:13:28.255" endtime="20240109 19:13:28.255"/>
+<kw name="Get List Sheet Names" library="ExcelLibrary">
+<var>${sheets}</var>
+<doc>Returns a list of sheet names in the current document.</doc>
+<msg timestamp="20240110 18:13:12.951" level="INFO">${sheets} = ['Portal', 'OneMapRouting']</msg>
+<status status="PASS" starttime="20240110 18:13:12.950" endtime="20240110 18:13:12.951"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${data}</var>
 <arg>${rownum}</arg>
 <arg>${colnum}</arg>
+<arg>${sheet_name}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20240109 19:13:28.255" level="INFO">${data} = Test Username</msg>
-<status status="PASS" starttime="20240109 19:13:28.255" endtime="20240109 19:13:28.255"/>
+<msg timestamp="20240110 18:13:12.951" level="INFO">${data} = Chrome</msg>
+<status status="PASS" starttime="20240110 18:13:12.951" endtime="20240110 18:13:12.951"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20240109 19:13:28.255" endtime="20240109 19:13:28.255"/>
+<status status="PASS" starttime="20240110 18:13:12.951" endtime="20240110 18:13:12.951"/>
 </kw>
-<msg timestamp="20240109 19:13:28.255" level="INFO">${data} = Test Username</msg>
-<status status="PASS" starttime="20240109 19:13:28.248" endtime="20240109 19:13:28.255"/>
+<msg timestamp="20240110 18:13:12.951" level="INFO">${BROWSER} = Chrome</msg>
+<status status="PASS" starttime="20240110 18:13:12.940" endtime="20240110 18:13:12.951"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${data}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240109 19:13:28.256" endtime="20240109 19:13:28.256"/>
-</kw>
-<kw name="Read_Data_Portal_Excel_File">
-<var>${data}</var>
-<arg>Portal</arg>
+<kw name="Read_Data_From_Excel_File" library="Read_data_from_excel_file">
+<var>${GIS_URL}</var>
+<arg>User_Dashboard.xlsx</arg>
+<arg>OneMapRouting</arg>
+<arg>3</arg>
 <arg>2</arg>
-<arg>2</arg>
+<kw name="Replace String" library="String">
+<var>${file_path}</var>
+<arg>${file_path1}</arg>
+<arg>filename</arg>
+<arg>${filename}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:12.953" level="INFO">${file_path} = C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Utilities\..\TestData\User_Dashboard.xlsx</msg>
+<status status="PASS" starttime="20240110 18:13:12.952" endtime="20240110 18:13:12.953"/>
+</kw>
 <kw name="Open Excel Document" library="ExcelLibrary">
 <arg>${file_path}</arg>
 <arg>doc_id=docid</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" starttime="20240109 19:13:28.257" endtime="20240109 19:13:28.277"/>
+<status status="PASS" starttime="20240110 18:13:12.953" endtime="20240110 18:13:12.963"/>
 </kw>
-<kw name="Get Sheet" library="ExcelLibrary">
-<arg>${sheet_name}</arg>
-<doc>Returns a page from the current document.</doc>
-<status status="PASS" starttime="20240109 19:13:28.277" endtime="20240109 19:13:28.277"/>
+<kw name="Get List Sheet Names" library="ExcelLibrary">
+<var>${sheets}</var>
+<doc>Returns a list of sheet names in the current document.</doc>
+<msg timestamp="20240110 18:13:12.963" level="INFO">${sheets} = ['Portal', 'OneMapRouting']</msg>
+<status status="PASS" starttime="20240110 18:13:12.963" endtime="20240110 18:13:12.964"/>
 </kw>
 <kw name="Read Excel Cell" library="ExcelLibrary">
 <var>${data}</var>
 <arg>${rownum}</arg>
 <arg>${colnum}</arg>
+<arg>${sheet_name}</arg>
 <doc>Returns content of a cell.</doc>
-<msg timestamp="20240109 19:13:28.277" level="INFO">${data} = Test Password</msg>
-<status status="PASS" starttime="20240109 19:13:28.277" endtime="20240109 19:13:28.277"/>
+<msg timestamp="20240110 18:13:12.964" level="INFO">${data} = https://onemap.bpx.com/portal/apps/dashboards/8eead05d24e04e2ca5b1212e2bbab3b6</msg>
+<status status="PASS" starttime="20240110 18:13:12.964" endtime="20240110 18:13:12.964"/>
 </kw>
 <kw name="Close Current Excel Document" library="ExcelLibrary">
 <doc>Closes current document.</doc>
-<status status="PASS" starttime="20240109 19:13:28.277" endtime="20240109 19:13:28.277"/>
+<status status="PASS" starttime="20240110 18:13:12.964" endtime="20240110 18:13:12.964"/>
 </kw>
-<msg timestamp="20240109 19:13:28.277" level="INFO">${data} = Test Password</msg>
-<status status="PASS" starttime="20240109 19:13:28.256" endtime="20240109 19:13:28.277"/>
+<msg timestamp="20240110 18:13:12.964" level="INFO">${GIS_URL} = https://onemap.bpx.com/portal/apps/dashboards/8eead05d24e04e2ca5b1212e2bbab3b6</msg>
+<status status="PASS" starttime="20240110 18:13:12.951" endtime="20240110 18:13:12.964"/>
+</kw>
+<kw name="Read_Data_From_Excel_File" library="Read_data_from_excel_file">
+<var>${GPS_URL}</var>
+<arg>User_Dashboard.xlsx</arg>
+<arg>OneMapRouting</arg>
+<arg>4</arg>
+<arg>2</arg>
+<kw name="Replace String" library="String">
+<var>${file_path}</var>
+<arg>${file_path1}</arg>
+<arg>filename</arg>
+<arg>${filename}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:12.965" level="INFO">${file_path} = C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Utilities\..\TestData\User_Dashboard.xlsx</msg>
+<status status="PASS" starttime="20240110 18:13:12.965" endtime="20240110 18:13:12.965"/>
+</kw>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${file_path}</arg>
+<arg>doc_id=docid</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20240110 18:13:12.965" endtime="20240110 18:13:12.977"/>
+</kw>
+<kw name="Get List Sheet Names" library="ExcelLibrary">
+<var>${sheets}</var>
+<doc>Returns a list of sheet names in the current document.</doc>
+<msg timestamp="20240110 18:13:12.977" level="INFO">${sheets} = ['Portal', 'OneMapRouting']</msg>
+<status status="PASS" starttime="20240110 18:13:12.977" endtime="20240110 18:13:12.977"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${data}</var>
+<arg>${rownum}</arg>
+<arg>${colnum}</arg>
+<arg>${sheet_name}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20240110 18:13:12.978" level="INFO">${data} = https://onemap.bpx.com/portal/apps/webappviewer/index.html?id=9226c6c1d0c844cfa5ae0a0cc8908ddc</msg>
+<status status="PASS" starttime="20240110 18:13:12.978" endtime="20240110 18:13:12.978"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20240110 18:13:12.978" endtime="20240110 18:13:12.978"/>
+</kw>
+<msg timestamp="20240110 18:13:12.978" level="INFO">${GPS_URL} = https://onemap.bpx.com/portal/apps/webappviewer/index.html?id=9226c6c1d0c844cfa5ae0a0cc8908ddc</msg>
+<status status="PASS" starttime="20240110 18:13:12.964" endtime="20240110 18:13:12.978"/>
+</kw>
+<kw name="Read_Data_From_Excel_File" library="Read_data_from_excel_file">
+<var>${UserName}</var>
+<arg>User_Dashboard.xlsx</arg>
+<arg>OneMapRouting</arg>
+<arg>5</arg>
+<arg>2</arg>
+<kw name="Replace String" library="String">
+<var>${file_path}</var>
+<arg>${file_path1}</arg>
+<arg>filename</arg>
+<arg>${filename}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:12.979" level="INFO">${file_path} = C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Utilities\..\TestData\User_Dashboard.xlsx</msg>
+<status status="PASS" starttime="20240110 18:13:12.979" endtime="20240110 18:13:12.979"/>
+</kw>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${file_path}</arg>
+<arg>doc_id=docid</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20240110 18:13:12.980" endtime="20240110 18:13:13.022"/>
+</kw>
+<kw name="Get List Sheet Names" library="ExcelLibrary">
+<var>${sheets}</var>
+<doc>Returns a list of sheet names in the current document.</doc>
+<msg timestamp="20240110 18:13:13.022" level="INFO">${sheets} = ['Portal', 'OneMapRouting']</msg>
+<status status="PASS" starttime="20240110 18:13:13.022" endtime="20240110 18:13:13.022"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${data}</var>
+<arg>${rownum}</arg>
+<arg>${colnum}</arg>
+<arg>${sheet_name}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20240110 18:13:13.023" level="INFO">${data} = qeadmin</msg>
+<status status="PASS" starttime="20240110 18:13:13.022" endtime="20240110 18:13:13.023"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20240110 18:13:13.023" endtime="20240110 18:13:13.023"/>
+</kw>
+<msg timestamp="20240110 18:13:13.023" level="INFO">${UserName} = qeadmin</msg>
+<status status="PASS" starttime="20240110 18:13:12.979" endtime="20240110 18:13:13.023"/>
+</kw>
+<kw name="Read_Data_From_Excel_File" library="Read_data_from_excel_file">
+<var>${Password}</var>
+<arg>User_Dashboard.xlsx</arg>
+<arg>OneMapRouting</arg>
+<arg>6</arg>
+<arg>2</arg>
+<kw name="Replace String" library="String">
+<var>${file_path}</var>
+<arg>${file_path1}</arg>
+<arg>filename</arg>
+<arg>${filename}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:13.023" level="INFO">${file_path} = C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Utilities\..\TestData\User_Dashboard.xlsx</msg>
+<status status="PASS" starttime="20240110 18:13:13.023" endtime="20240110 18:13:13.023"/>
+</kw>
+<kw name="Open Excel Document" library="ExcelLibrary">
+<arg>${file_path}</arg>
+<arg>doc_id=docid</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" starttime="20240110 18:13:13.024" endtime="20240110 18:13:13.033"/>
+</kw>
+<kw name="Get List Sheet Names" library="ExcelLibrary">
+<var>${sheets}</var>
+<doc>Returns a list of sheet names in the current document.</doc>
+<msg timestamp="20240110 18:13:13.033" level="INFO">${sheets} = ['Portal', 'OneMapRouting']</msg>
+<status status="PASS" starttime="20240110 18:13:13.033" endtime="20240110 18:13:13.033"/>
+</kw>
+<kw name="Read Excel Cell" library="ExcelLibrary">
+<var>${data}</var>
+<arg>${rownum}</arg>
+<arg>${colnum}</arg>
+<arg>${sheet_name}</arg>
+<doc>Returns content of a cell.</doc>
+<msg timestamp="20240110 18:13:13.034" level="INFO">${data} = Welcome2BPX!</msg>
+<status status="PASS" starttime="20240110 18:13:13.033" endtime="20240110 18:13:13.034"/>
+</kw>
+<kw name="Close Current Excel Document" library="ExcelLibrary">
+<doc>Closes current document.</doc>
+<status status="PASS" starttime="20240110 18:13:13.034" endtime="20240110 18:13:13.034"/>
+</kw>
+<msg timestamp="20240110 18:13:13.034" level="INFO">${Password} = Welcome2BPX!</msg>
+<status status="PASS" starttime="20240110 18:13:13.023" endtime="20240110 18:13:13.034"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${BROWSER}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240110 18:13:13.034" level="INFO">${BROWSER} = Chrome</msg>
+<status status="PASS" starttime="20240110 18:13:13.034" endtime="20240110 18:13:13.034"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${GIS_URL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240110 18:13:13.035" level="INFO">${GIS_URL} = https://onemap.bpx.com/portal/apps/dashboards/8eead05d24e04e2ca5b1212e2bbab3b6</msg>
+<status status="PASS" starttime="20240110 18:13:13.034" endtime="20240110 18:13:13.035"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${GPS_URL}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240110 18:13:13.035" level="INFO">${GPS_URL} = https://onemap.bpx.com/portal/apps/webappviewer/index.html?id=9226c6c1d0c844cfa5ae0a0cc8908ddc</msg>
+<status status="PASS" starttime="20240110 18:13:13.035" endtime="20240110 18:13:13.035"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${UserName}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240110 18:13:13.035" level="INFO">${UserName} = qeadmin</msg>
+<status status="PASS" starttime="20240110 18:13:13.035" endtime="20240110 18:13:13.035"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${Password}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20240110 18:13:13.036" level="INFO">${Password} = Welcome2BPX!</msg>
+<status status="PASS" starttime="20240110 18:13:13.035" endtime="20240110 18:13:13.036"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:12.940" endtime="20240110 18:13:13.036"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${GPS_URL}</arg>
+<arg>chrome</arg>
+<arg>options=add_argument("--incognito");add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240110 18:13:13.036" level="INFO">Opening browser 'chrome' to base url 'https://onemap.bpx.com/portal/apps/webappviewer/index.html?id=9226c6c1d0c844cfa5ae0a0cc8908ddc'.</msg>
+<status status="PASS" starttime="20240110 18:13:13.036" endtime="20240110 18:13:19.877"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240110 18:13:19.877" endtime="20240110 18:13:19.994"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath=//*[@id="loginTitle"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:19.994" endtime="20240110 18:13:22.236"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//*[@id="loginTitle"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:22.238" level="INFO">Clicking element 'xpath=//*[@id="loginTitle"]'.</msg>
+<status status="PASS" starttime="20240110 18:13:22.238" endtime="20240110 18:13:22.316"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login_page_username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:22.316" endtime="20240110 18:13:22.353"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Login_page_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:22.353" endtime="20240110 18:13:22.386"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_page_username}</arg>
+<arg>${UserName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:22.386" level="INFO">Typing text 'qeadmin' into text field 'id=user_username'.</msg>
+<status status="PASS" starttime="20240110 18:13:22.386" endtime="20240110 18:13:22.550"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Login_page_password}</arg>
+<arg>${Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:22.552" level="INFO">Typing text 'Welcome2BPX!' into text field 'id=user_password'.</msg>
+<status status="PASS" starttime="20240110 18:13:22.550" endtime="20240110 18:13:22.677"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Login_page_signIn_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:22.678" level="INFO">Clicking element 'id=signIn'.</msg>
+<status status="PASS" starttime="20240110 18:13:22.678" endtime="20240110 18:13:24.855"/>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.readyState == "complete"</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20240110 18:13:24.855" endtime="20240110 18:13:24.862"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:12.940" endtime="20240110 18:13:24.862"/>
+</kw>
+<kw name="Navigate_Directions_between_places" library="One_Map_Routing_Constants">
+<arg>${Source_Input}</arg>
+<arg>${Destination_Input}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Arc_GPS_Directions_btn}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:24.862" endtime="20240110 18:13:31.790"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240110 18:13:36.802" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240110 18:13:31.801" endtime="20240110 18:13:36.802"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Arc_GPS_Directions_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:36.802" level="INFO">Clicking element 'xpath=//div[@title='Directions']'.</msg>
+<status status="PASS" starttime="20240110 18:13:36.802" endtime="20240110 18:13:36.890"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240110 18:13:39.892" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240110 18:13:36.890" endtime="20240110 18:13:39.892"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_Source_Input}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:39.892" endtime="20240110 18:13:39.939"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_Source_Input}</arg>
+<arg>${Source}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:39.939" level="INFO">Typing text 'LAVERNE 58-T2-12X1 3B B302H' into text field 'xpath=//div[@class='esriStopIcon dojoDndHandle' and contains(text(),'1')]//parent::td/following-sibling::td[@class='esriStopGeocoderColumn']//input'.</msg>
+<status status="PASS" starttime="20240110 18:13:39.939" endtime="20240110 18:13:40.278"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_Destination_Input}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:40.278" endtime="20240110 18:13:40.325"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_Destination_Input}</arg>
+<arg>${Destination}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:40.326" level="INFO">Typing text 'HS STATE 113-22X15 1H' into text field 'xpath=//div[@class='esriStopIcon dojoDndHandle' and contains(text(),'2')]//parent::td/following-sibling::td[@class='esriStopGeocoderColumn']//input'.</msg>
+<status status="PASS" starttime="20240110 18:13:40.325" endtime="20240110 18:13:40.761"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_GetDirection_btn}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:40.761" endtime="20240110 18:13:40.821"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_GetDirection_btn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:40.822" level="INFO">Clicking element 'xpath=//div[contains(text(),'Get Directions')]'.</msg>
+<status status="PASS" starttime="20240110 18:13:40.822" endtime="20240110 18:13:40.994"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:24.862" endtime="20240110 18:13:40.994"/>
+</kw>
+<kw name="Fetch_Navigation_Values" library="One_Map_Routing_Constants">
+<var>${list_Of_Values}</var>
+<kw name="Fetch_Duration_Value" library="One_Map_Routing_Constants">
+<var>${Duration}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_Hour_Minut_Value}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:40.997" endtime="20240110 18:13:49.947"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240110 18:13:52.948" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20240110 18:13:49.947" endtime="20240110 18:13:52.948"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${Duration}</var>
+<arg>${Arc_GPS_Direction_Hour_Minut_Value}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:52.979" level="INFO">${Duration} = 00:30
+hr
+min</msg>
+<status status="PASS" starttime="20240110 18:13:52.948" endtime="20240110 18:13:52.979"/>
+</kw>
+<msg timestamp="20240110 18:13:52.979" level="INFO">${Duration} = 00:30
+hr
+min</msg>
+<status status="PASS" starttime="20240110 18:13:40.996" endtime="20240110 18:13:52.979"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${list_of_Value}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20240110 18:13:52.980" level="INFO">${list_of_Value} = []</msg>
+<status status="PASS" starttime="20240110 18:13:52.979" endtime="20240110 18:13:52.980"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_Value}</arg>
+<arg>${Duration}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:13:52.980" endtime="20240110 18:13:52.980"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${Arc_GPS_Direction_Table_rows_Count}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20240110 18:13:52.980" endtime="20240110 18:13:53.005"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240110 18:13:58.009" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20240110 18:13:53.009" endtime="20240110 18:13:58.009"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_rr}</var>
+<arg>${Arc_GPS_Direction_Table_rows_Count}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240110 18:13:58.009" level="INFO">${Total_rr} = 14</msg>
+<status status="PASS" starttime="20240110 18:13:58.009" endtime="20240110 18:13:58.009"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${data}</arg>
+<arg>Total_Row_Count_is=${Total_rr}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20240109 19:13:28.278" endtime="20240109 19:13:28.278"/>
+<status status="PASS" starttime="20240110 18:13:58.009" endtime="20240110 18:13:58.022"/>
 </kw>
-<status status="PASS" starttime="20240109 19:13:28.248" endtime="20240109 19:13:28.279"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${Total_data}</var>
+<arg>${Arc_GPS_Direction_Table_data_Count}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240110 18:13:58.030" level="INFO">${Total_data} = 2</msg>
+<status status="PASS" starttime="20240110 18:13:58.022" endtime="20240110 18:13:58.030"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Total_Data_Count_is=${Total_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:13:58.030" endtime="20240110 18:13:58.030"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>1</value>
+<value>${Total_rr}+1</value>
+<iter>
+<var name="${i}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:58.030" level="INFO">${rowindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:13:58.030" endtime="20240110 18:13:58.030"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:58.038" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:13:58.038" endtime="20240110 18:13:58.038"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.038" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[1]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:13:58.038" endtime="20240110 18:13:58.038"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.038" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[1]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:13:58.038" endtime="20240110 18:13:58.038"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:13:58.038" endtime="20240110 18:13:58.330"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:58.350" level="INFO">${data_text} = 1. Start at LAVERNE 58-T2-12X1 3B B302H </msg>
+<status status="PASS" starttime="20240110 18:13:58.330" endtime="20240110 18:13:58.350"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:13:58.350" endtime="20240110 18:13:58.355"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:13:58.355" endtime="20240110 18:13:58.355"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:58.038" endtime="20240110 18:13:58.355"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:58.356" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:13:58.356" endtime="20240110 18:13:58.356"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.356" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[1]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:13:58.356" endtime="20240110 18:13:58.356"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.356" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[1]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:13:58.356" endtime="20240110 18:13:58.356"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:13:58.356" endtime="20240110 18:13:58.644"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:58.661" level="INFO">${data_text} = 12:43 PM GMT+0000</msg>
+<status status="PASS" starttime="20240110 18:13:58.644" endtime="20240110 18:13:58.661"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.661"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.661"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:58.355" endtime="20240110 18:13:58.661"/>
+</iter>
+<status status="PASS" starttime="20240110 18:13:58.030" endtime="20240110 18:13:58.661"/>
+</for>
+<status status="PASS" starttime="20240110 18:13:58.030" endtime="20240110 18:13:58.661"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:58.661" level="INFO">${rowindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.661"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:58.661" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.661"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.661" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[2]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.661"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.661" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[2]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.661"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.965"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:58.985" level="INFO">${data_text} = 2. Go northeast on LAVERNE 58-T2-12 PAD E1 ACCESS ROAD </msg>
+<status status="PASS" starttime="20240110 18:13:58.965" endtime="20240110 18:13:58.985"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:13:58.985" endtime="20240110 18:13:58.985"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:13:58.985" endtime="20240110 18:13:58.985"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:58.985"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:58.985" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:13:58.985" endtime="20240110 18:13:58.985"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.985" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[2]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:13:58.985" endtime="20240110 18:13:58.985"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:58.985" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[2]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:13:58.985" endtime="20240110 18:13:58.985"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:13:58.985" endtime="20240110 18:13:59.278"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:59.295" level="INFO">${data_text} = 0.11 mi</msg>
+<status status="PASS" starttime="20240110 18:13:59.278" endtime="20240110 18:13:59.295"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.295"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.295"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:58.985" endtime="20240110 18:13:59.295"/>
+</iter>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:59.295"/>
+</for>
+<status status="PASS" starttime="20240110 18:13:58.661" endtime="20240110 18:13:59.295"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:59.295" level="INFO">${rowindex} = 3</msg>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.295"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:59.295" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.295"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:59.295" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[3]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.295"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:59.295" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[3]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.295"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.580"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:59.596" level="INFO">${data_text} = 3. Turn left, then turn left on SHIRELY 58-T2-12X13 ACCESS ROAD</msg>
+<status status="PASS" starttime="20240110 18:13:59.580" endtime="20240110 18:13:59.596"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:13:59.596" endtime="20240110 18:13:59.596"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:13:59.596" endtime="20240110 18:13:59.596"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.596"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:59.596" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:13:59.596" endtime="20240110 18:13:59.596"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:59.596" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[3]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:13:59.596" endtime="20240110 18:13:59.596"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:59.596" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[3]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:13:59.596" endtime="20240110 18:13:59.596"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:13:59.596" endtime="20240110 18:13:59.894"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:13:59.910" level="INFO">${data_text} = 0.19 mi</msg>
+<status status="PASS" starttime="20240110 18:13:59.894" endtime="20240110 18:13:59.910"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:13:59.910"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:13:59.910"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:59.596" endtime="20240110 18:13:59.910"/>
+</iter>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.910"/>
+</for>
+<status status="PASS" starttime="20240110 18:13:59.295" endtime="20240110 18:13:59.910"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:59.910" level="INFO">${rowindex} = 4</msg>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:13:59.910"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:13:59.910" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:13:59.910"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:59.910" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[4]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:13:59.910"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:13:59.910" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[4]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:13:59.910"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:14:00.199"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:00.215" level="INFO">${data_text} = 4. Turn left to stay on SHIRELY 58-T2-12X13 ACCESS ROAD </msg>
+<status status="PASS" starttime="20240110 18:14:00.199" endtime="20240110 18:14:00.215"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:00.215" endtime="20240110 18:14:00.215"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:00.215" endtime="20240110 18:14:00.215"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:14:00.215"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:00.215" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:00.215" endtime="20240110 18:14:00.215"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:00.215" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[4]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:00.215" endtime="20240110 18:14:00.215"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:00.215" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[4]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:00.215" endtime="20240110 18:14:00.215"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:00.215" endtime="20240110 18:14:00.514"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:00.532" level="INFO">${data_text} = 0.04 mi</msg>
+<status status="PASS" starttime="20240110 18:14:00.514" endtime="20240110 18:14:00.532"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.532"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.532"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:00.215" endtime="20240110 18:14:00.532"/>
+</iter>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:14:00.532"/>
+</for>
+<status status="PASS" starttime="20240110 18:13:59.910" endtime="20240110 18:14:00.532"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:00.532" level="INFO">${rowindex} = 5</msg>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.532"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:00.532" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.532"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:00.532" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[5]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.532"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:00.532" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[5]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.532"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.828"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:00.846" level="INFO">${data_text} = 5. Continue forward on LAVERNE 58-T2-12X1 ACCESS ROAD </msg>
+<status status="PASS" starttime="20240110 18:14:00.828" endtime="20240110 18:14:00.846"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:00.846" endtime="20240110 18:14:00.846"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:00.846" endtime="20240110 18:14:00.846"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:00.846"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:00.846" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:00.846" endtime="20240110 18:14:00.846"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:00.846" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[5]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:00.846" endtime="20240110 18:14:00.846"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:00.846" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[5]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:00.846" endtime="20240110 18:14:00.846"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:00.846" endtime="20240110 18:14:01.148"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:01.162" level="INFO">${data_text} = 0.27 mi · 1 min</msg>
+<status status="PASS" starttime="20240110 18:14:01.148" endtime="20240110 18:14:01.162"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.162"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.162"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:00.846" endtime="20240110 18:14:01.162"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:01.162"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:00.532" endtime="20240110 18:14:01.162"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:01.162" level="INFO">${rowindex} = 6</msg>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.162"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:01.162" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.162"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:01.162" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[6]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.162"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:01.162" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[6]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.162"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.463"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:01.481" level="INFO">${data_text} = 6. Turn left to stay on LAVERNE 58-T2-12X1 ACCESS ROAD </msg>
+<status status="PASS" starttime="20240110 18:14:01.463" endtime="20240110 18:14:01.481"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:01.481" endtime="20240110 18:14:01.491"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:01.492" endtime="20240110 18:14:01.492"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.492"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:01.492" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:01.492" endtime="20240110 18:14:01.492"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:01.492" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[6]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:01.492" endtime="20240110 18:14:01.492"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:01.492" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[6]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:01.492" endtime="20240110 18:14:01.492"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:01.492" endtime="20240110 18:14:01.779"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:01.795" level="INFO">${data_text} = 0.07 mi</msg>
+<status status="PASS" starttime="20240110 18:14:01.779" endtime="20240110 18:14:01.795"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:01.795"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:01.795"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:01.492" endtime="20240110 18:14:01.795"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.795"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:01.162" endtime="20240110 18:14:01.795"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:01.795" level="INFO">${rowindex} = 7</msg>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:01.795"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:01.795" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:01.795"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:01.795" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[7]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:01.795"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:01.795" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[7]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:01.795"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:02.096"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:02.112" level="INFO">${data_text} = 7. Turn right</msg>
+<status status="PASS" starttime="20240110 18:14:02.096" endtime="20240110 18:14:02.112"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:02.112" endtime="20240110 18:14:02.112"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:02.112" endtime="20240110 18:14:02.112"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:02.112"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:02.112" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:02.112" endtime="20240110 18:14:02.112"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:02.112" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[7]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:02.112" endtime="20240110 18:14:02.112"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:02.112" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[7]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:02.112" endtime="20240110 18:14:02.112"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:02.112" endtime="20240110 18:14:02.412"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:02.438" level="INFO">${data_text} = 1.44 mi · 7 min</msg>
+<status status="PASS" starttime="20240110 18:14:02.412" endtime="20240110 18:14:02.438"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.438"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.438"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:02.112" endtime="20240110 18:14:02.438"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:02.438"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:01.795" endtime="20240110 18:14:02.438"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:02.438" level="INFO">${rowindex} = 8</msg>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.438"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:02.438" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.438"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:02.438" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[8]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.438"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:02.438" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[8]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.438"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.729"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:02.747" level="INFO">${data_text} = 8. Turn left</msg>
+<status status="PASS" starttime="20240110 18:14:02.729" endtime="20240110 18:14:02.747"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:02.747" endtime="20240110 18:14:02.756"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:02.756" endtime="20240110 18:14:02.756"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:02.756"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:02.756" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:02.756" endtime="20240110 18:14:02.756"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:02.756" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[8]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:02.756" endtime="20240110 18:14:02.756"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:02.756" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[8]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:02.756" endtime="20240110 18:14:02.756"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:02.756" endtime="20240110 18:14:03.045"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:03.061" level="INFO">${data_text} = 0.22 mi · 1 min</msg>
+<status status="PASS" starttime="20240110 18:14:03.045" endtime="20240110 18:14:03.061"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.061"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.061"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:02.756" endtime="20240110 18:14:03.061"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:03.061"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:02.438" endtime="20240110 18:14:03.061"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:03.061" level="INFO">${rowindex} = 9</msg>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.061"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:03.061" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.061"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:03.061" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[9]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.061"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:03.061" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[9]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.061"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.363"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:03.378" level="INFO">${data_text} = 9. Turn right on County Road 446  CR-446 </msg>
+<status status="PASS" starttime="20240110 18:14:03.363" endtime="20240110 18:14:03.378"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:03.387" endtime="20240110 18:14:03.387"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:03.388" endtime="20240110 18:14:03.388"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.388"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:03.388" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:03.388" endtime="20240110 18:14:03.388"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:03.388" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[9]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:03.388" endtime="20240110 18:14:03.388"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:03.388" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[9]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:03.388" endtime="20240110 18:14:03.388"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:03.388" endtime="20240110 18:14:03.680"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:03.695" level="INFO">${data_text} = 1.38 mi · 2 min</msg>
+<status status="PASS" starttime="20240110 18:14:03.680" endtime="20240110 18:14:03.704"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:03.704" endtime="20240110 18:14:03.705"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:03.705"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:03.388" endtime="20240110 18:14:03.705"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.705"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:03.061" endtime="20240110 18:14:03.705"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:03.705" level="INFO">${rowindex} = 10</msg>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:03.705"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:03.705" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:03.705"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:03.705" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[10]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:03.705"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:03.705" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[10]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:03.705"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:03.996"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:04.012" level="INFO">${data_text} = 10. Turn right on FM-652 </msg>
+<status status="PASS" starttime="20240110 18:14:03.996" endtime="20240110 18:14:04.012"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:04.012" endtime="20240110 18:14:04.012"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:04.012" endtime="20240110 18:14:04.012"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:04.012"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:04.012" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:04.012" endtime="20240110 18:14:04.012"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.012" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[10]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:04.012" endtime="20240110 18:14:04.012"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.012" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[10]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:04.012" endtime="20240110 18:14:04.012"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:04.012" endtime="20240110 18:14:04.313"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:04.336" level="INFO">${data_text} = 2.83 mi · 6 min</msg>
+<status status="PASS" starttime="20240110 18:14:04.313" endtime="20240110 18:14:04.336"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.336"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.336"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:04.012" endtime="20240110 18:14:04.336"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:04.336"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:03.705" endtime="20240110 18:14:04.336"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:04.336" level="INFO">${rowindex} = 11</msg>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.336"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:04.336" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.336"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.336" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[11]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.336"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.336" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[11]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.336"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.628"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:04.644" level="INFO">${data_text} = 11. Turn left</msg>
+<status status="PASS" starttime="20240110 18:14:04.628" endtime="20240110 18:14:04.644"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:04.644" endtime="20240110 18:14:04.644"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:04.644" endtime="20240110 18:14:04.644"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.644"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:04.644" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:04.644" endtime="20240110 18:14:04.644"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.644" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[11]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:04.644" endtime="20240110 18:14:04.644"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.644" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[11]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:04.644" endtime="20240110 18:14:04.644"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:04.644" endtime="20240110 18:14:04.946"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:04.963" level="INFO">${data_text} = 9.13 mi · 11 min</msg>
+<status status="PASS" starttime="20240110 18:14:04.946" endtime="20240110 18:14:04.970"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:04.970" endtime="20240110 18:14:04.971"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:04.971"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:04.644" endtime="20240110 18:14:04.971"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.971"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:04.336" endtime="20240110 18:14:04.971"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:04.971" level="INFO">${rowindex} = 12</msg>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:04.971"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:04.971" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:04.971"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.971" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[12]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:04.971"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:04.971" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[12]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:04.971"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:05.265"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:05.287" level="INFO">${data_text} = 12. Turn right on HSS STATE 113-23X14 LEASE ROAD </msg>
+<status status="PASS" starttime="20240110 18:14:05.265" endtime="20240110 18:14:05.287"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:05.287" endtime="20240110 18:14:05.287"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:05.287" endtime="20240110 18:14:05.287"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:05.287"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:05.287" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:05.287" endtime="20240110 18:14:05.287"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:05.287" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[12]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:05.287" endtime="20240110 18:14:05.287"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:05.287" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[12]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:05.287" endtime="20240110 18:14:05.287"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:05.287" endtime="20240110 18:14:05.580"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:05.596" level="INFO">${data_text} = 0.51 mi · 1 min</msg>
+<status status="PASS" starttime="20240110 18:14:05.580" endtime="20240110 18:14:05.596"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.596"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.596"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:05.287" endtime="20240110 18:14:05.596"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:05.596"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:04.971" endtime="20240110 18:14:05.596"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:05.596" level="INFO">${rowindex} = 13</msg>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.596"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:05.596" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.596"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:05.596" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[13]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.596"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:05.596" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[13]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.596"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.896"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:05.912" level="INFO">${data_text} = 13. Bear right on HSS STATE 113-23X14 A LEASE ROAD </msg>
+<status status="PASS" starttime="20240110 18:14:05.896" endtime="20240110 18:14:05.912"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:05.912" endtime="20240110 18:14:05.912"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:05.912" endtime="20240110 18:14:05.912"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:05.912"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:05.912" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:05.912" endtime="20240110 18:14:05.912"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:05.912" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[13]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:05.912" endtime="20240110 18:14:05.912"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:05.912" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[13]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:05.912" endtime="20240110 18:14:05.912"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:05.912" endtime="20240110 18:14:06.215"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:06.236" level="INFO">${data_text} = 0.20 mi</msg>
+<status status="PASS" starttime="20240110 18:14:06.215" endtime="20240110 18:14:06.236"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.237"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.237"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:05.912" endtime="20240110 18:14:06.237"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:06.237"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:05.596" endtime="20240110 18:14:06.237"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${rowindex}</var>
+<arg>${i}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:06.237" level="INFO">${rowindex} = 14</msg>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.237"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${j}</var>
+<value>1</value>
+<value>${Total_data}+1</value>
+<iter>
+<var name="${j}">1</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:06.237" level="INFO">${dataindex} = 1</msg>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.237"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:06.237" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[14]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.237"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:06.237" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[14]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][1]</msg>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.237"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.532"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:06.546" level="INFO">${data_text} = 14. Finish at HS STATE 113-22X15 1H  on the left
+16.38 mi · 30 min</msg>
+<status status="PASS" starttime="20240110 18:14:06.532" endtime="20240110 18:14:06.546"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:06.546" endtime="20240110 18:14:06.546"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:06.546" endtime="20240110 18:14:06.546"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.546"/>
+</iter>
+<iter>
+<var name="${j}">2</var>
+<kw name="Convert To String" library="BuiltIn">
+<var>${dataindex}</var>
+<arg>${j}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20240110 18:14:06.546" level="INFO">${dataindex} = 2</msg>
+<status status="PASS" starttime="20240110 18:14:06.546" endtime="20240110 18:14:06.546"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Row_index_added_element}</var>
+<arg>${Arc_GPS_Direction_Table_Data}</arg>
+<arg>Row_index</arg>
+<arg>${rowindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:06.546" level="INFO">${Row_index_added_element} = xpath=//tbody[@role='menu']//tr[14]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][data_index]</msg>
+<status status="PASS" starttime="20240110 18:14:06.546" endtime="20240110 18:14:06.546"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${Text_element}</var>
+<arg>${Row_index_added_element}</arg>
+<arg>data_index</arg>
+<arg>${dataindex}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20240110 18:14:06.546" level="INFO">${Text_element} = xpath=//tbody[@role='menu']//tr[14]//td//div[@class='esriRouteInfo']//div[@class='esriRouteText' or @class='esriRouteLength'][2]</msg>
+<status status="PASS" starttime="20240110 18:14:06.546" endtime="20240110 18:14:06.546"/>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<arg>${Text_element}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" starttime="20240110 18:14:06.546" endtime="20240110 18:14:06.851"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${data_text}</var>
+<arg>${Text_element}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240110 18:14:06.870" level="INFO">${data_text} = 1:13 PM GMT+0000</msg>
+<status status="PASS" starttime="20240110 18:14:06.851" endtime="20240110 18:14:06.870"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${data_text}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:06.872" endtime="20240110 18:14:06.872"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${list_of_value}</arg>
+<arg>${data_text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20240110 18:14:06.872" endtime="20240110 18:14:06.872"/>
+</kw>
+<status status="PASS" starttime="20240110 18:14:06.546" endtime="20240110 18:14:06.872"/>
+</iter>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.872"/>
+</for>
+<status status="PASS" starttime="20240110 18:14:06.237" endtime="20240110 18:14:06.872"/>
+</iter>
+<status status="PASS" starttime="20240110 18:13:58.030" endtime="20240110 18:14:06.872"/>
+</for>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${list_of_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240110 18:14:06.872" endtime="20240110 18:14:06.872"/>
+</kw>
+<kw name="Log List" library="Collections">
+<arg>${list_of_value}</arg>
+<doc>Logs the length and contents of the ``list`` using given ``level``.</doc>
+<msg timestamp="20240110 18:14:06.872" level="INFO">List length is 29 and it contains following items:
+0: 00:30
+hr
+min
+1: 1. Start at LAVERNE 58-T2-12X1 3B B302H 
+2: 12:43 PM GMT+0000
+3: 2. Go northeast on LAVERNE 58-T2-12 PAD E1 ACCESS ROAD 
+4: 0.11 mi
+5: 3. Turn left, then turn left on SHIRELY 58-T2-12X13 ACCESS ROAD
+6: 0.19 mi
+7: 4. Turn left to stay on SHIRELY 58-T2-12X13 ACCESS ROAD 
+8: 0.04 mi
+9: 5. Continue forward on LAVERNE 58-T2-12X1 ACCESS ROAD 
+10: 0.27 mi · 1 min
+11: 6. Turn left to stay on LAVERNE 58-T2-12X1 ACCESS ROAD 
+12: 0.07 mi
+13: 7. Turn right
+14: 1.44 mi · 7 min
+15: 8. Turn left
+16: 0.22 mi · 1 min
+17: 9. Turn right on County Road 446  CR-446 
+18: 1.38 mi · 2 min
+19: 10. Turn right on FM-652 
+20: 2.83 mi · 6 min
+21: 11. Turn left
+22: 9.13 mi · 11 min
+23: 12. Turn right on HSS STATE 113-23X14 LEASE ROAD 
+24: 0.51 mi · 1 min
+25: 13. Bear right on HSS STATE 113-23X14 A LEASE ROAD 
+26: 0.20 mi
+27: 14. Finish at HS STATE 113-22X15 1H  on the left
+16.38 mi · 30 min
+28: 1:13 PM GMT+0000</msg>
+<status status="PASS" starttime="20240110 18:14:06.872" endtime="20240110 18:14:06.872"/>
+</kw>
+<msg timestamp="20240110 18:14:06.872" level="INFO">${list_Of_Values} = ['00:30\nhr\nmin', '1. Start at LAVERNE 58-T2-12X1 3B B302H ', '12:43 PM GMT+0000', '2. Go northeast on LAVERNE 58-T2-12 PAD E1 ACCESS ROAD ', '0.11 mi', '3. Turn left, then turn left on SHIRELY 58-T2...</msg>
+<status status="PASS" starttime="20240110 18:13:40.996" endtime="20240110 18:14:06.872"/>
+</kw>
+<status status="PASS" starttime="20240110 18:13:12.938" endtime="20240110 18:14:06.872"/>
 </test>
-<status status="PASS" starttime="20240109 19:13:27.920" endtime="20240109 19:13:28.281"/>
+<status status="PASS" starttime="20240110 18:13:11.416" endtime="20240110 18:14:06.872"/>
 </suite>
 <statistics>
 <total>
@@ -85,9 +2215,15 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Read data from excel file">Read data from excel file</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Validate One Map Routing Direction">Validate One Map Routing Direction</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20240110 18:13:11.746" level="ERROR">Error in file 'C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Resources\OneMap\Keywords\ArcGIS_LogIn.robot' on line 62: Creating keyword 'Close Browser One Map' failed: User keyword cannot be empty.</msg>
+<msg timestamp="20240110 18:13:12.933" level="ERROR">[ DataDriver ] Error in robot file:
+  File "C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\OneMap\TestCase\Validate_One_Map_Routing_Direction.robot", line 0</msg>
+<msg timestamp="20240110 18:13:12.934" level="ERROR">In source file:
+  File "C:\Users\10712370\PycharmProjects\pythonProject\BPxPoc\Tests\OneMap\TestCase\..\..\..\TestData\DataOneMap.xls", line 0</msg>
+<msg timestamp="20240110 18:13:12.936" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: AttributeError: No "Test Template" keyword found for first test case.</msg>
 </errors>
 </robot>

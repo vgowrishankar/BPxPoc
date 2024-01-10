@@ -16,7 +16,7 @@ ${Gateway_input}=        ngw-perm-ms-001
 ${Facility_Input}=      GRAND SLAM CDP
 
 *** Test Cases ***
-Sample
+Validate_Map_Data_Settings
     One Map GIS Login
     Business_Unit_Selection
     Facility_Selection

@@ -8,17 +8,13 @@ Library         DataDriver      ../../../TestData/Database.xls
 Library         Collections
 Library          JSONLibrary
 Variables       ../PageObject/ArcGPS.py
+Resource        ../../../Utilities/Read_data_from_excel_file.robot
 
 
 *** Variables ***
 ${Source_Input}=    LAVERNE 58-T2-12X1 3B B302H
 ${Destination_Input}=       HS STATE 113-22X15 1H
 
-*** Test Cases ***
-Sample
-    One Map GPS Login
-    Navigate_Directions_between_places      ${Source_Input}     ${Destination_Input}
-    #${list_Of_Values}=      Fetch_Navigation_Values
 
 *** Keywords ***
 Navigate_Directions_between_places
@@ -72,3 +68,18 @@ Fetch_Navigation_Values
     [Return]    ${list_of_value}
 
 
+ARCGPS_Variables_Read_from_Excel
+    [Documentation]    This Function used to get cell value from Excel file
+    #variable      Methods name                 Excel File name        Sheet name      Row     Column
+    ${BROWSER}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    2       2
+    ${GIS_URL}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    3       2
+    ${GPS_URL}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    4       2
+    ${UserName}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    5       2
+    ${Password}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    6       2
+
+    #Set All variable as Global to access all Testcases
+     set global variable    ${BROWSER}
+     set global variable    ${GIS_URL}
+     set global variable    ${GPS_URL}
+     set global variable    ${UserName}
+     set global variable    ${Password}

@@ -50,7 +50,7 @@ Fetch_Graph_Value
     END
     log to console    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}
     log list    ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}
-    log to console    Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C_completed
+    log to console    Fetch_Graph_Value_completed
     [Return]        ${List_of_Values_Fetch_Graph_Value_From_Air_Quality_Ambient_Temp_C}
 
 Navigate_To_Scada_Tab

@@ -197,3 +197,19 @@ Validate_Sensors_Have_the_Selected_Facility
             Run Keyword If      '${Text_length}' != '0'      should contain    ${Facility_value}      ${Value_Should_Contains}
            # should contain    ${Gateway_value}      ${Gateway_input}
     END
+
+ARCGIS_Variables_Read_from_Excel
+    [Documentation]    This Function used to get cell value from Excel file
+    #variable      Methods name                 Excel File name        Sheet name      Row     Column
+    ${BROWSER}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    2       2
+    ${GIS_URL}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    3       2
+    ${GPS_URL}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    4       2
+    ${UserName}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    5       2
+    ${Password}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    6       2
+
+    #Set All variable as Global to access all Testcases
+     set global variable    ${BROWSER}
+     set global variable    ${GIS_URL}
+     set global variable    ${GPS_URL}
+     set global variable    ${UserName}
+     set global variable    ${Password}

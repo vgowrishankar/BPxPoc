@@ -2,18 +2,20 @@
 Documentation   Login to GPS One Map BPX Routing
 Library         SeleniumLibrary
 Resource        ../../../Resources/OneMap/Keywords/ArcGIS_LogIn.robot
-Variables       ../../../Resources/OneMap/PageObject/ArcGIS_LogIn.py
 
-Test Template    Test Template
-
-*** Test Cases ***
-One Map BPX Routing Login
-    One Map GPS Login
-    Get One Map URL
-    Close Browser One Map
 
 *** Keywords ***
-Test Template
-    One Map GPS Login
-    Get One Map URL
-    Close Browser One Map
+One Map GIS Login
+    ARCGPS_Variables_Read_from_Excel
+    seleniumlibrary.open browser    ${GIS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
+    maximize browser window
+    wait until element is visible   ${ArcGIS_Login_Title}
+    click element    xpath=//*[@id="loginTitle"]
+    wait until element is visible    ${Login_page_username}
+    wait until element is visible    ${Login_page_password}
+    #[Arguments]     ${UserName}
+    input text    ${Login_page_username}    ${UserName}
+    #[Arguments]    ${Password}
+    input text    ${Login_page_password}    ${Password}
+    click element    ${Login_page_signIn_btn}
+    Wait For Condition  return document.readyState == "complete"
