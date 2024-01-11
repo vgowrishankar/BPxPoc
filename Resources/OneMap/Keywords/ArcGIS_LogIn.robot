@@ -17,7 +17,7 @@ Resource        ArcGIS_Constants.robot
 
 *** Keywords ***
 One Map GIS Login
-    ARCGPS_Variables_Read_from_Excel
+    ARCGIS_Variables_Read_from_Excel
     seleniumlibrary.open browser    ${GIS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
     wait until element is visible   ${ArcGIS_Login_Title}

@@ -21,10 +21,8 @@ Read_Data_From_Excel_File
     close current excel document
 
 
-Excel_Variables
-    ${exceldata}=    Read_Data_From_Excel_File        User_Dashboard.xlsx   Portal     2        2
-    ${exceldata1}=    Read_Data_From_Excel_File        User_Dashboard.xlsx      OneMapRouting     2         2
-    #OneMapRouting
-    log to console    ${exceldata}
-    log to console    ${exceldata1}
-
+Write_Data_To_Excel_File
+    [Arguments]    ${filename}     ${sheet_name}    ${rownum}    ${colnum}    ${Value}
+    ${file_path}=    replace string    ${file_path1}    filename     ${filename}
+    open excel document    ${file_path}     doc_id=docid
+    write excel cell    ${rownum}    ${colnum}    ${Value}     ${sheet_name}

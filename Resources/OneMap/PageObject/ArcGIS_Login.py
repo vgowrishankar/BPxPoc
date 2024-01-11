@@ -42,3 +42,4 @@ Wind_WindSpeed_No_data_Text= "xpath=//p[contains(text(),'Wind Speed (mph - m/s)'
 Wind_WindDirection_No_data_Text= "xpath=//p[contains(text(),'Wind Direction (Degrees)')]/parent::div/parent::div/following-sibling::div[@class='flex-fluid flex-vertical overflow-y-auto justify-content-center']//p"
 Scada_LEL_No_data_Text= "xpath=//span[contains(text(),'LEL')]/parent::p/parent::div/parent::div/following-sibling::div[@class='flex-fluid flex-vertical overflow-y-auto justify-content-center']//p"
 Scada_H2S_No_data_Text= "xpath=//span[contains(text(),'H2S (ppm)')]/parent::p/parent::div/parent::div/following-sibling::div[@class='flex-fluid flex-vertical overflow-y-auto justify-content-center']//p"
+Drop_Down_Values ="xpath=//div[@class='select-list-options overflow-y-auto overflow-x-hidden h-compact']//span[@class='flex-fluid']"

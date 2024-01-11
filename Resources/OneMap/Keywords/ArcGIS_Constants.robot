@@ -1,23 +1,22 @@
 *** Settings ***
 Library         SeleniumLibrary
-Library         DataDriver     ../../../TestData/DataOneMap.xls     sheet_name=ArcGIS_User
+Library          DataDriver         ../../../TestData/DataOneMap.xls     sheet_name=ArcGIS_User
 Variables       ../PageObject/ArcGIS_Login.py
 Resource        ArcGIS_LogIn.robot
-Library         SeleniumLibrary
 Library         String
-Library         DataDriver      ../../../TestData/Database.xls
+Library         DataDriver       ../../../TestData/Database.xls
 Library         Collections
-Library         SeleniumLibrary
 Library          JSONLibrary
 
 
 
 *** Variables ***
 @{Sensor_Status_Headings}=        ${EMPTY}    Gateway       Facility        online_status       last_online_status      Last_Alarm_status
-${Business_Unit_Input}=     Permian
-${Facility_Input}=      GRAND SLAM CDP
-${Gateway_input}=       ngw-perm-ms-001
+#${Business_Unit_Input}=     Permian
+#${Facility_Input}=      GRAND SLAM CDP
+#${Gateway_input}=       ngw-perm-ms-001
 @{list_of_Values}
+
 
 
 
@@ -56,18 +55,21 @@ Get_all_Values_From_Sensor_status
     [Return]    ${list_To_Store}
 
 Business_Unit_Selection
+    ARCGIS_Variables_Read_from_Excel
     sleep    10
-    wait until element is visible    ${Business_Unit_DD_Click_btn}  10s
+    wait until element is visible    ${Business_Unit_DD_Click_btn}  20s
     click element    ${Business_Unit_DD_Click_btn}
     sleep    3
     Select_from_Drop_Down_value     ${Business_Unit_Input}
 
 Facility_Selection
+    ARCGIS_Variables_Read_from_Excel
     wait until element is visible    ${Facility_DD_Click_btn}  10s
     click element    ${Facility_DD_Click_btn}
     Select_from_Drop_Down_value     ${Facility_Input}
 
 Gateway_Selection
+    ARCGIS_Variables_Read_from_Excel
     wait until element is visible    ${Gateway_DD_Click_btn}  10s
     click element    ${Gateway_DD_Click_btn}
     Select_from_Drop_Down_value     ${Gateway_input}
@@ -200,16 +202,23 @@ Validate_Sensors_Have_the_Selected_Facility
 
 ARCGIS_Variables_Read_from_Excel
     [Documentation]    This Function used to get cell value from Excel file
-    #variable      Methods name                 Excel File name        Sheet name      Row     Column
-    ${BROWSER}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    2       2
-    ${GIS_URL}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    3       2
-    ${GPS_URL}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    4       2
-    ${UserName}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    5       2
-    ${Password}=    Read_Data_From_Excel_File    User_Dashboard.xlsx    OneMapRouting    6       2
-
+    #variable                    Methods name                 Excel File name     Sheet name  Row     Column
+    ${BROWSER}=                 Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    2       2
+    ${GIS_URL}=                 Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    3       2
+    ${GPS_URL}=                 Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    4       2
+    ${UserName}=                Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    5       2
+    ${Password}=                Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    6       2
+    ${Business_Unit_Input}=     Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    7       2
+    ${Facility_Input}=          Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    8       2
+    ${Gateway_input}=           Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    9       2
+    ${Device_Input}=            Read_Data_From_Excel_File    User_Dashboard.xlsx    Arc_GIS    10      2
     #Set All variable as Global to access all Testcases
      set global variable    ${BROWSER}
      set global variable    ${GIS_URL}
      set global variable    ${GPS_URL}
      set global variable    ${UserName}
      set global variable    ${Password}
+     set global variable    ${Business_Unit_Input}
+     set global variable    ${Facility_Input}
+     set global variable    ${Gateway_input}
+     set global variable    ${Device_Input}
