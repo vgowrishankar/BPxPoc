@@ -13,7 +13,3 @@ One Map NimbusLive Login
     Close Browser One Map
 
 *** Keywords ***
-Test Template
-    One Map GIS Login
-    Get One Map URL
-    Close Browser One Map

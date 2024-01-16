@@ -7,12 +7,6 @@ Resource        One_Map_Routing_Constants.robot
 Resource        ArcGIS_Constants.robot
 
 
-*** Variables ***
-#${BROWSER}      Chrome
-#${GIS_URL}      https://onemap.bpx.com/portal/apps/dashboards/8eead05d24e04e2ca5b1212e2bbab3b6
-#${GPS_URL}      https://onemap.bpx.com/portal/apps/webappviewer/index.html?id=9226c6c1d0c844cfa5ae0a0cc8908ddc
-#${UserName}     qeadmin
-#${Password}     Welcome2BPX!
 
 
 *** Keywords ***
@@ -21,7 +15,7 @@ One Map GIS Login
     seleniumlibrary.open browser    ${GIS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
     wait until element is visible   ${ArcGIS_Login_Title}
-    click element    xpath=//*[@id="loginTitle"]
+    click element    ${ArcGIS_Login_Title}
     wait until element is visible    ${Login_page_username}
     wait until element is visible    ${Login_page_password}
     #[Arguments]     ${UserName}
@@ -31,12 +25,14 @@ One Map GIS Login
     click element    ${Login_page_signIn_btn}
     Wait For Condition  return document.readyState == "complete"
 
+#=============================  END  =============================================================
+
 One Map GPS Login
     ARCGPS_Variables_Read_from_Excel
     open browser    ${GPS_URL}  chrome   options=add_argument("--incognito");add_experimental_option("detach", True)
     maximize browser window
-    wait until element is visible    xpath=//*[@id="loginTitle"]
-    click element    xpath=//*[@id="loginTitle"]
+    wait until element is visible    ${ArcGIS_Login_Title}
+    click element    ${ArcGIS_Login_Title}
     wait until element is visible    ${Login_page_username}
     wait until element is visible    ${Login_page_password}
     #[Arguments]     ${UserName}
@@ -46,14 +42,16 @@ One Map GPS Login
     click element    ${Login_page_signIn_btn}
     Wait For Condition    return document.readyState == "complete"
 
-
+#=============================  END  =============================================================
 
 Open Browser OneMap Portal
     ARCGPS_Variables_Read_from_Excel
     Open Browser    ${Login_URL}    ${BROWSER}
     Maximize Browser Window
     sleep   5s
-    Click Element   id=loginTitle
+    Click Element   ${ArcGIS_Login_Title}
+
+#=============================  END  =============================================================
 
 Get One Map URL
     ${url} =  Execute Javascript  return window.location.href;
@@ -61,20 +59,30 @@ Get One Map URL
 
 Close Browser One Map
 
+#=============================  END  =============================================================
+
 Input Password
     [Arguments]    ${Password}
     Input Text    id=user_password     ${Password}
+
+#=============================  END  =============================================================
 
 Click Sign in button
     Click Button    id=signIn
     sleep   2s
 
+#=============================  END  =============================================================
+
 Check if the dashboard is loading
     Wait For Condition    return document.readyState == "complete"
+
+#=============================  END  =============================================================
 
 Home Page should be visible
     Page Should Contain    Nimbus Live - Midstream
     sleep   2s
+
+#=============================  END  =============================================================
 
 Close Browser OneMap Portal
     Close All Browsers

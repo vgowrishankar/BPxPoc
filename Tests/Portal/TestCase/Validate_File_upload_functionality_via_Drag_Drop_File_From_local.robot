@@ -29,8 +29,8 @@ Validate_File_upload_functionality_via_Drag_Drop_File_From_local
     wait until element is visible     ${Pads_Ex_Tab_Pad_data_Attachemnts}
     click element        ${Pads_Ex_Tab_Pad_data_Attachemnts}
     sleep    5
-    Upload_Document_using_Drag_Drop         ${Pads_Ex_Tab_Pad_data_Attachements_first_upload_area}          ${file_input}
-
+    #Upload_Document_using_Drag_Drop         ${Pads_Ex_Tab_Pad_data_Attachements_first_upload_area}          ${file_input}
+    Simulate Drag and Drop        ${Pads_Ex_Tab_Pad_data_Attachements_first_upload_area}          ${file_input}
 
 
 
@@ -45,7 +45,17 @@ Validate_File_upload_functionality_via_Drag_Drop_File_From_local
 Upload_Document_using_Drag_Drop
     [Arguments]    ${source_locator}        ${targeted}
     ${source}=      get webelement    ${source_locator}
-    ${target}=      get webelement    ${targeted}
-    ${action}=      evaluate    seleniumlibrary.create webdriver.common.action_chains.ActionChains(driver).drag_and_drop(${source},${target})
+    #${target}=      get webelement    ${targeted}
+    ${action}=      evaluate    seleniumlibrary.create webdriver.common.action_chains.ActionChains(driver).drag_and_drop(${source},${targeted})
     [Return]     ${action}
 
+Simulate Drag and Drop
+    [Arguments]    ${target_element}    ${file_path}
+    Execute JavaScript        arguments[0].style.display = 'block';    # Display drop area if hidden
+    ${source_position}=    Evaluate    [window.innerWidth/2, window.innerHeight/2]    # Center of the window
+    ${target_position}=    Get Element Position    ${target_element}
+    Execute JavaScript    var dropEvent = new DragEvent('drop', { bubbles: true, dataTransfer: { files: [new File(['${file_path}'], 'document.pdf')] } });
+                          dropEvent.clientX = ${target_position}[0];
+                          dropEvent.clientY = ${target_position}[1];
+                          document.dispatchEvent(dropEvent);
+    Sleep    2s   # Add a delay to ensure the drop event is processe

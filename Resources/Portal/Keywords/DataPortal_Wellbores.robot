@@ -19,33 +19,31 @@ Variables       ../PageObject/DataPortal_Wellbores.py
 
 *** Keywords ***
 Get_all_values_From_Data_porta_Well_bores_table
-
-    sleep   10
+    sleep   5
     wait until element is visible    ${Wellbores_Tab}
-
     sleep   3
-    ${column}   get element count     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th
+    ${column}   get element count     ${Well_bores_Table_Headings_Locatore}
     LOG TO CONSOLE    ${column}
     FOR     ${i}    IN RANGE       1       ${column}+1
-         ${locators}=   get webelement    xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]
-         ${text}=      GET TEXT       xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]
-
+         #${text}=      GET TEXT       xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[2]//th)[${i}]
+         ${text}=      GET TEXT       ${Well_bores_Table_Headings_Locatore}\[${i}]
     END
     log to console    Header_values_Fetch_successfully
-    ${Total_data}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//td
-    LOG TO CONSOLE    Totaldatacountis=${Total_data}
+    ${Total_data}   GET ELEMENT COUNT     ${Well_bores_Table_Datas_Locatore}
+    LOG TO CONSOLE    Total_data_count_is=${Total_data}
 
-    ${Total_rr}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr
-    LOG TO CONSOLE    Totaldatacountis=${Total_rr}
+    ${Total_rr}   GET ELEMENT COUNT     ${Well_bores_Table_Rows_Locatore}
+    LOG TO CONSOLE    Total_Row_count_is=${Total_rr}
      ${list_of_value}=    create list
     FOR    ${i}    IN RANGE     1       ${Total_rr}+1
-    LOG TO CONSOLE    1stloop started
+        ${rowindex}=    convert to string    ${i}
         ${dict}=    create dictionary
         FOR    ${j}    IN RANGE     1       ${column}+1
-        #LOG TO CONSOLE    2ndloop started
-        ${locatores}=   get webelement    xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]
-        scroll element into view        ${locatores}
-        ${data_text}=   GET TEXT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[2]//tr[${i}]//td[${j}]
+        ${dataindex}=    convert to string     ${j}
+        ${Row_index_added_element}=     replace string    ${Pads_Table_Fetch_each_values_elements}       RowIndex       ${rowindex}
+        ${Text_element}=    replace string    ${Row_index_added_element}       DataIndex       ${dataindex}
+        scroll element into view        ${Text_element}
+        ${data_text}=   GET TEXT     ${Text_element}
         log to console    ${data_text}
         set to dictionary    ${dict}        ${Well_bores_Table_Headings}[${j}]       ${data_text}
         END
@@ -56,16 +54,19 @@ Get_all_values_From_Data_porta_Well_bores_table
     log    ${list_of_value}
     [Return]    ${list_of_value}
 
+#=============================  END  =============================================================
 
 Well_bores_Filter_Function_using_Arrow
-        [Arguments]      ${DD_selection_element}        ${Pad_filter_Value}
+        ${DD_selection_element}=    replace string      ${Well_bores_Select_pad_name_from_dd}       value             ${Well_bores_DropDown_Selection}
         wait until element is visible    ${Well_bores_Name_DD_Arrow}    15s
         click element    ${Well_bores_Name_DD_Arrow}
         sleep    3
         click element    ${DD_selection_element}
-        Input_Well_bores_Filter    ${Well_bores_Search_input}    ${Pad_filter_Value}
+        Input_Well_bores_Filter    ${Well_bores_Search_input_locator}    ${Well_bores_Search_Input}
         wait until element is enabled    ${Well_bores_Apply_Filter}
         click_button    ${Well_bores_Apply_Filter}
+
+#=============================  END  =============================================================
 
 Input_Well_bores_Filter
     [Documentation]   used to input value in Filter dropdown
@@ -74,10 +75,20 @@ Input_Well_bores_Filter
     clear element text    ${Element}
     input text    ${Element}    ${Pad_filter_Value}
 
+#=============================  END  =============================================================
+
 Select_Wellbore_side_panel
     wait until element is visible    ${Well_bores_Side_Extend_Tab}
     click element       ${Well_bores_Side_Extend_Tab}
 
+#=============================  END  =============================================================
+
+Select_WellBores_Tab
+     Wait Until Element Is Visible    ${Wellbores_Tab}
+     click element       ${Wellbores_Tab}
+     sleep    3
+
+#=============================  END  =============================================================
 
 Get_all_Comments_list
     ${list_of_elements}=        get webelements     ${Well_bores_Ex_Tab_Pad_data_Comments_lists}
@@ -94,3 +105,18 @@ Get_all_Comments_list
 
     LOG TO CONSOLE     List_Of_Files= ${list}
     [Return]    ${list}
+
+#=============================  END  =============================================================
+
+Assign_WellBores_Table_Values_as_Variables
+    [Arguments]    ${List_Of_Dictionary_Fetch_From_Table}
+    &{Fetch_table_value_from_wellbore_data_list}=        get from list           ${List_Of_Dictionary_Fetch_From_Table}            0
+    ${well_boar_Table_Value_wellname}=                   get from dictionary     ${Fetch_table_value_from_wellbore_data_list}      Well_Name
+    ${well_boar_Table_Value_Origin_Corp_ID}=             get from dictionary     ${Fetch_table_value_from_wellbore_data_list}      Origin_Corp_ID
+    ${well_boar_Table_Value_Wellbore_Corp_ID}=           get from dictionary     ${Fetch_table_value_from_wellbore_data_list}      Wellbore_Corp_ID
+
+    set suite variable    ${well_boar_Table_Value_wellname}
+    set suite variable    ${well_boar_Table_Value_Origin_Corp_ID}
+    set suite variable    ${well_boar_Table_Value_Wellbore_Corp_ID}
+
+    

@@ -9,6 +9,7 @@ Resource        ../../../Resources/OneMap/Keywords/One_Map_Routing_Constants.rob
 *** Test Cases ***
 Validate_One_Map_Routing_Direction.robot
     One Map GPS Login
+    ARCGPS_Variables_Read_from_Excel
     Navigate_Directions_between_places      ${Source_Input}     ${Destination_Input}
     ${list_Of_Values}=      Fetch_Navigation_Values
 

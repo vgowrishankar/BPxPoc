@@ -10,9 +10,9 @@ Library         ../../../Resources/Portal/Keywords/Custome_Methods.py
 
 
 *** Variables ***
-${filter_value}       OR
-@{table_value}=     anstate    state     anstEate    st
-@{list_of_input}=   an      STATE
+#${Toggle_option}       OR
+#@{table_value}=     anstate    state     anstEate    st
+#@{List_of_Search_Input}=   an      STATE
 
 
 
@@ -25,7 +25,7 @@ Validate_The_Filter_Functionality_using_And_Condition
     wait until element is visible    ${Pads_Tab}
     click element    ${Pads_Tab}
     #Select_AND_Toggle_button
-    FOR    ${i}    IN    @{list_of_input}
+    FOR    ${i}    IN    @{List_of_Search_Input}
     Pads_Filter_Function_using_Arrow     ${i}
     sleep    3
     END
@@ -33,7 +33,7 @@ Validate_The_Filter_Functionality_using_And_Condition
     sleep    5
     ${list_of_value}=   Get_all_Value_from_Pad_name_Header_table
     log to console    ${list_of_value}
-    Table_Value_validation_with_filter_option       ${list_of_value}      ${list_of_input}        ${filter_value}
+    Table_Value_validation_with_filter_option       ${list_of_value}      ${list_of_input}        ${Toggle_option}
 
 
 

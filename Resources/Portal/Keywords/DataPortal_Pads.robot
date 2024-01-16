@@ -7,18 +7,15 @@ Library         Collections
 Library         SeleniumLibrary
 Library          JSONLibrary
 Library         ../PageObject/Locators.py
-
+Library         Custome_Methods.py
 
 *** Variables ***
 @{Pads_Table_Headings}=        ${EMPTY}     Pad_Name      Pad_ID       Business_Unit
-@{ll}
+#@{ll}
 
 
 
 *** Keywords ***
-Select Pad Filter
-
-    #select from list by label  ${PadName}
 
 Input_Pad_Filter
     [Documentation]   used to input value in Filter dropdown
@@ -27,8 +24,7 @@ Input_Pad_Filter
     clear element text    ${Element}
     input text    ${Element}    ${Pad_filter_Value}
 
-
-
+#=============================  END  =============================================================
 
 Input_Pad_Value
     [Documentation]   used to input value in Search value
@@ -36,13 +32,19 @@ Input_Pad_Value
     wait until element is visible    ${Element}
     input text    ${Element}    ${Pad_input_Value}
 
+#=============================  END  =============================================================
+
 Click_Button
     [Arguments]    ${Element}
     wait until element is visible    ${Element}
     click element    ${Element}
 
+#=============================  END  =============================================================
+
 Click Refresh Table
     Click Element  ${RefreshTable}
+
+#=============================  END  =============================================================
 
 Drop_down_List_Validation
     [Documentation]    This Keyword used to fetch list from dropdown and compare with actual list
@@ -53,11 +55,15 @@ Drop_down_List_Validation
     log to console    ${Actual_list}
     lists should be equal    ${Actual_list} @{Expected_list}
 
+#=============================  END  =============================================================
+
 Upload_Document
     [Documentation]    This Key word used to acheive upload file function
     [Arguments]    ${upload_btn_element}  @{File_path}
     wait until page contains element   ${upload_btn_element}  60s
     choose file    ${upload_btn_element}    @{File_path}
+
+#=============================  END  =============================================================
 
 Scroll_Down_To_Find_Element
     [Arguments]    ${Element}
@@ -74,6 +80,8 @@ Scroll_Down_To_Find_Element
         EXCEPT    Error message
             log     Catches any exception.
     END
+
+#=============================  END  =============================================================
 
 Select_from_dropdown
     [Arguments]    ${Element}   ${dd_selection_Value}
@@ -95,6 +103,8 @@ Select_from_dropdown
             log     dropdown element Not found
     END
 
+#=============================  END  =============================================================
+
 Send_Keys
     [Arguments]    ${Sendkey_Element}   ${Input_Value}
     TRY
@@ -103,6 +113,8 @@ Send_Keys
         input text    ${Sendkey_Element}   ${Input_Value}
     EXCEPT    run keyword and expect error
         log    run keyword and expect error
+
+#=============================  END  =============================================================
 
 Pads_Filter_Function
      [Arguments]    ${Pad_filter_Value}  ${Pad_input_Value}
@@ -114,6 +126,8 @@ Pads_Filter_Function
         wait until element is enabled    ${pads_apply_filter}
         click_button    ${pads_apply_filter}
 
+#=============================  END  =============================================================
+
 Pads_Filter_Function_using_Arrow
         [Arguments]       ${Pad_filter_Value}
         click element    ${Pad_Name_DD_Arrow}
@@ -123,69 +137,37 @@ Pads_Filter_Function_using_Arrow
         wait until element is enabled    ${pads_apply_filter}
         click_button    ${pads_apply_filter}
 
-test_Get_all_values_From_Data_porta_Pads_table
+
+#=============================  END  =============================================================
+
+Get_all_values_From_Data_portal_Pads_table
     locators.minwindow
     sleep   10
     wait until element is visible    ${Pads_Tab}
-    click element     ${Pads_Tab}
-
     sleep   3
-    ${data}=    get text         xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table' or @role=table]//thead//tr)[1]//th[1]
-    LOG TO CONSOLE    ${data}
-    ${column}   get element count     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th
+    @{ll}=        Create List
+    ${column}   get element count     ${Pads_Table_Rows}
     LOG TO CONSOLE    ${column}
     FOR     ${i}    IN RANGE       1       ${column}+1
-         ${locators}=   get webelement    xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
-         ${text}=      GET TEXT       xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
+         ${locators}=   get webelement    ${Pads_Table_Rows}\[${i}]
+         ${text}=      GET TEXT       ${Pads_Table_Rows}\[${i}]
          LOG TO CONSOLE       ${text}
     END
-    ${Total_data}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//td
-    LOG TO CONSOLE    Totaldatacountis=${Total_data}
+    ${Total_data}   GET ELEMENT COUNT     ${Pads_Table_all_values_elements}
+    LOG TO CONSOLE    Total_data_count_is=${Total_data}
 
-    ${Total_rr}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr
-    LOG TO CONSOLE    Totaldatacountis=${Total_rr}
-
+    ${Total_rr}   GET ELEMENT COUNT     ${Pads_Table_coloum}
+    LOG TO CONSOLE    Total_data_count_is=${Total_rr}
     FOR    ${i}    IN RANGE     1       ${Total_rr}+1
-    LOG TO CONSOLE    1stloop started
-        FOR    ${j}    IN RANGE     1       ${column}+1
-        #LOG TO CONSOLE    2ndloop started
-        ${locatores}=   get webelement    xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
-        scroll element into view        ${locatores}
-        ${data_text}=   GET TEXT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
-        log to console    ${data_text}
-        END
-    #LOG TO CONSOLE    loop_completed
-    END
-
-Get_all_values_From_Data_porta_Pads_table
-    locators.minwindow
-    sleep   10
-    wait until element is visible    ${Pads_Tab}
-
-    sleep   3
-    ${data}=    get text         xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table' or @role=table]//thead//tr)[1]//th[1]
-    LOG TO CONSOLE    ${data}
-    ${column}   get element count     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th
-    LOG TO CONSOLE    ${column}
-    FOR     ${i}    IN RANGE       1       ${column}+1
-         ${locators}=   get webelement    xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
-         ${text}=      GET TEXT       xpath=((//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//thead//tr)[1]//th)[${i}]
-         LOG TO CONSOLE       ${text}
-    END
-    ${Total_data}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//td
-    LOG TO CONSOLE    Totaldatacountis=${Total_data}
-
-    ${Total_rr}   GET ELEMENT COUNT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr
-    LOG TO CONSOLE    Totaldatacountis=${Total_rr}
-
-    FOR    ${i}    IN RANGE     1       ${Total_rr}+1
-    LOG TO CONSOLE    1stloop started
+        ${rowindex}=    convert to string    ${i}
         ${dict}=    create dictionary
         FOR    ${j}    IN RANGE     1       ${column}+1
-        #LOG TO CONSOLE    2ndloop started
-        ${locatores}=   get webelement    xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
-        scroll element into view        ${locatores}
-        ${data_text}=   GET TEXT     xpath=(//table[@class='mat-mdc-table mdc-data-table__table cdk-table table']//tbody)[1]//tr[${i}]//td[${j}]
+        ${dataindex}=    convert to string     ${j}
+        ${Row_index_added_element}=     replace string    ${Pads_Table_Fetch_each_values_elements}       Rowindex       ${rowindex}
+        ${Text_element}=    replace string    ${Row_index_added_element}       Dataintex       ${dataindex}
+        ${locatores}=   get webelement    ${Text_element}
+        scroll element into view        ${Text_element}
+        ${data_text}=   GET TEXT     ${Text_element}
         log to console    ${data_text}
         set to dictionary    ${dict}        ${Pads_Table_Headings}[${j}]       ${data_text}
         END
@@ -195,11 +177,13 @@ Get_all_values_From_Data_porta_Pads_table
     log to console          ${ll}
     log    ${ll}
 
+#=============================  END  =============================================================
 
 Select_side_panel
     wait until element is visible    ${Pads_Side_Extend_Tab}
     click element       ${Pads_Side_Extend_Tab}
 
+#=============================  END  =============================================================
 
 Upload_URL_function
     [Arguments]    ${URL_name}      ${URL}
@@ -207,8 +191,9 @@ Upload_URL_function
     input text        ${Pads_Ex_Tab_Pad_data_Attachements_first_URL_name_input}         ${URL_name}
     wait until element is visible    ${Pads_Ex_Tab_Pad_data_Attachements_first_URL_input}
     input text        ${Pads_Ex_Tab_Pad_data_Attachements_first_URL_input}         ${URL}
-    #click element       ${Pads_Ex_Tab_Pad_data_Attachements_first_upload_URL_btn}
+    click element       ${Pads_Ex_Tab_Pad_data_Attachements_first_upload_URL_btn}
 
+#=============================  END  =============================================================
 
 Get_all_uploaded_file_list
     ${list_of_elements}=        get webelements     ${Pads_Ex_Tab_Pad_data_Attachements_first_uploaded_doc_name}
@@ -218,7 +203,7 @@ Get_all_uploaded_file_list
 
     FOR     ${i}    IN        @{list_of_elements}
         scroll element into view        ${i}
-        log to console    ${i.text}
+        #log to console    ${i.text}
         ${get_text}=    get text    ${i}
         APPEND TO LIST    ${list}        ${get_text}
     END
@@ -226,24 +211,25 @@ Get_all_uploaded_file_list
     LOG TO CONSOLE     List_Of_Files= ${list}
     [Return]    ${list}
 
+#=============================  END  =============================================================
+
 Select_AND_Toggle_button
     sleep    5
     wait until element is visible    ${Pads_And_Toggle_Pressed_status}      10s
     ${status}=    Run Keyword And Return Status    Click Element    ${Pads_And_Toggle}
     Run Keyword If    'True'=='${status}'       Tab_clicked_successfully
 
+#=============================  END  =============================================================
 
 Get_all_Value_from_Pad_name_Header_table
     locators.minwindow
     sleep   10
     wait until element is visible    ${Pads_Tab}
-
     sleep   3
     ${list_of_elements}=        get webelements     ${Pads_Table_only_Padname_Value}
     ${Element_count}=    get element count    ${Pads_Table_only_Padname_Value}
     log to console    Total_file_countis=${Element_count}
     ${list}=    create list
-
     FOR     ${i}    IN        @{list_of_elements}
         scroll element into view        ${i}
         log to console    ${i.text}
@@ -254,7 +240,7 @@ Get_all_Value_from_Pad_name_Header_table
     LOG TO CONSOLE     List_Of_Files= ${list}
     [Return]    ${list}
 
-
+#=============================  END  =============================================================
 
 Table_Value_validation_with_filter_option
     [Arguments]     ${Enter_table_list}     ${Enter_list_of_input}      ${Filter_mode}
@@ -263,8 +249,7 @@ Table_Value_validation_with_filter_option
     log to console     ${new_Filter_mode}
     RUN KEYWORD IF    '${new_Filter_mode}' == 'and'     And_Toggle_option_validation    ${Enter_table_list}    ${Enter_list_of_input}       ELSE    Or_Toggle_option_validation    ${Enter_table_list}    ${Enter_list_of_input}
 
-
-
+#=============================  END  =============================================================
 
 Or_Toggle_option_validation
     [Arguments]    ${list_to_be_validate}       ${list_of_input_values}
@@ -277,6 +262,8 @@ Or_Toggle_option_validation
         END
 
     END
+
+#=============================  END  =============================================================
 
 And_Toggle_option_validation
     [Arguments]    ${list_to_be_validate}       ${list_of_input_values}
@@ -291,8 +278,65 @@ And_Toggle_option_validation
 
     END
 
+#=============================  END  =============================================================
 
 Uploading_files
     [Arguments]    @{List_Of_file_tobe_uploaded}
     wait until element is visible    ${Pads_Ex_Tab_Pad_data_Attachements_first_area_Browse_file_btn}    10s
     choose file      ${Pads_Ex_Tab_Pad_data_Attachements_first_area_Browse_file_btn}        ${CURDIR}${/}..\\..\\..\\TestData\\Upload_files\\Test_csv_file.csv
+
+#=============================  END  =============================================================
+
+Select_Pads_Tab
+    wait until element is visible    ${Pads_Tab}
+    click element    ${Pads_Tab}
+
+#=============================  END  =============================================================
+
+Filter_with_values
+    Pads_Filter_Function_using_Arrow     ${Pads_Search_Input}
+    #Below code used to minimize window using Python script | Source_path = Resources->Portal->Keywords->Custome_Methods.py
+    Custome_Methods.minwindow
+    sleep    5
+
+#=============================  END  =============================================================
+
+Click_Table_Value
+    click element        ${Pads_Table_only_Padname_Value}
+    sleep    5
+
+#=============================  END  =============================================================
+
+Navigate_to_attachment_Tab_And_upload_file
+    Select_side_panel
+    wait until element is visible     ${Pads_Ex_Tab_Pad_data_Attachemnts}
+    click element        ${Pads_Ex_Tab_Pad_data_Attachemnts}
+    sleep    5
+    click element      ${Pads_Ex_Tab_Pad_data_Attachements_first_area_Browse_file_btn}
+    #Below code used to upload single/Mulitple file  using Python script | Source_path = Resources->Portal->Keywords->Custome_Methods.py
+    Custome_Methods.Upload_files     ${Pads_Uploading_files}
+
+#=============================  END  =============================================================
+
+Uploaded_file_validation
+    sleep  3
+    ${list_of_files_uploaded}=      Get_all_uploaded_file_list
+    FOR    ${file_name}     IN    @{Pads_Uploading_file_names}
+        list should contain value    ${list_of_files_uploaded}      ${file_name}
+    END
+
+#=============================  END  =============================================================
+
+Click_Attachment_Tab
+    wait until element is visible     ${Pads_Ex_Tab_Pad_data_Attachemnts}
+    click element        ${Pads_Ex_Tab_Pad_data_Attachemnts}
+    sleep    5
+
+#=============================  END  =============================================================
+
+URL_Upload_files_validation
+    Sleep   5
+    ${list_of_uploadedfile}=        Get_all_uploaded_file_list
+    ${latest}=    get from list    ${list_of_uploadedfile}          0
+    list should contain value      ${list_of_uploadedfile}       ${Pads_Attachments_URL_Name}
+    should be equal as strings    ${latest}         ${Pads_Attachments_URL_Name}
