@@ -40,7 +40,7 @@ Get_all_values_From_Data_porta_Well_bores_table
         ${dict}=    create dictionary
         FOR    ${j}    IN RANGE     1       ${column}+1
         ${dataindex}=    convert to string     ${j}
-        ${Row_index_added_element}=     replace string    ${Pads_Table_Fetch_each_values_elements}       RowIndex       ${rowindex}
+        ${Row_index_added_element}=     replace string    ${Well_bores_Table_Each_data_Locatore}       RowIndex       ${rowindex}
         ${Text_element}=    replace string    ${Row_index_added_element}       DataIndex       ${dataindex}
         scroll element into view        ${Text_element}
         ${data_text}=   GET TEXT     ${Text_element}
