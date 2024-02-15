@@ -13,9 +13,9 @@ ${ANDROID_APP_ACTIVITY}       .MainActivity
 ${ANDROID_DEVICE_NAME}        Pixel 7 API 34
 
 # iOS configs
-#${IOS_AUTOMATION_NAME}        XCUITest
-#${IOS_APP}                    ${CURDIR}/../apps/wdioNativeDemoApp.app
-#${IOS_PLATFORM_NAME}          ios
-#${IOS_PLATFORM_VERSION}       %{IOS_PLATFORM_VERSION=16.1}
-#${IOS_APP_BUNDLE_ID}          com.wdiodemoapp
-#${IOS_DEVICE_NAME}            iPhone 14
+${IOS_AUTOMATION_NAME}        XCUITest
+${IOS_APP}                    ${CURDIR}/../apps/wdioNativeDemoApp.app
+${IOS_PLATFORM_NAME}          ios
+${IOS_PLATFORM_VERSION}       %{IOS_PLATFORM_VERSION=16.1}
+${IOS_APP_BUNDLE_ID}          com.wdiodemoapp
+${IOS_DEVICE_NAME}            iPhone 14
