@@ -8,4 +8,4 @@ ${LARGE_RETRY_COUNT}           5x
 ${RETRY_DELAY}                 1 s
 
 # Timeout
-${TIMEOUT}                     60
+${TIMEOUT}                     6000

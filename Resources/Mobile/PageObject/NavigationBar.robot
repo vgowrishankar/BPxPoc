@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    Common.robot
+Resource    ../Keywords/Common.robot
 Resource    ../Locators/NavigationBarLocators.robot
 
 
