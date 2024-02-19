@@ -17,7 +17,7 @@ Read_Variable_From_Excel
     ${App_Password}=              Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    4       2
     ${APPIUM_SERVER_URL}=         Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    5       2
     ${ANDROID_PLATFORM_NAME}=     Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    6       2
-    ${ANDROID_DEVICE_NAME}=               Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    7       2
+    ${ANDROID_DEVICE_NAME}=       Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    7       2
     ${ANDROID_APP_PACKAGE}=       Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    8       2
     ${ANDROID_APP_ACTIVITY}=      Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    9       2
     ${ANDROID_AUTOMATION_NAME}=   Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    10      2
@@ -33,7 +33,7 @@ Read_Variable_From_Excel
      set global variable    ${ANDROID_APP_ACTIVITY}
      set global variable    ${ANDROID_AUTOMATION_NAME}
 
-     Log To Console    Varibale Successfully read from Excel...
+     Log To Console    Variable Successfully read from Excel...
 
 #=============================  END  =============================================================
 
