@@ -3,6 +3,8 @@ Resource    ../../../Configs/ApplicationConfigs.robot
 #Resource    ../../../Configs/AppiumConfigs.robot
 Resource        ../../../Utilities/Read_data_from_excel_file.robot
 Resource       ../PageObject/ArcGIS_Navigator_Locators.robot
+Resource       ../PageObject/LTI_Navigator_Locators.robot
+Resource       ../PageObject/Calendar.robot
 Library    String
 Library    OperatingSystem
 Library    AppiumLibrary
@@ -12,7 +14,7 @@ Library    AppiumLibrary
 Read_Variable_From_Excel
      [Documentation]    This Function used to get cell value from Excel file
     #variable                      Methods name                 Excel File name     Sheet name  Row     Column
-    ${App_Login_URL}=             Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    2        2
+    ${App_Login_URL}=             Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    2       2
     ${App_Username}=              Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    3       2
     ${App_Password}=              Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    4       2
     ${APPIUM_SERVER_URL}=         Read_Data_From_Excel_File    User_Dashboard.xlsx    Mobile    5       2
@@ -51,7 +53,7 @@ Open Android Application
     Open Application    ${APPIUM_SERVER_URL}     platformName=${ANDROID_PLATFORM_NAME}        deviceName=${ANDROID_DEVICE_NAME}        appPackage=${ANDROID_APP_PACKAGE}    appActivity=${ANDROID_APP_ACTIVITY}   automationName=${ANDROID_AUTOMATION_NAME}
     #Open Application    ${APPIUM_SERVER_URL}    automationName=${ANDROID_AUTOMATION_NAME}    platformName=${ANDROID_PLATFORM_NAME}    platformVersion=${ANDROID_PLATFORM_VERSION}    deviceName=${ANDROID_DEVICE_NAME}    app=${ANDROID_APP}    appPackage=${ANDROID_APP_PACKAGE}    appActivity=${ANDROID_APP_ACTIVITY}
     Set Appium Timeout    ${TIMEOUT}
-    Log To Console    Android_Appium_Session_started_And_Application_Launched_Succesfully
+    Log To Console    Android_Appium_Session_started_And_Application_Launched_Successfully
 
 #=============================  END  =============================================================
 
@@ -161,9 +163,6 @@ Alert Message Should Be [Arguments] ${alertMessage}
  #=============================  END  =============================================================
 
 
-
-
-
 Select_ArcGIS_Enterprise_Option
     [Documentation]    This Keyword used to Select ArcGIS_Enterprise_Option
     Sleep    2s
@@ -188,31 +187,109 @@ Login_Arc_GIS_With_Valid_credentials
 
 Enable_Location_option
     [Documentation]    This keyword used to access Location enable options
-    Sleep    5s
+    Wait Until Element Is Visible    ${Location_Access_enable_Locator}
     Click Element    ${Location_Access_enable_Locator}
-    Sleep    3s
+    Wait Until Element Is Visible    ${Location_Access_enable_Continue_Locator}
     Click Element    ${Location_Access_enable_Continue_Locator}
     Log To Console    Location enable access Provided successfully
 
-Select_Premian_From_list_And_download
-    Wait Until Element Is Visible    ${Premian_Navigator_Map_Locator}    20s
-    ${Appium_Timeout}=    Get Appium Timeout
-    Log To Console    ${Appium_Timeout}
-    Click Element    ${Premian_Navigator_Map_Locator}
+Allow Notification
+    [Documentation]    This keyword used to enable Notification options
+    Wait Until Element Is Visible    ${Enable_Notification}
+    Click Element    ${Enable_Notification}
+    Log To Console    Notification enable access Provided successfully
 
-    #Wait Until Element Is Visible    //android.widget.TextView[@resource-id="com.esri.navigator:id/title" and @text="Permian Navigation"]    300s
-    Wait Until Element Is Visible    ${Premian_Navigator_Map_More_Option_Locator}     180s
+
+Allow Media Access
+    [Documentation]   This keyword used to enable Media Access options
+    Sleep    2s
+    Click Element    ${Enable_Media_Access}
+    Log To Console    Media Access access Provided successfully
+
+Select_Permian_From_list_And_download
+    Wait Until Element Is Visible    ${Permian_Navigator_Map_Locator}    20s
+    #${Appium_Timeout}=    Get Appium Timeout
+    #Log To Console    ${Appium_Timeout}
+    Click Element    ${Permian_Navigator_Map_Locator}
+    Wait Until Element Is Visible    ${Permian_Navigator_Map_More_Option_Locator}     300s
     sleep  5
-    Click Element    ${Premian_Navigator_Map_Locator}
+    Click Element    ${Permian_Navigator_Map_Locator}
+    Log To Console    Navigator Map Downloaded successfully
 
 Select_Route_From_List
     [Documentation]   This keyword used to select navigation place from list
-    Wait Until Element Is Visible    ${Premian_Navigator_Map_Plan_route_Locator}     180s
+    Wait Until Element Is Visible    ${Permian_Navigator_Map_Plan_route_Locator}     300s
     sleep  5
-    Click Element    ${Premian_Navigator_Map_2400_Texus_location_Locator}
-    Wait Until Element Is Visible    ${Premian_Navigator_Map_go_btn_Locator}     180s
-    Click Element    ${Premian_Navigator_Map_go_btn_Locator}
-    Wait Until Element Is Visible    ${Premian_Navigator_Map_error_screen_after_go_btn_Locator}     180s
-    ${Map_Error_Message}=    Get Text    ${Premian_Navigator_Map_error_screen_after_go_btn_Locator}
-    Log To Console    ${Map_Error_Message}
+    Click Element    ${Permian_Navigator_Map_2400_Texas_location_Locator}
+    Wait Until Element Is Visible    ${Permian_Navigator_Map_go_btn_Locator}     180s
+    Click Element    ${Permian_Navigator_Map_go_btn_Locator}
+    Wait Until Element Is Visible    ${Permian_Navigator_Map_error_screen_after_go_btn_Locator}     180s
+    ${Map_Error_Message}=    Get Text    ${Permian_Navigator_Map_error_screen_after_go_btn_Locator}
+    #Log To Console    ${Map_Error_Message}
+    Click Element    ${ArcGIS Enterprise_App_URL_Continue_btn_locator}
+    Log To Console    Opened Downloaded Navigator Map successfully
     
+View_Plan_Route_List
+    [Documentation]   This keyword used to view navigation plan from list
+    Wait Until Element Is Visible    ${Planned_Route_Duration}     180s
+    ${Route_Duration}=    Get Text    ${Planned_Route_Duration}
+    Log To Console    ${Route_Duration}
+    ${Route_Distance}=    Get Text    ${Planned_Route_Distance}
+    Log To Console    ${Route_Distance}
+    ${Route_Arrival_time}=    Get Text    ${Planned_Route_Arrival_time}
+    Log To Console    ${Route_Arrival_time}
+    Swipe    ${455}    ${2256}    ${516}    ${533}
+    sleep    2s
+    #@{finger} =    Create List    ${243}    ${675}
+    #@{positions} =    Create List    ${finger}
+    #Tap With Positions    ${100}    ${positions}
+    Log To Console    Planned Route Estimated Duration, Distance and Arrival time are captured successfully
+    sleep    5s
+
+
+Add Event for Calender
+    Wait Until Element Is Visible    ${next_page}    50s
+    Click Element    ${next_page}
+    Wait Until Element Is Visible    ${ok_button}    50s
+    Click Element    ${ok_button}
+    Wait Until Element Is Visible    ${AddTaskOrEvent}    10s
+    Click Element    ${AddTaskOrEvent}
+    Wait Until Element Is Visible    ${AddEvent}    10s
+    Click Element    ${AddEvent}   #Click Event
+    Wait Until Element Is Visible    ${Title}    10s
+    Input Text       ${Title}   BPX Test Event
+    Wait Until Element Is Visible    ${EnableSwitch}    10s
+    Click Element    ${EnableSwitch}
+    Execute Script    mobile: hideKeyboard
+    Wait Until Element Is Visible    ${AddLocation}    10s
+    Click Element    ${AddLocation}
+    Wait Until Element Is Visible    ${AllowLocation}    10s
+    Click Element    ${AllowLocation}
+    Wait Until Element Is Visible    ${InputLocation}    10s
+    Input Text    ${InputLocation}    Denver
+    Wait Until Element Is Visible    ${SelectEnteredLocation}    10s
+    Click Element    ${SelectEnteredLocation}
+    Swipe    ${477}    ${2239}    ${537}    ${418}
+    Wait Until Element Is Visible    ${SaveButton}    10s
+    Click Element    ${SaveButton}
+    Log To Console    Event Added Successfully..
+    
+
+Add Task for Calender
+    Wait Until Element Is Visible    ${AddTaskOrEvent}    10s
+    Click Element    ${AddTaskOrEvent}
+    Wait Until Element Is Visible    ${AddEvent}    10s
+    Click Element    ${AddTask}   #Click Task
+    Wait Until Element Is Visible    ${Title}    10s
+    Input Text       ${Title}   BPX Test Task
+    Wait Until Element Is Visible    ${EnableSwitch}    10s
+    Click Element    ${EnableSwitch}
+    Execute Script    mobile: hideKeyboard
+    Wait Until Element Is Visible    ${DoesNotReport}    10s
+    Click Element    ${DoesNotReport}
+    Wait Until Element Is Visible    ${EveryDay}    10s
+    Click Element    ${EveryDay}
+    Wait Until Element Is Visible    ${SaveButton}    10s
+    Click Element    ${SaveButton}
+    Log To Console    Task Added Successfully..
+

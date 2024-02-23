@@ -10,8 +10,11 @@ Verify That A User Can Login To The Application Using Valid Credentials
     Select_ArcGIS_Enterprise_Option
     Login_Arc_GIS_With_Valid_credentials
     Enable_Location_option
-    Select_Premian_From_list_And_download
+    Select_Permian_From_list_And_download
     Select_Route_From_List
+    View_Plan_Route_List
+
+    Close Application
 
 
 
